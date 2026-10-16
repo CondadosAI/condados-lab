@@ -83,7 +83,6 @@ def latency(variant: str, device: str, precision: str | None, frames: np.ndarray
         "query_ms": timed(lambda: e1.embed_text("a man puts on a hat")),
         "clip_end_to_end_ms": timed(lambda: e1.embed_videos([frames])),
     }
-    del e1
     e = OVEmbedder(variant, device, precision, vision_batch=1, enc_batch=4)
     embs, masks = np.repeat(emb[None], 4, 0), np.repeat(mask[None], 4, 0)
     r["vision_b1_ms"] = timed(lambda: e.frame_tokens(pv, pos))
@@ -95,9 +94,8 @@ def latency(variant: str, device: str, precision: str | None, frames: np.ndarray
 
 def pytorch_latency(frames: np.ndarray) -> dict:
     import torch
-    from transformers import AutoModel, AutoProcessor
-
     from ov_model import MODEL_ID, QUERY_PREFIX, pooled
+    from transformers import AutoModel, AutoProcessor
 
     torch.set_grad_enabled(False)
     m = AutoModel.from_pretrained(MODEL_ID, dtype=torch.float32).eval()
