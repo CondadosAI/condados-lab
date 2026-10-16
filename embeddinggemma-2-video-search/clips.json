@@ -1,0 +1,663 @@
+{
+ "source": "Pexels (https://www.pexels.com/license/): free to use and modify, no attribution required, not to be redistributed on other stock platforms. Only ids are kept here; download.py fetches the files.",
+ "written": "2026-10-16, before any embedding was computed",
+ "clips": [
+  {
+   "key": "8435581",
+   "id": "8435581",
+   "trim": [
+    6,
+    13
+   ],
+   "kind": "paired",
+   "action": "a person sits down on a chair",
+   "caption_fwd": "a person sits down on a chair",
+   "caption_rev": "a person stands up from a chair"
+  },
+  {
+   "key": "8377765",
+   "id": "8377765",
+   "trim": [
+    18,
+    24
+   ],
+   "kind": "paired",
+   "action": "a person stands up from a chair",
+   "caption_fwd": "a person stands up from a chair",
+   "caption_rev": "a person sits down on a chair"
+  },
+  {
+   "key": "10238036",
+   "id": "10238036",
+   "trim": [
+    0,
+    6
+   ],
+   "kind": "paired",
+   "action": "a person opens a door",
+   "caption_fwd": "a person opens a door",
+   "caption_rev": "a person closes a door"
+  },
+  {
+   "key": "855730",
+   "id": "855730",
+   "trim": [
+    1.0,
+    6
+   ],
+   "kind": "paired",
+   "action": "a man puts on a jacket",
+   "caption_fwd": "a man puts on a jacket",
+   "caption_rev": "a man takes off a jacket"
+  },
+  {
+   "key": "8547606",
+   "id": "8547606",
+   "trim": [
+    1,
+    7
+   ],
+   "kind": "paired",
+   "action": "a woman puts on glasses",
+   "caption_fwd": "a woman puts on glasses",
+   "caption_rev": "a woman takes off her glasses"
+  },
+  {
+   "key": "7431681",
+   "id": "7431681",
+   "trim": [
+    4,
+    12
+   ],
+   "kind": "paired",
+   "action": "someone opens a laptop",
+   "caption_fwd": "someone opens a laptop",
+   "caption_rev": "someone closes a laptop"
+  },
+  {
+   "key": "7431863",
+   "id": "7431863",
+   "trim": [
+    8,
+    16
+   ],
+   "kind": "paired",
+   "action": "someone closes a laptop",
+   "caption_fwd": "someone closes a laptop",
+   "caption_rev": "someone opens a laptop"
+  },
+  {
+   "key": "6898056",
+   "id": "6898056",
+   "trim": [
+    10,
+    17
+   ],
+   "kind": "paired",
+   "action": "a woman opens a box",
+   "caption_fwd": "a woman opens a box",
+   "caption_rev": "a woman closes a box"
+  },
+  {
+   "key": "35759882",
+   "id": "35759882",
+   "trim": [
+    0,
+    8
+   ],
+   "kind": "paired",
+   "action": "a person walks away from the camera",
+   "caption_fwd": "a person walks away from the camera",
+   "caption_rev": "a person walks towards the camera"
+  },
+  {
+   "key": "8550922",
+   "id": "8550922",
+   "trim": [
+    0,
+    6
+   ],
+   "kind": "paired",
+   "action": "a person walks up the stairs",
+   "caption_fwd": "a person walks up the stairs",
+   "caption_rev": "a person walks down the stairs"
+  },
+  {
+   "key": "7557650",
+   "id": "7557650",
+   "trim": [
+    0,
+    8
+   ],
+   "kind": "paired",
+   "action": "a woman walks down the stairs",
+   "caption_fwd": "a woman walks down the stairs",
+   "caption_rev": "a woman walks up the stairs"
+  },
+  {
+   "key": "39173954a",
+   "id": "39173954",
+   "trim": [
+    0,
+    5
+   ],
+   "kind": "paired",
+   "action": "a hand picks up a mug",
+   "caption_fwd": "a hand picks up a mug",
+   "caption_rev": "a hand puts down a mug"
+  },
+  {
+   "key": "39173954b",
+   "id": "39173954",
+   "trim": [
+    4,
+    9
+   ],
+   "kind": "paired",
+   "action": "a hand puts down a mug",
+   "caption_fwd": "a hand puts down a mug",
+   "caption_rev": "a hand picks up a mug"
+  },
+  {
+   "key": "7658235",
+   "id": "7658235",
+   "trim": [
+    5,
+    10
+   ],
+   "kind": "paired",
+   "action": "a hand puts a cup down on the table",
+   "caption_fwd": "a hand puts a cup down on the table",
+   "caption_rev": "a hand picks a cup up from the table"
+  },
+  {
+   "key": "18248318",
+   "id": "18248318",
+   "trim": [
+    5,
+    13
+   ],
+   "kind": "paired",
+   "action": "an airplane lands on the runway",
+   "caption_fwd": "an airplane lands on the runway",
+   "caption_rev": "an airplane takes off from the runway"
+  },
+  {
+   "key": "37432967",
+   "id": "37432967",
+   "trim": [
+    2,
+    10
+   ],
+   "kind": "paired",
+   "action": "a train arrives at the station",
+   "caption_fwd": "a train arrives at the station",
+   "caption_rev": "a train leaves the station"
+  },
+  {
+   "key": "4138712",
+   "id": "4138712",
+   "trim": [
+    0,
+    7
+   ],
+   "kind": "paired",
+   "action": "riding an escalator up",
+   "caption_fwd": "riding an escalator up",
+   "caption_rev": "riding an escalator down"
+  },
+  {
+   "key": "4088488",
+   "id": "4088488",
+   "trim": [
+    3,
+    10
+   ],
+   "kind": "paired",
+   "action": "riding an escalator up",
+   "caption_fwd": "riding an escalator up",
+   "caption_rev": "riding an escalator down"
+  },
+  {
+   "key": "15671645",
+   "id": "15671645",
+   "trim": [
+    5,
+    13
+   ],
+   "kind": "paired",
+   "action": "a person opens the curtains",
+   "caption_fwd": "a person opens the curtains",
+   "caption_rev": "a person closes the curtains"
+  },
+  {
+   "key": "6620537",
+   "id": "6620537",
+   "trim": [
+    0,
+    5
+   ],
+   "kind": "paired",
+   "action": "a person lies down on a bed",
+   "caption_fwd": "a person lies down on a bed",
+   "caption_rev": "a person gets up from a bed"
+  },
+  {
+   "key": "8090735",
+   "id": "8090735",
+   "trim": [
+    0,
+    7
+   ],
+   "kind": "paired",
+   "action": "a woman gets out of bed",
+   "caption_fwd": "a woman gets out of bed",
+   "caption_rev": "a woman lies down in bed"
+  },
+  {
+   "key": "854026",
+   "id": "854026",
+   "trim": [
+    0,
+    8
+   ],
+   "kind": "paired",
+   "action": "a man blows up a balloon",
+   "caption_fwd": "a man blows up a balloon",
+   "caption_rev": "a balloon deflates"
+  },
+  {
+   "key": "9184997",
+   "id": "9184997",
+   "trim": [
+    12,
+    20
+   ],
+   "kind": "paired",
+   "action": "a man puts on a hat",
+   "caption_fwd": "a man puts on a hat",
+   "caption_rev": "a man takes off his hat"
+  },
+  {
+   "key": "9058615",
+   "id": "9058615",
+   "trim": [
+    0,
+    8
+   ],
+   "kind": "paired",
+   "action": "someone packs a suitcase",
+   "caption_fwd": "someone packs a suitcase",
+   "caption_rev": "someone unpacks a suitcase"
+  },
+  {
+   "key": "13211307",
+   "id": "13211307",
+   "trim": [
+    3,
+    11
+   ],
+   "kind": "paired",
+   "action": "a car drives away down the road",
+   "caption_fwd": "a car drives away down the road",
+   "caption_rev": "a car drives towards the camera"
+  },
+  {
+   "key": "4281260",
+   "id": "4281260",
+   "trim": [
+    14,
+    22
+   ],
+   "kind": "paired",
+   "action": "a man gets into a car",
+   "caption_fwd": "a man gets into a car",
+   "caption_rev": "a man gets out of a car"
+  },
+  {
+   "key": "8345035",
+   "id": "8345035",
+   "trim": [
+    5,
+    13
+   ],
+   "kind": "paired",
+   "action": "a woman gets out of a car",
+   "caption_fwd": "a woman gets out of a car",
+   "caption_rev": "a woman gets into a car"
+  },
+  {
+   "key": "34779661",
+   "id": "34779661",
+   "trim": [
+    0,
+    5
+   ],
+   "kind": "paired",
+   "action": "elevator doors open",
+   "caption_fwd": "elevator doors open",
+   "caption_rev": "elevator doors close"
+  },
+  {
+   "key": "9222684",
+   "id": "9222684",
+   "trim": [
+    3,
+    11
+   ],
+   "kind": "paired",
+   "action": "someone zips up a jacket",
+   "caption_fwd": "someone zips up a jacket",
+   "caption_rev": "someone unzips a jacket"
+  },
+  {
+   "key": "7338499",
+   "id": "7338499",
+   "trim": [
+    0,
+    5
+   ],
+   "kind": "paired",
+   "action": "a woman puts on a glove",
+   "caption_fwd": "a woman puts on a glove",
+   "caption_rev": "a woman takes off a glove"
+  },
+  {
+   "key": "35898046",
+   "id": "35898046",
+   "trim": [
+    0,
+    7
+   ],
+   "kind": "paired",
+   "action": "a man walks into a room",
+   "caption_fwd": "a man walks into a room",
+   "caption_rev": "a man walks out of a room"
+  },
+  {
+   "key": "7310261",
+   "id": "7310261",
+   "trim": [
+    0,
+    5
+   ],
+   "kind": "paired",
+   "action": "a woman puts on headphones",
+   "caption_fwd": "a woman puts on headphones",
+   "caption_rev": "a woman takes off headphones"
+  },
+  {
+   "key": "6539605",
+   "id": "6539605",
+   "trim": [
+    1.5,
+    7.5
+   ],
+   "kind": "one_way",
+   "action": "a swimmer dives into a pool",
+   "caption_fwd": "a swimmer dives into a pool"
+  },
+  {
+   "key": "31637076",
+   "id": "31637076",
+   "trim": [
+    0,
+    5
+   ],
+   "kind": "one_way",
+   "action": "a glass jar shatters",
+   "caption_fwd": "a glass jar shatters"
+  },
+  {
+   "key": "31994420",
+   "id": "31994420",
+   "trim": [
+    1,
+    7
+   ],
+   "kind": "one_way",
+   "action": "an egg is cracked into a bowl",
+   "caption_fwd": "an egg is cracked into a bowl"
+  },
+  {
+   "key": "4957763",
+   "id": "4957763",
+   "trim": [
+    8,
+    14
+   ],
+   "kind": "one_way",
+   "action": "coffee pours into a cup",
+   "caption_fwd": "coffee pours into a cup"
+  },
+  {
+   "key": "35257455",
+   "id": "35257455",
+   "trim": [
+    11,
+    17
+   ],
+   "kind": "one_way",
+   "action": "a wave crashes on rocks",
+   "caption_fwd": "a wave crashes on rocks"
+  },
+  {
+   "key": "5921005",
+   "id": "5921005",
+   "trim": [
+    12,
+    18
+   ],
+   "kind": "one_way",
+   "action": "a row of dominoes falls over",
+   "caption_fwd": "a row of dominoes falls over"
+  },
+  {
+   "key": "7675221",
+   "id": "7675221",
+   "trim": [
+    7.5,
+    13.5
+   ],
+   "kind": "one_way",
+   "action": "a candle is blown out",
+   "caption_fwd": "a candle is blown out"
+  },
+  {
+   "key": "19286012",
+   "id": "19286012",
+   "trim": [
+    0,
+    6
+   ],
+   "kind": "one_way",
+   "action": "a water balloon bursts",
+   "caption_fwd": "a water balloon bursts"
+  },
+  {
+   "key": "3933594",
+   "id": "3933594",
+   "trim": [
+    4,
+    10
+   ],
+   "kind": "one_way",
+   "action": "a pencil is snapped in half",
+   "caption_fwd": "a pencil is snapped in half"
+  },
+  {
+   "key": "5698928",
+   "id": "5698928",
+   "trim": [
+    0,
+    6
+   ],
+   "kind": "one_way",
+   "action": "a match is struck and lights",
+   "caption_fwd": "a match is struck and lights"
+  },
+  {
+   "key": "7184590",
+   "id": "7184590",
+   "trim": [
+    1.0,
+    7
+   ],
+   "kind": "one_way",
+   "action": "water is poured into a glass",
+   "caption_fwd": "water is poured into a glass"
+  }
+ ],
+ "queries": [
+  {
+   "query": "a swimmer dives off the starting block",
+   "targets": [
+    "6539605"
+   ]
+  },
+  {
+   "query": "glass shattering into pieces",
+   "targets": [
+    "31637076"
+   ]
+  },
+  {
+   "query": "cracking an egg into a steel bowl",
+   "targets": [
+    "31994420"
+   ]
+  },
+  {
+   "query": "espresso dripping into a white cup",
+   "targets": [
+    "4957763"
+   ]
+  },
+  {
+   "query": "a red train pulling into a station",
+   "targets": [
+    "37432967"
+   ]
+  },
+  {
+   "query": "an airplane landing at an airport",
+   "targets": [
+    "18248318"
+   ]
+  },
+  {
+   "query": "a man inflating a purple balloon",
+   "targets": [
+    "854026"
+   ]
+  },
+  {
+   "query": "a man on the beach putting on a straw hat",
+   "targets": [
+    "9184997"
+   ]
+  },
+  {
+   "query": "packing clothes into a suitcase",
+   "targets": [
+    "9058615"
+   ]
+  },
+  {
+   "query": "a car on a winding country road",
+   "targets": [
+    "13211307"
+   ]
+  },
+  {
+   "query": "riding an escalator in a station",
+   "targets": [
+    "4138712",
+    "4088488"
+   ]
+  },
+  {
+   "query": "a woman wearing red headphones",
+   "targets": [
+    "7310261"
+   ]
+  },
+  {
+   "query": "striking a match",
+   "targets": [
+    "5698928"
+   ]
+  },
+  {
+   "query": "a candle flame going out",
+   "targets": [
+    "7675221"
+   ]
+  },
+  {
+   "query": "dominoes toppling",
+   "targets": [
+    "5921005"
+   ]
+  },
+  {
+   "query": "black and white waves hitting rocks",
+   "targets": [
+    "35257455"
+   ]
+  },
+  {
+   "query": "snapping a pencil",
+   "targets": [
+    "3933594"
+   ]
+  },
+  {
+   "query": "pulling on a black glove",
+   "targets": [
+    "7338499"
+   ]
+  },
+  {
+   "query": "a man getting into a black car",
+   "targets": [
+    "4281260"
+   ]
+  },
+  {
+   "query": "drawing back the curtains to let daylight in",
+   "targets": [
+    "15671645"
+   ]
+  },
+  {
+   "query": "a laptop showing a world map",
+   "targets": [
+    "7431681",
+    "7431863"
+   ]
+  },
+  {
+   "query": "uma mulher colocando óculos",
+   "targets": [
+    "8547606"
+   ]
+  },
+  {
+   "query": "una persona caminando por un sendero de tierra",
+   "targets": [
+    "35759882"
+   ]
+  }
+ ],
+ "dropped_after_frame_check": [
+  {
+   "id": "7884059",
+   "why": "the woman barely changes size at 1 fps; direction invisible even to a person"
+  },
+  {
+   "id": "8084137",
+   "why": "the shoe barely changes at 1 fps; direction invisible even to a person"
+  }
+ ]
+}
