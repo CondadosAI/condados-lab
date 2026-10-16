@@ -10,3 +10,30 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "UP", "B", "SIM", "I"]
+
+[dependency-groups]
+# embeddinggemma-2-video-search
+egv = [
+    "torch>=2.8",
+    "torchvision>=0.23",
+    "transformers>=4.57",
+    "sentence-transformers>=5.1",
+    "openvino>=2025.3",
+    "nncf>=2.18",
+    "numpy>=1.26",
+    "pillow>=10.0",
+    "av>=14.0",
+    "loguru>=0.7",
+]
+
+[tool.uv]
+default-groups = ["egv"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
