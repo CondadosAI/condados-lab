@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
+.env.*
+
+# Per-project artifacts stay out of git; only small output/ results ship.
+*/data/
+*/models/
+*/index/
+*/cache/
+*.mp4
+*.mov
+*.npy
+*.npz
+*.xml
+*.bin
+*.onnx
+*.safetensors
