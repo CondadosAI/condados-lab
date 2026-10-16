@@ -27,8 +27,8 @@
 | a man getting into a black car | 1 | a man gets into a car | 0.707 |
 | drawing back the curtains to let daylight in | 1 | a person opens the curtains | 0.657 |
 | a laptop showing a world map | 1 | someone closes a laptop | 0.746 |
-| uma mulher colocando óculos | 1 | a woman puts on glasses | 0.703 |
-| una persona caminando por un sendero de tierra | 1 | a person walks away from the camera | 0.667 |
+| a woman putting on glasses | 1 | a woman puts on glasses | 0.738 |
+| a person walking along a dirt path | 1 | a person walks away from the camera | 0.699 |
 
 ## Direction of time
 

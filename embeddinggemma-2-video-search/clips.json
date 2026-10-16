@@ -638,13 +638,13 @@
    ]
   },
   {
-   "query": "uma mulher colocando óculos",
+   "query": "a woman putting on glasses",
    "targets": [
     "8547606"
    ]
   },
   {
-   "query": "una persona caminando por un sendero de tierra",
+   "query": "a person walking along a dirt path",
    "targets": [
     "35759882"
    ]
@@ -659,5 +659,8 @@
    "id": "8084137",
    "why": "the shoe barely changes at 1 fps; direction invisible even to a person"
   }
+ ],
+ "query_changes": [
+  "2026-10-16, after the first evaluation: the only two non-English queries were replaced by their direct English translations (Luis: English only). Both had ranked their target #1."
  ]
 }
