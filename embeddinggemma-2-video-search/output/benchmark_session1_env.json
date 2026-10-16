@@ -1,0 +1,8 @@
+{
+ "session": 1,
+ "cpu": "x86_64",
+ "cpu_name": "12th Gen Intel(R) Core(TM) i7-12700H",
+ "gpu_name": "Intel(R) Iris(R) Xe Graphics (iGPU)",
+ "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "latency_clip": "7431681 (8 frames, 640x360)"
+}

@@ -24,6 +24,7 @@ egv = [
     "pillow>=10.0",
     "av>=14.0",
     "loguru>=0.7",
+    "matplotlib>=3.11.2",
 ]
 
 [tool.uv]
