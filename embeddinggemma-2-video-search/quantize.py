@@ -34,17 +34,17 @@ def main() -> None:
     vis_items, enc_items = [], []
     for c in calib:
         frames = sample_frames(HERE / "data" / "clips" / f"{c['key']}_fwd.mp4")
-        x = ref.proc(
-            text=["<|video|>"], videos=[frames], do_sample_frames=False, return_tensors="np"
-        )
+        x = ref.prompt(frames)
         pv, pos = x["pixel_values_videos"], x["video_position_ids"]
         k = VISION_BATCH - len(pv)
         if k > 0:
             pv = np.concatenate([pv, np.repeat(pv[-1:], k, 0)])
             pos = np.concatenate([pos, np.repeat(pos[-1:], k, 0)])
         vis_items.append((pv[:VISION_BATCH], pos[:VISION_BATCH]))
-        emb, mask = ref.video_inputs(frames)
-        enc_items.append((emb[None], mask[None]))
+        emb = ref.video_inputs(frames)  # calibrated at the 1024 bucket every 8-frame clip uses
+        e, m = np.zeros((1, 1024, emb.shape[1]), np.float32), np.zeros((1, 1024), np.int64)
+        e[0, : len(emb)], m[0, : len(emb)] = emb, 1
+        enc_items.append((e, m))
     logger.info(f"calibration: {len(vis_items)} clips")
 
     for name, items in (("vision", vis_items), ("encoder", enc_items)):

@@ -74,19 +74,18 @@ def quality(e: OVEmbedder, spec: dict, ref: dict) -> dict:
 
 def latency(variant: str, device: str, precision: str | None, frames: np.ndarray) -> dict:
     e1 = OVEmbedder(variant, device, precision, vision_batch=8, enc_batch=1)
-    x = e1.proc(text=["<|video|>"], videos=[frames], do_sample_frames=False, return_tensors="np")
+    x = e1.prompt(frames)
     pv, pos = x["pixel_values_videos"], x["video_position_ids"]
-    emb, mask = e1.video_inputs(frames)
+    emb = e1.video_inputs(frames)
     r = {
         "vision_b8_ms": timed(lambda: e1.frame_tokens(pv, pos)),
-        "encoder_b1_ms": timed(lambda: e1.encode(emb[None], mask[None])),
+        "encoder_b1_ms": timed(lambda: e1.encode([emb])),
         "query_ms": timed(lambda: e1.embed_text("a man puts on a hat")),
         "clip_end_to_end_ms": timed(lambda: e1.embed_videos([frames])),
     }
     e = OVEmbedder(variant, device, precision, vision_batch=1, enc_batch=4)
-    embs, masks = np.repeat(emb[None], 4, 0), np.repeat(mask[None], 4, 0)
     r["vision_b1_ms"] = timed(lambda: e.frame_tokens(pv, pos))
-    r["encoder_b4_per_clip_ms"] = timed(lambda: e.encode(embs, masks)) / 4
+    r["encoder_b4_per_clip_ms"] = timed(lambda: e.encode([emb] * 4)) / 4
     return {k: float(np.median(v)) for k, v in r.items()} | {
         f"{k}_p90": float(np.percentile(v, 90)) for k, v in r.items()
     }
