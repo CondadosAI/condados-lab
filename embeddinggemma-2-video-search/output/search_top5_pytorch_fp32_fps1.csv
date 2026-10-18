@@ -1,0 +1,116 @@
+query,rank,key,action,score
+a swimmer dives off the starting block,1,6539605,a swimmer dives into a pool,0.7280559539794922
+a swimmer dives off the starting block,2,31637076,a glass jar shatters,0.5776357054710388
+a swimmer dives off the starting block,3,34779661,elevator doors open,0.57382732629776
+a swimmer dives off the starting block,4,8550922,a person walks up the stairs,0.561298131942749
+a swimmer dives off the starting block,5,8090735,a woman gets out of bed,0.5598077774047852
+glass shattering into pieces,1,31637076,a glass jar shatters,0.7720838785171509
+glass shattering into pieces,2,19286012,a water balloon bursts,0.6408240795135498
+glass shattering into pieces,3,7184590,water is poured into a glass,0.6126382350921631
+glass shattering into pieces,4,5921005,a row of dominoes falls over,0.5874898433685303
+glass shattering into pieces,5,34779661,elevator doors open,0.5830752849578857
+cracking an egg into a steel bowl,1,31994420,an egg is cracked into a bowl,0.7289023399353027
+cracking an egg into a steel bowl,2,31637076,a glass jar shatters,0.6105914115905762
+cracking an egg into a steel bowl,3,4957763,coffee pours into a cup,0.5986841320991516
+cracking an egg into a steel bowl,4,7658235,a hand puts a cup down on the table,0.5930739641189575
+cracking an egg into a steel bowl,5,19286012,a water balloon bursts,0.5870935916900635
+espresso dripping into a white cup,1,4957763,coffee pours into a cup,0.7779958248138428
+espresso dripping into a white cup,2,7658235,a hand puts a cup down on the table,0.6655006408691406
+espresso dripping into a white cup,3,31994420,an egg is cracked into a bowl,0.5882851481437683
+espresso dripping into a white cup,4,39173954b,a hand puts down a mug,0.5840272307395935
+espresso dripping into a white cup,5,39173954a,a hand picks up a mug,0.5829828977584839
+a red train pulling into a station,1,37432967,a train arrives at the station,0.7478750944137573
+a red train pulling into a station,2,4138712,riding an escalator up,0.6444106101989746
+a red train pulling into a station,3,34779661,elevator doors open,0.5969688892364502
+a red train pulling into a station,4,4088488,riding an escalator up,0.5835825204849243
+a red train pulling into a station,5,18248318,an airplane lands on the runway,0.5606812238693237
+an airplane landing at an airport,1,18248318,an airplane lands on the runway,0.7091917991638184
+an airplane landing at an airport,2,34779661,elevator doors open,0.6073369979858398
+an airplane landing at an airport,3,37432967,a train arrives at the station,0.6003841161727905
+an airplane landing at an airport,4,4138712,riding an escalator up,0.5860499739646912
+an airplane landing at an airport,5,4088488,riding an escalator up,0.577765941619873
+a man inflating a purple balloon,1,854026,a man blows up a balloon,0.7752861976623535
+a man inflating a purple balloon,2,19286012,a water balloon bursts,0.6749367117881775
+a man inflating a purple balloon,3,855730,a man puts on a jacket,0.5891828536987305
+a man inflating a purple balloon,4,6620537,a person lies down on a bed,0.569218099117279
+a man inflating a purple balloon,5,35898046,a man walks into a room,0.5683772563934326
+a man on the beach putting on a straw hat,1,9184997,a man puts on a hat,0.7468677759170532
+a man on the beach putting on a straw hat,2,855730,a man puts on a jacket,0.6180166006088257
+a man on the beach putting on a straw hat,3,6620537,a person lies down on a bed,0.5572203993797302
+a man on the beach putting on a straw hat,4,39173954b,a hand puts down a mug,0.5524747371673584
+a man on the beach putting on a straw hat,5,39173954a,a hand picks up a mug,0.551602840423584
+packing clothes into a suitcase,1,9058615,someone packs a suitcase,0.7289277911186218
+packing clothes into a suitcase,2,6898056,a woman opens a box,0.5835714936256409
+packing clothes into a suitcase,3,9222684,someone zips up a jacket,0.576600968837738
+packing clothes into a suitcase,4,7338499,a woman puts on a glove,0.5724515318870544
+packing clothes into a suitcase,5,8345035,a woman gets out of a car,0.5670413374900818
+a car on a winding country road,1,13211307,a car drives away down the road,0.7268377542495728
+a car on a winding country road,2,35759882,a person walks away from the camera,0.5963423252105713
+a car on a winding country road,3,8345035,a woman gets out of a car,0.575547456741333
+a car on a winding country road,4,31637076,a glass jar shatters,0.5431536436080933
+a car on a winding country road,5,5698928,a match is struck and lights,0.542372465133667
+riding an escalator in a station,1,4138712,riding an escalator up,0.7397972941398621
+riding an escalator in a station,2,4088488,riding an escalator up,0.7346981763839722
+riding an escalator in a station,3,37432967,a train arrives at the station,0.6391017436981201
+riding an escalator in a station,4,34779661,elevator doors open,0.6327609419822693
+riding an escalator in a station,5,8550922,a person walks up the stairs,0.6124342083930969
+a woman wearing red headphones,1,7310261,a woman puts on headphones,0.7189139127731323
+a woman wearing red headphones,2,8547606,a woman puts on glasses,0.5967271327972412
+a woman wearing red headphones,3,9058615,someone packs a suitcase,0.5783301591873169
+a woman wearing red headphones,4,7557650,a woman walks down the stairs,0.5760655999183655
+a woman wearing red headphones,5,15671645,a person opens the curtains,0.575653612613678
+striking a match,1,5698928,a match is struck and lights,0.6623840928077698
+striking a match,2,3933594,a pencil is snapped in half,0.6376734972000122
+striking a match,3,5921005,a row of dominoes falls over,0.6191791892051697
+striking a match,4,19286012,a water balloon bursts,0.608266294002533
+striking a match,5,31637076,a glass jar shatters,0.6066147089004517
+a candle flame going out,1,7675221,a candle is blown out,0.6957974433898926
+a candle flame going out,2,5698928,a match is struck and lights,0.6263930201530457
+a candle flame going out,3,31637076,a glass jar shatters,0.5947448015213013
+a candle flame going out,4,5921005,a row of dominoes falls over,0.5862616300582886
+a candle flame going out,5,19286012,a water balloon bursts,0.5762956738471985
+dominoes toppling,1,31637076,a glass jar shatters,0.6557862758636475
+dominoes toppling,2,5921005,a row of dominoes falls over,0.641936182975769
+dominoes toppling,3,3933594,a pencil is snapped in half,0.5978289246559143
+dominoes toppling,4,34779661,elevator doors open,0.5837427377700806
+dominoes toppling,5,855730,a man puts on a jacket,0.5825638175010681
+black and white waves hitting rocks,1,35257455,a wave crashes on rocks,0.7748190760612488
+black and white waves hitting rocks,2,9184997,a man puts on a hat,0.6112518310546875
+black and white waves hitting rocks,3,7184590,water is poured into a glass,0.5849699378013611
+black and white waves hitting rocks,4,31637076,a glass jar shatters,0.5827054977416992
+black and white waves hitting rocks,5,7431863,someone closes a laptop,0.55448317527771
+snapping a pencil,1,3933594,a pencil is snapped in half,0.7337868809700012
+snapping a pencil,2,5698928,a match is struck and lights,0.6302645802497864
+snapping a pencil,3,31637076,a glass jar shatters,0.6092327833175659
+snapping a pencil,4,854026,a man blows up a balloon,0.6068108677864075
+snapping a pencil,5,7310261,a woman puts on headphones,0.599486768245697
+pulling on a black glove,1,7338499,a woman puts on a glove,0.7231645584106445
+pulling on a black glove,2,9222684,someone zips up a jacket,0.6411275863647461
+pulling on a black glove,3,855730,a man puts on a jacket,0.626194953918457
+pulling on a black glove,4,19286012,a water balloon bursts,0.6116716265678406
+pulling on a black glove,5,39173954b,a hand puts down a mug,0.6068621873855591
+a man getting into a black car,1,4281260,a man gets into a car,0.707144021987915
+a man getting into a black car,2,8345035,a woman gets out of a car,0.659146249294281
+a man getting into a black car,3,13211307,a car drives away down the road,0.5965412855148315
+a man getting into a black car,4,855730,a man puts on a jacket,0.5881096124649048
+a man getting into a black car,5,9222684,someone zips up a jacket,0.5821590423583984
+drawing back the curtains to let daylight in,1,15671645,a person opens the curtains,0.6571974158287048
+drawing back the curtains to let daylight in,2,3933594,a pencil is snapped in half,0.5704859495162964
+drawing back the curtains to let daylight in,3,13211307,a car drives away down the road,0.5674157738685608
+drawing back the curtains to let daylight in,4,7338499,a woman puts on a glove,0.564395010471344
+drawing back the curtains to let daylight in,5,8377765,a person stands up from a chair,0.5628381371498108
+a laptop showing a world map,1,7431863,someone closes a laptop,0.7464948892593384
+a laptop showing a world map,2,7431681,someone opens a laptop,0.7067578434944153
+a laptop showing a world map,3,8345035,a woman gets out of a car,0.5449894666671753
+a laptop showing a world map,4,9058615,someone packs a suitcase,0.5377862453460693
+a laptop showing a world map,5,8435581,a person sits down on a chair,0.5376061201095581
+a woman putting on glasses,1,8547606,a woman puts on glasses,0.737561821937561
+a woman putting on glasses,2,7310261,a woman puts on headphones,0.6396672129631042
+a woman putting on glasses,3,10238036,a person opens a door,0.6160249710083008
+a woman putting on glasses,4,8435581,a person sits down on a chair,0.6113828420639038
+a woman putting on glasses,5,6898056,a woman opens a box,0.6018692255020142
+a person walking along a dirt path,1,35759882,a person walks away from the camera,0.6992782354354858
+a person walking along a dirt path,2,13211307,a car drives away down the road,0.5934994220733643
+a person walking along a dirt path,3,8550922,a person walks up the stairs,0.5797927379608154
+a person walking along a dirt path,4,35898046,a man walks into a room,0.560083270072937
+a person walking along a dirt path,5,7557650,a woman walks down the stairs,0.5594037175178528

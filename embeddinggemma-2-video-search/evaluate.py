@@ -68,10 +68,13 @@ def main() -> None:
     lines = [f"# Results for `{tag}`", ""]
 
     # --- search -------------------------------------------------------------------------
-    rows, rr = [], []
+    rows, rr, top5 = [], [], []
     for i, q in enumerate(spec["queries"]):
         s = V @ E[f"query/{i}"]
         order = np.argsort(-s)
+        top5 += [{"query": q["query"], "rank": r, "key": clips[j]["key"],
+                  "action": clips[j]["action"], "score": float(s[j])}
+                 for r, j in enumerate(order[:5], 1)]  # fmt: skip
         rank = next(r for r, j in enumerate(order, 1) if ids[j] in q["targets"])
         rr.append(1 / rank)
         top = clips[order[0]]
@@ -107,7 +110,11 @@ def main() -> None:
             row[f"capdiff_{rv}"] = float(tf @ f - tf @ r)
             cosines.append(float(f @ r))
             if c["kind"] == "paired":
-                row[f"paired_dot_{rv}"] = float((f - r) @ (tf - E[f"cap_rev/{k}"]))
+                tr = E[f"cap_rev/{k}"]
+                # the four caption-to-clip scores the paired reading is built from
+                row[f"capfwd_fwd_{rv}"], row[f"capfwd_{rv}"] = float(tf @ f), float(tf @ r)
+                row[f"caprev_fwd_{rv}"], row[f"caprev_{rv}"] = float(tr @ f), float(tr @ r)
+                row[f"paired_dot_{rv}"] = float((f - r) @ (tf - tr))
                 paired_ok.append(row[f"paired_dot_{rv}"] > 0)
                 rank_ok.append(row[f"capdiff_{rv}"] > 0)
             else:
@@ -149,6 +156,10 @@ def main() -> None:
 
     OUT.mkdir(exist_ok=True)
     (OUT / f"results_{tag}.md").write_text("\n".join(lines))
+    with open(OUT / f"search_top5_{tag}.csv", "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(top5[0]))
+        w.writeheader()
+        w.writerows(top5)
     with open(OUT / f"direction_{tag}.csv", "w", newline="") as fh:
         fields = list(dict.fromkeys(k for row in table for k in row))
         w = csv.DictWriter(fh, fieldnames=fields)

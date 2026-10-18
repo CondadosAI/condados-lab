@@ -24,7 +24,8 @@ frame encoded on its own ("bag of frames") searches as well as the whole clip. V
 across frames, notices when frames are shuffled (its vector moves 9× more than when they are reversed) but not the
 direction: reversed motion is still smooth motion.
 
-Full tables: `output/benchmark.md` (and `latency.png`), `output/results_*.md`, `output/order_probe.md`,
+Full tables: `output/benchmark.md` (and `latency.png`), `output/results_*.md` (with `direction_*.csv` and
+`search_top5_*.csv` per clip and per query), `output/order_probe.md`,
 `output/order_frames.md`, `output/scale.md`.
 
 ## Run it
@@ -44,6 +45,7 @@ uv run python report.py                        # -> output/benchmark.md, latency
 uv run python order_probe.py && uv run python order_probe.py --frames-report
 uv run python videoprism_embed.py && uv run python evaluate.py index/videoprism_lvt_b_16f.npz
 uv run python scale.py                         # exact search from 43 to 1M vectors -> output/scale.md
+uv run python media.py <folder>                # the post's figures and lab data
 uv run --with jupyter jupyter lab notebook.ipynb
 ```
 
@@ -67,6 +69,7 @@ existing index lacks. Nothing needs a discrete GPU.
 | `order_probe.py` | Where order gets lost: per-token comparisons, bag of frames, timestamps, 1/2/4 fps |
 | `videoprism_embed.py` | The control model on the same clips, captions and index keys |
 | `scale.py` | Do you need a vector database yet? |
+| `media.py` | The post's animations, lab thumbnails and lab data, from the clips and the reference index |
 | `notebook.ipynb` | The walk-through, end to end |
 
 `data/`, `models/`, `index/` and `cache/` are created by the scripts and stay out of git.
