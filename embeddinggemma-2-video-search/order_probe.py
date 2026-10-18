@@ -207,6 +207,7 @@ def report() -> None:
     Q = np.stack([ref[f"query/{i}"] for i in range(len(queries))])
     Tf, Tr = (np.stack([ref[f"{t}/{k}"] for k in pk]) for t in ("cap_fwd", "cap_rev"))
     lines = ["# Where frame order gets lost", ""]
+    signs: dict[int, np.ndarray] = {}  # per fps, is each clip's paired reading right?
     for fps in FPS:
         if any(f"{fps}/fwd/{k}" not in E for k in keys):
             continue
@@ -214,8 +215,10 @@ def report() -> None:
              for v in ("fwd", "rfr", "shf", "bag", "ts_fwd", "ts_rfr")}  # fmt: skip
         P = {
             v: np.stack([E[f"{fps}/{v}/{k}"] for k in pk])
-            for v in ("fwd", "rfr", "ts_fwd", "ts_rfr")
+            for v in ("fwd", "rfr", "shf", "ts_fwd", "ts_rfr")
         }
+        signs[fps] = ((P["fwd"] - P["rfr"]) * (Tf - Tr)).sum(1) > 0
+        ranked = ((Tf * P["fwd"]).sum(1) > (Tf * P["rfr"]).sum(1)).tolist()
         pairs = (("fwd", "rfr"), ("fwd", "shf"), ("fwd", "bag"), ("ts_fwd", "ts_rfr"))
         cos = {f"{a} vs {b}": float(np.median((V[a] * V[b]).sum(1))) for a, b in pairs}
         tok = {
@@ -230,6 +233,10 @@ def report() -> None:
             f"- Search, bag of frames: {search(V['bag'], Q, ids, queries)}",
             f"- Search, clip with timestamps: {search(V['ts_fwd'], Q, ids, queries)}",
             f"- Direction, paired, same frames reversed: {paired(P['fwd'], P['rfr'], Tf, Tr)}",
+            "- Control, paired, shuffled frames in place of the reversed ones: "
+            f"{paired(P['fwd'], P['shf'], Tf, Tr)}",
+            "- Direction, ranking (forward caption scores the clip above its reverse): "
+            f"{ci(sum(ranked), len(ranked))}",
             "- Direction, paired, reversed with timestamps kept ascending: "
             f"{paired(P['ts_fwd'], P['ts_rfr'], Tf, Tr)}",
             "- Cosine of the pooled vectors, median: "
@@ -239,6 +246,12 @@ def report() -> None:
             f"the clip vs the frame alone {tok['alone']:.4f}",
             "",
         ]
+    if len(signs) > 1:
+        lines += ["## Does a clip's paired reading repeat across frame rates?", ""]
+        for a, b in ((x, y) for i, x in enumerate(signs) for y in list(signs)[i + 1 :]):
+            same = int((signs[a] == signs[b]).sum())
+            lines.append(f"- {a} vs {b} fps: same answer for {same}/{len(signs[a])} clips")
+        lines.append("")
     OUT.mkdir(exist_ok=True)
     (OUT / "order_probe.md").write_text("\n".join(lines))
     print("\n".join(lines))
