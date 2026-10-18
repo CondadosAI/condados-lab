@@ -135,7 +135,7 @@ def lab_data(spec: dict, out: Path) -> None:
         "clips": [{"key": c["key"], "action": c["action"], "kind": c["kind"]} for c in clips],
         "queries": [{"text": q["query"], "targets": q["targets"]} for q in spec["queries"]],
         "scores": {
-            str(d): np.round(unit(Q[:, :d]) @ unit(V[:, :d]).T, 4).tolist()
+            str(d): np.round(unit(Q[:, :d]) @ unit(V[:, :d]).T, 6).tolist()
             for d in (768, 512, 256, 128)
         },  # fmt: skip
         "pairs": [],
