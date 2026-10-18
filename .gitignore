@@ -17,3 +17,5 @@ __pycache__/
 *.bin
 *.onnx
 *.safetensors
+# OpenVINO GPU compiler dumps
+*.errors.txt

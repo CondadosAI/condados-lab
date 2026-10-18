@@ -22,20 +22,12 @@ from pathlib import Path
 import numpy as np
 import openvino as ov
 from loguru import logger
-from ov_model import OVEmbedder
+from ov_model import OVEmbedder, igpu
 from smoke_export import sample_frames
 
 HERE = Path(__file__).parent
 CLIPS, OUT = HERE / "data" / "clips", HERE / "output"
 WARMUP, RUNS = 3, 10
-
-
-def igpu() -> str:
-    core = ov.Core()
-    for d in core.available_devices:
-        if d.startswith("GPU") and "iGPU" in core.get_property(d, "FULL_DEVICE_NAME"):
-            return d
-    raise RuntimeError("no Intel iGPU found")
 
 
 def timed(fn) -> np.ndarray:

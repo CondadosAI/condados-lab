@@ -37,6 +37,15 @@ BUCKETS = (128, 256, *range(WINDOW, VIDEO_LEN + 1, WINDOW))
 QUERY_PREFIX = "task: search result | query: "
 
 
+def igpu() -> str:
+    """The Intel integrated GPU's device name (GPU.0 here). A discrete GPU, if any, is GPU.1."""
+    core = ov.Core()
+    for d in core.available_devices:
+        if d.startswith("GPU") and "iGPU" in core.get_property(d, "FULL_DEVICE_NAME"):
+            return d
+    raise RuntimeError("no Intel iGPU found")
+
+
 def pooled(hidden: np.ndarray, mask: np.ndarray) -> np.ndarray:
     m = mask[..., None].astype(np.float32)
     v = (hidden * m).sum(axis=1) / m.sum(axis=1)

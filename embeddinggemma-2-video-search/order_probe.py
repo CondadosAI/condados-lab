@@ -28,10 +28,9 @@ import json
 from pathlib import Path
 
 import numpy as np
-from benchmark import igpu
 from evaluate import ci
 from loguru import logger
-from ov_model import TOK_PER_FRAME, OVEmbedder
+from ov_model import TOK_PER_FRAME, OVEmbedder, igpu
 from smoke_export import sample_frames
 from transformers.video_utils import VideoMetadata
 

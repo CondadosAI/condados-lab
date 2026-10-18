@@ -1,15 +1,16 @@
 """P0: can EmbeddingGemma 2's video path run in OpenVINO at all?
 
-The model is two networks in a row. The vision tower turns each sampled frame into 140 soft
-tokens, on its own, with no view of the other frames. The 24-layer text encoder then reads every
-frame's tokens together, bidirectionally, with rotary positions, and the embedding is the mean of
-its outputs over the attention mask. We export the two separately, because the vision tower runs
-once per frame with a fixed shape while the encoder's sequence length depends on the clip.
+The model is two networks in a row. The vision tower turns each sampled frame into soft tokens
+(120 for a 640x360 frame) on its own, with no view of the other frames. The 24-layer text encoder
+then reads every frame's tokens together, bidirectionally, with rotary positions, and the
+embedding is the mean of its outputs over the attention mask. We export the two separately,
+because the vision tower runs once per frame with a fixed shape while the encoder's sequence
+length depends on the clip.
 
 Reference: the PyTorch model in float32, pooled the way SentenceTransformers pools it. Pass: cosine
 >= 0.9999 against that reference, for a video and for a text query.
 
-    uv run python embeddinggemma-2-video-search/smoke_export.py
+    uv run python smoke_export.py
 """
 
 import subprocess

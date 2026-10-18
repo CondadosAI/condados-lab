@@ -4,7 +4,7 @@ The model card warns that float16 gives NaN or quietly degraded embeddings, and 
 plugin runs in f16 unless told otherwise. Same clip and query as smoke_export.py; reference is the
 PyTorch float32 embedding it saved.
 
-    uv run python embeddinggemma-2-video-search/smoke_gpu.py
+    uv run python smoke_gpu.py
 """
 
 import time
