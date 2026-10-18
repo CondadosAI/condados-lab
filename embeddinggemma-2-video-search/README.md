@@ -45,6 +45,7 @@ uv run python report.py                        # -> output/benchmark.md, latency
 uv run python order_probe.py && uv run python order_probe.py --frames-report
 uv run python videoprism_embed.py && uv run python evaluate.py index/videoprism_lvt_b_16f.npz
 uv run python budget.py --export && uv run python budget.py   # token budget 70/140/280 -> output/budget.md
+uv run python long_sequences.py                # int8 on 2 and 4 fps clips -> output/long_sequences.md
 uv run python scale.py                         # exact search from 43 to 1M vectors -> output/scale.md
 uv run python media.py <folder>                # the post's figures and lab data
 uv run --with jupyter jupyter lab notebook.ipynb
@@ -70,6 +71,7 @@ existing index lacks. Nothing needs a discrete GPU.
 | `order_probe.py` | Where order gets lost: per-token comparisons, bag of frames, timestamps, 1/2/4 fps |
 | `videoprism_embed.py` | The control model on the same clips, captions and index keys |
 | `budget.py` | The vision token budget per frame (70/140/280): speed, search and int8 at each |
+| `long_sequences.py` | int8 on longer clips: the int8 encoder on the iGPU drifts past ~1,500 tokens; int8 vision + fp32 encoder does not |
 | `scale.py` | Do you need a vector database yet? |
 | `media.py` | The post's animations, lab thumbnails and lab data, from the clips and the reference index |
 | `notebook.ipynb` | The walk-through, end to end |

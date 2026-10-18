@@ -58,11 +58,13 @@ def pooled(hidden: np.ndarray, mask: np.ndarray) -> np.ndarray:
 class OVEmbedder:
     def __init__(self, variant: str = "fp32", device: str = "CPU", precision: str | None = None,
                  vision_batch: int = VISION_BATCH, enc_batch: int = 1,
-                 budget: int = 140):  # fmt: skip
+                 budget: int = 140, enc_variant: str | None = None):  # fmt: skip
         """`variant` is a folder under models/ (fp32, int8w, int8); `precision` is the GPU's
         INFERENCE_PRECISION_HINT (f16 is the plugin default, f32 the safe choice). `budget` is the
         vision token budget per frame; other than 140, the vision graph comes from
-        models/<variant>_b<budget>/ and the encoder stays the variant's own."""
+        models/<variant>_b<budget>/ and the encoder stays the variant's own. `enc_variant` takes
+        the encoder from another folder: int8 vision with the fp32 encoder is the safe iGPU pair,
+        since the int8 encoder on the iGPU drifts on sequences past ~1,500 tokens."""
         core = ov.Core()
         core.set_property({"CACHE_DIR": str(MODELS / "cache")})
         cfg = {"PERFORMANCE_HINT": "LATENCY"}
@@ -77,9 +79,10 @@ class OVEmbedder:
         vis.reshape({0: [vision_batch, 9 * budget, 768], 1: [vision_batch, 9 * budget, 2]})
         self.vision = core.compile_model(vis, device, cfg)
 
-        self._core, self._device, self._cfg, self._enc_xml = core, device, cfg, d / "encoder.xml"
+        ed = MODELS / enc_variant if enc_variant else d
+        self._core, self._device, self._cfg, self._enc_xml = core, device, cfg, ed / "encoder.xml"
         self._encoders: dict[int, ov.CompiledModel] = {}
-        txt = core.read_model(d / "encoder.xml")
+        txt = core.read_model(ed / "encoder.xml")
         txt.reshape({0: [1, TEXT_LEN, HIDDEN], 1: [1, TEXT_LEN]})
         self.text_encoder = core.compile_model(txt, device, cfg)
 
