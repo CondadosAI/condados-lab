@@ -31,6 +31,9 @@ MODEL_ID = "google/embeddinggemma-2"
 HERE = Path(__file__).parent
 MODELS = HERE / "models"
 VISION_BATCH, TOK_PER_FRAME, HIDDEN = 8, 120, 512
+# The processor's per-frame token budget (max_soft_tokens) -> tokens a 640x360 frame keeps.
+# 140 is the video default; another budget needs its own vision export (budget.py).
+BUDGET_TOKENS = {70: 66, 140: TOK_PER_FRAME, 280: 264}
 VIDEO_LEN, TEXT_LEN, WINDOW = 4608, 64, 512  # 32 frames (4 fps x 8 s) with timestamps = 4129
 # 128 and 256 hold one frame (~124 tokens) without padding it to 512.
 BUCKETS = (128, 256, *range(WINDOW, VIDEO_LEN + 1, WINDOW))
@@ -54,9 +57,12 @@ def pooled(hidden: np.ndarray, mask: np.ndarray) -> np.ndarray:
 
 class OVEmbedder:
     def __init__(self, variant: str = "fp32", device: str = "CPU", precision: str | None = None,
-                 vision_batch: int = VISION_BATCH, enc_batch: int = 1):  # fmt: skip
+                 vision_batch: int = VISION_BATCH, enc_batch: int = 1,
+                 budget: int = 140):  # fmt: skip
         """`variant` is a folder under models/ (fp32, int8w, int8); `precision` is the GPU's
-        INFERENCE_PRECISION_HINT (f16 is the plugin default, f32 the safe choice)."""
+        INFERENCE_PRECISION_HINT (f16 is the plugin default, f32 the safe choice). `budget` is the
+        vision token budget per frame; other than 140, the vision graph comes from
+        models/<variant>_b<budget>/ and the encoder stays the variant's own."""
         core = ov.Core()
         core.set_property({"CACHE_DIR": str(MODELS / "cache")})
         cfg = {"PERFORMANCE_HINT": "LATENCY"}
@@ -65,8 +71,10 @@ class OVEmbedder:
         d = MODELS / variant
         self.vision_batch, self.enc_batch = vision_batch, enc_batch
 
-        vis = core.read_model(d / "vision.xml")
-        vis.reshape({0: [vision_batch, 1260, 768], 1: [vision_batch, 1260, 2]})
+        self.budget, self.tok_per_frame = budget, BUDGET_TOKENS[budget]
+        vd = d if budget == 140 else MODELS / f"{variant}_b{budget}"
+        vis = core.read_model(vd / "vision.xml")
+        vis.reshape({0: [vision_batch, 9 * budget, 768], 1: [vision_batch, 9 * budget, 2]})
         self.vision = core.compile_model(vis, device, cfg)
 
         self._core, self._device, self._cfg, self._enc_xml = core, device, cfg, d / "encoder.xml"
@@ -82,7 +90,7 @@ class OVEmbedder:
 
     # --- video ------------------------------------------------------------------------------
     def frame_tokens(self, pixel_values: np.ndarray, position_ids: np.ndarray) -> np.ndarray:
-        """All frames of a clip -> (n_frames * 120, 512), in calls of `vision_batch` frames."""
+        """All frames of a clip -> (frames x tok_per_frame, 512), `vision_batch` frames a call."""
         n, out = len(pixel_values), []
         for s in range(0, n, self.vision_batch):
             pv, pos = (
@@ -94,7 +102,7 @@ class OVEmbedder:
                 k = self.vision_batch - real
                 pv = np.concatenate([pv, np.repeat(pv[-1:], k, 0)])
                 pos = np.concatenate([pos, np.repeat(pos[-1:], k, 0)])
-            tok = self.vision([pv, pos])[0].reshape(self.vision_batch, TOK_PER_FRAME, HIDDEN)
+            tok = self.vision([pv, pos])[0].reshape(self.vision_batch, self.tok_per_frame, HIDDEN)
             out.append(tok[:real].reshape(-1, HIDDEN))
         return np.concatenate(out)
 
@@ -110,10 +118,11 @@ class OVEmbedder:
         """The processor's output for one clip: token ids, patches, patch positions."""
         x = self.proc(
             text=["<|video|>"], videos=[frames], do_sample_frames=False, return_tensors="np",
-            **kwargs,
+            max_soft_tokens=self.budget, **kwargs,
         )  # fmt: skip
         assert len(x["input_ids"][0]) <= VIDEO_LEN, f"{len(x['input_ids'][0])} > {VIDEO_LEN}"
-        assert (x["video_position_ids"][0] != -1).all(-1).sum() // 9 == TOK_PER_FRAME, "frame size"
+        kept = (x["video_position_ids"][0] != -1).all(-1).sum() // 9
+        assert kept == self.tok_per_frame, "frame size"
         return x
 
     def assemble(self, ids: np.ndarray, tokens: np.ndarray) -> np.ndarray:
