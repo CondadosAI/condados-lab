@@ -5,8 +5,8 @@ Three graphs, each compiled once:
 - vision: `VISION_BATCH` frames of patches -> 120 soft tokens each (640x360 frames). A clip with
   fewer frames is padded with copies of its last frame, and their tokens are dropped.
 - encoder: `enc_batch` sequences of input embeddings + mask -> per-token outputs, compiled per
-  length bucket (512, 1024, ... 4608) the first time a clip needs it; each clip goes to the
-  shortest bucket that fits. The mask keeps padding out of the attention and out of the mean.
+  length bucket (128, 256, 512, 1024, ... 4608) the first time a clip needs it; each clip goes to
+  the shortest bucket that fits. The mask keeps padding out of the attention and out of the mean.
 - the same encoder graph reshaped to `TEXT_LEN` for queries.
 
 The token-embedding table stays in numpy (memory-mapped): a video sequence only looks up its few
@@ -32,7 +32,8 @@ HERE = Path(__file__).parent
 MODELS = HERE / "models"
 VISION_BATCH, TOK_PER_FRAME, HIDDEN = 8, 120, 512
 VIDEO_LEN, TEXT_LEN, WINDOW = 4608, 64, 512  # 32 frames (4 fps x 8 s) with timestamps = 4129
-BUCKETS = tuple(range(WINDOW, VIDEO_LEN + 1, WINDOW))
+# 128 and 256 hold one frame (~124 tokens) without padding it to 512.
+BUCKETS = (128, 256, *range(WINDOW, VIDEO_LEN + 1, WINDOW))
 QUERY_PREFIX = "task: search result | query: "
 
 
