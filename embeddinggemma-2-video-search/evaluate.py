@@ -12,6 +12,9 @@ Direction, three readings, from strict to lenient:
   because the two clips are nearly the same vector; reported for comparison with other posts.
 - one-way clips (a reverse that cannot happen): the ranking reading only.
 
+- decodable: can a linear classifier, one clip held out at a time, tell a clip's vector from its
+  reverse's? No captions involved: if direction is anywhere in the vector, this finds it.
+
 Plus how far apart the versions are at all: cosine fwd-rev and fwd-shuffled, against the cosine
 between two different clips of the corpus for scale.
 
@@ -25,6 +28,10 @@ from pathlib import Path
 
 import numpy as np
 from scipy.stats import binomtest
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import LeaveOneGroupOut, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 HERE = Path(__file__).parent
 OUT = HERE / "output"
@@ -34,6 +41,17 @@ def ci(k: int, n: int) -> str:
     r = binomtest(k, n, 0.5)
     lo, hi = r.proportion_ci(0.95, method="exact")
     return f"{k}/{n} = {k / n:.0%} (95% CI {lo:.0%}–{hi:.0%}, p = {r.pvalue:.2f} vs chance)"
+
+
+def decodable(E: dict, keys: list[str], rv: str) -> str:
+    """Leave-one-clip-out logistic regression, fwd vector vs `rv` vector; chance 50%."""
+    X = np.stack([E[f"{v}/{k}"] for k in keys for v in ("fwd", rv)])
+    y = np.tile([1, 0], len(keys))
+    g = np.repeat(np.arange(len(keys)), 2)
+    clf = make_pipeline(StandardScaler(), LogisticRegression(C=0.1, max_iter=2000))
+    pred = cross_val_predict(clf, X, y, groups=g, cv=LeaveOneGroupOut())
+    k = int((pred == y).sum())
+    return f"{k}/{len(y)} = {k / len(y):.0%} of vectors"
 
 
 def main() -> None:
@@ -101,6 +119,7 @@ def main() -> None:
             f"- Paired (reversible clips): {ci(sum(paired_ok), len(paired_ok))}",
             f"- Ranking, reversible clips: {ci(sum(rank_ok), len(rank_ok))}",
             f"- Ranking, one-way clips: {ci(sum(oneway_ok), len(oneway_ok))}",
+            f"- Decodable, held-out classifier on the vectors: {decodable(E, keys, rv)}",
             "",
         ]
     for c in clips:

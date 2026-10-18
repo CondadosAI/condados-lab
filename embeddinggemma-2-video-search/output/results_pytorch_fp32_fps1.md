@@ -37,12 +37,14 @@
 - Paired (reversible clips): 16/32 = 50% (95% CI 32%–68%, p = 1.00 vs chance)
 - Ranking, reversible clips: 18/32 = 56% (95% CI 38%–74%, p = 0.60 vs chance)
 - Ranking, one-way clips: 7/11 = 64% (95% CI 31%–89%, p = 0.55 vs chance)
+- Decodable, held-out classifier on the vectors: 45/86 = 52% of vectors
 
 ### Reverse = reversed file, resampled (`rev`)
 
 - Paired (reversible clips): 17/32 = 53% (95% CI 35%–71%, p = 0.86 vs chance)
 - Ranking, reversible clips: 16/32 = 50% (95% CI 32%–68%, p = 1.00 vs chance)
 - Ranking, one-way clips: 5/11 = 45% (95% CI 17%–77%, p = 1.00 vs chance)
+- Decodable, held-out classifier on the vectors: 44/86 = 51% of vectors
 
 How far apart the versions are (cosine):
 
