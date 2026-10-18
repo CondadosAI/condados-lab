@@ -25,6 +25,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).parent
 CLIPS, INDEX = HERE / "data" / "clips", HERE / "index"
 W, H, FPS = 1200, 675, 12
+SEARCH_FPS = 10  # keeps search.webp near 1 MB
 BG, FG, MUTED, ACCENT, WARN = "#0b0e18", "#e5e7eb", "#8b909c", "#818cf8", "#f59e0b"
 HERO_KEY, HERO_QUERY = "7431681", "someone opens a laptop"
 FONTS: dict[bool, str] = {}  # bold -> font file, from --font / --font-bold
@@ -88,10 +89,8 @@ def hero(E: dict, out: Path) -> None:
             im.paste(frame.resize((pw, ph), Image.LANCZOS), (x, top))
             d.text((x, top - 34), label, font=font(24, True), fill=FG)
             d.text((x, top + ph + 14), f"score {s:.3f}", font=font(30, True), fill=ACCENT)
-        d.text((24, H - 92), f"Cosine between the two videos: {cos:.3f}", font=font(30, True),
+        d.text((24, H - 70), f"Cosine between the two videos: {cos:.3f}", font=font(30, True),
                fill=WARN)  # fmt: skip
-        d.text((24, H - 50), "EmbeddingGemma 2 finds the clip, then scores it the same both ways.",
-               font=font(22), fill=MUTED)  # fmt: skip
         out_frames.append(im)
     save_anim(out_frames, out / "hero.webp")
     out_frames[len(out_frames) // 2].save(out / "ogimage.webp", quality=82)
@@ -106,8 +105,8 @@ def search_anim(E: dict, spec: dict, out: Path) -> None:
     for text in SEARCHES:
         s = V @ E[f"query/{index[text]}"]
         best = np.argsort(-s)[:3]
-        reels = [frames_at(CLIPS / f"{clips[i]['key']}_fwd.mp4") for i in best]
-        for t in range(int(3.5 * FPS)):
+        reels = [frames_at(CLIPS / f"{clips[i]['key']}_fwd.mp4", SEARCH_FPS) for i in best]
+        for t in range(int(3.5 * SEARCH_FPS)):
             im = Image.new("RGB", (W, H), BG)
             d = ImageDraw.Draw(im)
             d.text((24, 26), "Query", font=font(22), fill=MUTED)
@@ -122,7 +121,7 @@ def search_anim(E: dict, spec: dict, out: Path) -> None:
             d.text((24, H - 50), "EmbeddingGemma 2, one dot product per clip", font=font(22),
                    fill=MUTED)  # fmt: skip
             out_frames.append(im)
-    save_anim(out_frames, out / "search.webp")
+    save_anim(out_frames, out / "search.webp", SEARCH_FPS)
 
 
 def lab_data(spec: dict, out: Path) -> None:
