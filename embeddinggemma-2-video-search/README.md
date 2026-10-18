@@ -100,4 +100,3 @@ timings drift by up to ~20% between sessions, so latency is reported as the medi
   on `google/videoprism-lvt-base-f16r288`, pinned by commit.
 - Clips: [Pexels License](https://www.pexels.com/license/), which allows use but not redistribution, so this
   repository ships the ids and a downloader, never the videos. Each clip's page is `https://www.pexels.com/video/<id>/`.
-- The direction test was prompted by an OpenCV University post that compared forward and reversed clips.

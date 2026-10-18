@@ -6,7 +6,7 @@ numbers the post publishes.
 
 | Folder | Post |
 |---|---|
-| [`embeddinggemma-2-video-search/`](embeddinggemma-2-video-search/) | in progress |
+| [`embeddinggemma-2-video-search/`](embeddinggemma-2-video-search/) | [EmbeddingGemma 2 Video Search on a Laptop iGPU](https://condados.ai/blog/embeddinggemma-2-video-search) |
 
 ```bash
 uv sync
