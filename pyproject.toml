@@ -3,7 +3,11 @@ name = "condados-lab"
 version = "0.1.0"
 description = "Companion code for condados.ai posts: one subfolder per post, flat scripts and one notebook each."
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "onnxruntime>=1.31.0",
+    "opencv-python-headless>=5.0.0.93",
+    "rapidocr>=3.10.0",
+]
 
 [tool.ruff]
 line-length = 100
