@@ -1,0 +1,50 @@
+{
+ "background": "a basketball game in progress",
+ "classes": {
+  "free_throw": [
+   "a basketball player shooting a free throw",
+   "a player at the free-throw line while the others stand along the lane",
+   "free throw"
+  ],
+  "timeout": [
+   "a timeout: players gathered around the coach at the bench",
+   "a team huddle on the sideline during a break in play",
+   "timeout"
+  ],
+  "three": [
+   "a player makes a three-point shot",
+   "a long jump shot from beyond the arc goes in",
+   "three-pointer"
+  ],
+  "dunk": [
+   "a player dunks the basketball",
+   "a slam dunk at the rim",
+   "dunk"
+  ],
+  "made_two": [
+   "a player scores a layup",
+   "a short jump shot goes in",
+   "layup"
+  ],
+  "substitution": [
+   "players checking in at the scorer's table for a substitution",
+   "a substitute runs onto the court while a teammate walks off",
+   "substitution"
+  ],
+  "foul": [
+   "the referee blows the whistle and signals a foul",
+   "a referee stops play and points at a player",
+   "foul"
+  ],
+  "turnover": [
+   "a player loses the ball and the other team takes it",
+   "a bad pass is intercepted",
+   "turnover"
+  ],
+  "shot_attempt": [
+   "a player takes a jump shot",
+   "a player shoots the ball at the basket",
+   "shot"
+  ]
+ }
+}

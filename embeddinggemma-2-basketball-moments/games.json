@@ -1,0 +1,59 @@
+{
+ "primary": "misericordia",
+ "games": {
+  "misericordia": {
+   "title": "Manhattanville at Misericordia, NCAA D-III men, 12 Jan 2019 (Misericordia 91-71)",
+   "youtube": "cjf7Qd3lIl0",
+   "credit": "MCN 87, the TV station at Misericordia University (CC BY)",
+   "log_url": "https://govaliants.com/boxscore.aspx?path=mbball&id=12296",
+   "log_team": "Manhattanville",
+   "log_opponent": "Misericordia",
+   "bug_boxes": {
+    "score_a": [
+     688,
+     925,
+     802,
+     987
+    ],
+    "score_b": [
+     1188,
+     925,
+     1305,
+     987
+    ],
+    "period": [
+     1318,
+     925,
+     1457,
+     987
+    ],
+    "clock": [
+     1468,
+     925,
+     1610,
+     987
+    ],
+    "shot": [
+     1620,
+     925,
+     1742,
+     987
+    ]
+   },
+   "bug_mask": [
+    300,
+    915,
+    1752,
+    1005
+   ]
+  },
+  "loras": {
+   "title": "Buena Vista at Loras, NCAA D-III men, 10 Jan 2026 (Loras 96-69)",
+   "youtube": "66NC8NhwUHk",
+   "credit": "DUMEDIA, Loras College (CC BY)",
+   "log_url": "https://bvuathletics.com/boxscore.aspx?path=mbball&id=13227",
+   "log_team": "Buena Vista",
+   "log_opponent": "Loras"
+  }
+ }
+}
