@@ -3,11 +3,7 @@ name = "condados-lab"
 version = "0.1.0"
 description = "Companion code for condados.ai posts: one subfolder per post, flat scripts and one notebook each."
 requires-python = ">=3.12"
-dependencies = [
-    "onnxruntime>=1.31.0",
-    "opencv-python-headless>=5.0.0.93",
-    "rapidocr>=3.10.0",
-]
+dependencies = []
 
 [tool.ruff]
 line-length = 100
@@ -31,8 +27,16 @@ egv = [
     "matplotlib>=3.11.2",
 ]
 
+# embeddinggemma-2-basketball-moments: the video stack above plus the score-bug OCR
+egbm = [
+    { include-group = "egv" },
+    "rapidocr>=3.10.0",
+    "onnxruntime>=1.31.0",
+    "opencv-python-headless>=5.0.0.93",
+]
+
 [tool.uv]
-default-groups = ["egv"]
+default-groups = ["egv", "egbm"]
 
 [tool.uv.sources]
 torch = { index = "pytorch-cpu" }
