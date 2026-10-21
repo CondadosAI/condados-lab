@@ -1,9 +1,11 @@
 """A contact sheet of frames at given video times, each labelled: for checking labels by eye.
 
     uv run python contact.py out.jpg 1431.5:dunk 1454.5:three 2299:ft
+    uv run python contact.py --game loras out.jpg 1500:ft
 """
 
-import sys
+import argparse
+import json
 from pathlib import Path
 
 import av
@@ -24,8 +26,14 @@ def grab(path: Path, t: float) -> np.ndarray:
 
 
 def main() -> None:
-    out, specs = sys.argv[1], sys.argv[2:]
-    video = HERE / "data" / "misericordia_1080.mp4"
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--game", default=None)
+    ap.add_argument("out")
+    ap.add_argument("specs", nargs="+", help="time:label")
+    args = ap.parse_args()
+    out, specs = args.out, args.specs
+    games = json.loads((HERE / "games.json").read_text())
+    video = HERE / "data" / games["games"][args.game or games["primary"]]["video"]
     tiles = []
     for spec in specs:
         t, _, label = spec.partition(":")

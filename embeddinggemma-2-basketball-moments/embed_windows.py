@@ -100,7 +100,7 @@ def main() -> None:
     starts, vecs, pending, pend_t = [], [], [], []
     t0 = time.perf_counter()
     mask = games["games"][key]["bug_mask"] if args.mask_bug else None
-    frames = sampled(DATA / f"{key}_1080.mp4", args.fps, args.start, args.end, mask)
+    frames = sampled(DATA / games["games"][key]["video"], args.fps, args.start, args.end, mask)
     for k, (t, im) in enumerate(frames, start=1):
         buf.append((t, im))
         if len(buf) == n_frames and (k - n_frames) % every == 0:

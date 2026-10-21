@@ -45,7 +45,8 @@
     915,
     1752,
     1005
-   ]
+   ],
+   "video": "misericordia_1080.mp4"
   },
   "loras": {
    "title": "Buena Vista at Loras, NCAA D-III men, 10 Jan 2026 (Loras 96-69)",
@@ -53,7 +54,40 @@
    "credit": "DUMEDIA, Loras College (CC BY)",
    "log_url": "https://bvuathletics.com/boxscore.aspx?path=mbball&id=13227",
    "log_team": "Buena Vista",
-   "log_opponent": "Loras"
+   "log_opponent": "Loras",
+   "video": "loras_720.mp4",
+   "bug_boxes": {
+    "score_a": [
+     553,
+     645,
+     607,
+     690
+    ],
+    "score_b": [
+     843,
+     645,
+     899,
+     690
+    ],
+    "period": [
+     903,
+     645,
+     997,
+     690
+    ],
+    "clock": [
+     1000,
+     645,
+     1102,
+     690
+    ]
+   },
+   "bug_mask": [
+    175,
+    638,
+    1105,
+    697
+   ]
   }
  }
 }

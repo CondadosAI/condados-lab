@@ -90,7 +90,7 @@ def main() -> None:
     boxes = games["games"][key]["bug_boxes"]  # name -> [x0, y0, x1, y1] in source pixels
 
     def jobs():
-        for t, im in frames(DATA / f"{key}_1080.mp4", args.every):
+        for t, im in frames(DATA / games["games"][key]["video"], args.every):
             if args.limit and t > args.limit:
                 return
             # BGR for the recogniser, like cv2.imread would give it.
@@ -111,7 +111,7 @@ def main() -> None:
                     "" if clock is None else clock,
                     a if a.isdigit() else "",
                     b if b.isdigit() else "",
-                    row["shot"] if row["shot"].isdigit() else "",
+                    row.get("shot", "") if row.get("shot", "").isdigit() else "",
                     row["clock"],
                 ]
             )
