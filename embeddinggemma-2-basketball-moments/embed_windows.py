@@ -129,6 +129,7 @@ def main() -> None:
     if args.segments:
         d = np.load(args.segments)
         segs = np.stack([d["start"], d["end"]], axis=1)
+        segs = segs[np.argsort(segs[:, 0], kind="stable")]  # TwelveLabs returns them unsorted
         for clip in segment_clips(frames, segs, args.frames):
             pending.append(clip)
             if len(pending) == args.batch:
