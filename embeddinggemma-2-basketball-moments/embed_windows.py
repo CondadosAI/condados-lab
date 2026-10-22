@@ -11,6 +11,11 @@ whatever device is given; full games go to a desktop GPU, not the laptop.
 
     uv run python embed_windows.py --device cuda --start 3300 --end 4500
     uv run python embed_windows.py --device cuda --length 8 --stride 2
+    uv run python embed_windows.py --device cuda --game loras --mask-bug \
+        --segments index/loras_marengo_visual.npz   # another model's segments, 8 frames each
+
+`--segments` embeds the spans of another index (start/end arrays) instead of sliding windows:
+the control for comparing against TwelveLabs, whose segments are cut at scene changes.
 """
 
 import argparse
@@ -63,8 +68,26 @@ def sampled(path: Path, fps: float, start: float, end: float | None, mask: list 
                 nxt += 1 / fps
 
 
+def segment_clips(frames, segs: np.ndarray, n: int):
+    """Yield n frames spread evenly over each segment, from a time-ordered frame stream."""
+    buf, i = [], 0
+    for t, im in frames:
+        buf.append((t, im))
+        while i < len(segs) and t >= segs[i][1]:
+            s, e = segs[i]
+            want = s + (np.arange(n) + 0.5) * (e - s) / n
+            ts = np.array([b[0] for b in buf])
+            yield np.stack([buf[int(np.abs(ts - w).argmin())][1] for w in want])
+            i += 1
+            keep_from = segs[i][0] - 1 if i < len(segs) else t
+            buf = [b for b in buf if b[0] >= keep_from]
+
+
 def tag_of(a) -> str:
-    return f"L{a.length:g}_S{a.stride:g}_F{a.fps:g}_T{a.tokens}" + ("_mask" if a.mask_bug else "")
+    m = "_mask" if a.mask_bug else ""
+    if a.segments:
+        return f"seg-{Path(a.segments).stem}_N{a.frames}_T{a.tokens}{m}"
+    return f"L{a.length:g}_S{a.stride:g}_F{a.fps:g}_T{a.tokens}{m}"
 
 
 def main() -> None:
@@ -79,6 +102,8 @@ def main() -> None:
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--mask-bug", action="store_true", help="black out games.json bug_mask")
+    ap.add_argument("--segments", default=None, help="an index .npz whose start/end to embed")
+    ap.add_argument("--frames", type=int, default=8, help="frames per segment with --segments")
     args = ap.parse_args()
     games = json.loads((HERE / "games.json").read_text())
     key = args.game or games["primary"]
@@ -101,6 +126,23 @@ def main() -> None:
     t0 = time.perf_counter()
     mask = games["games"][key]["bug_mask"] if args.mask_bug else None
     frames = sampled(DATA / games["games"][key]["video"], args.fps, args.start, args.end, mask)
+    if args.segments:
+        d = np.load(args.segments)
+        segs = np.stack([d["start"], d["end"]], axis=1)
+        for clip in segment_clips(frames, segs, args.frames):
+            pending.append(clip)
+            if len(pending) == args.batch:
+                vecs.append(embed(pending))
+                pending = []
+        if pending:
+            vecs.append(embed(pending))
+        emb = np.concatenate(vecs).astype(np.float32)
+        INDEX.mkdir(exist_ok=True)
+        out = INDEX / f"{key}_{tag_of(args)}.npz"
+        np.savez(out, start=segs[: len(emb), 0], end=segs[: len(emb), 1], emb=emb,
+                 length=float((segs[:, 1] - segs[:, 0]).mean()), tokens=args.tokens)  # fmt: skip
+        print(f"{len(emb)} segments in {time.perf_counter() - t0:.0f} s -> {out.name}")
+        return
     for k, (t, im) in enumerate(frames, start=1):
         buf.append((t, im))
         if len(buf) == n_frames and (k - n_frames) % every == 0:

@@ -10,10 +10,15 @@ Two comparisons, because TwelveLabs is both a model and a product:
   delta. Chance places k clips of the same lengths at random inside the halves, 200 times.
   Product against product: it also uses the audio (crowd, whistle, commentary) when asked.
 
-The video is uploaded and indexed first (an index named `egbm-<game>`, Marengo, visual + audio);
-the index is found by name, so no account id lives here. Needs TWELVE_API_KEY.
+The video is uploaded and indexed first (an index named `egbm-<game>[-<variant>]`, Marengo,
+visual + audio); the index is found by name, so no account id lives here. Needs TWELVE_API_KEY.
+Upload a file with its audio track: yt-dlp's 720p stream is video only, so mux the original
+audio in first. `--variant mask` is the same game with the score bug blacked out (ffmpeg
+drawbox on games.json bug_mask): the bug writes "3 POINTER" after a three, which a model that
+reads text can match.
 
-    uv run python marengo.py upload --game loras
+    uv run python marengo.py upload --game loras --video data/loras_720_av.mp4
+    uv run python marengo.py upload --game loras --variant mask --video data/loras_720_av_mask.mp4
     uv run python marengo.py embed --game loras     # -> index/<game>_marengo_<option>.npz
     uv run python marengo.py search --game loras --delta 5
 """
@@ -38,18 +43,18 @@ def client() -> TwelveLabs:
     return TwelveLabs(api_key=os.environ["TWELVE_API_KEY"])
 
 
-def find(c: TwelveLabs, game: str) -> tuple[str, str]:
+def find(c: TwelveLabs, tag: str) -> tuple[str, str]:
     """(index id, indexed asset id) of the game's index, created by `upload`."""
-    idx = next(i for i in c.indexes.list() if i.index_name == f"egbm-{game}")
+    idx = next(i for i in c.indexes.list() if i.index_name == f"egbm-{tag}")
     asset = next(iter(c.indexes.indexed_assets.list(idx.id)))
     return idx.id, asset.id
 
 
-def upload(c: TwelveLabs, game: str, video: Path) -> None:
-    idx = next((i for i in c.indexes.list() if i.index_name == f"egbm-{game}"), None)
+def upload(c: TwelveLabs, tag: str, video: Path) -> None:
+    idx = next((i for i in c.indexes.list() if i.index_name == f"egbm-{tag}"), None)
     if idx is None:
         idx = c.indexes.create(
-            index_name=f"egbm-{game}",
+            index_name=f"egbm-{tag}",
             models=[{"model_name": MODEL, "model_options": ["visual", "audio"]}],
         )
     # Files over 200 MB need the multipart route.
@@ -63,7 +68,7 @@ def upload(c: TwelveLabs, game: str, video: Path) -> None:
         if s == "failed":
             raise RuntimeError("indexing failed")
         time.sleep(30)
-    print(f"indexed {video.name} into egbm-{game}")
+    print(f"indexed {video.name} into egbm-{tag}")
 
 
 def queries() -> tuple[dict, list[str]]:
@@ -71,8 +76,8 @@ def queries() -> tuple[dict, list[str]]:
     return q, [q["background"]] + [t for v in q["classes"].values() for t in v]
 
 
-def embed(c: TwelveLabs, game: str) -> None:
-    index_id, asset_id = find(c, game)
+def embed(c: TwelveLabs, tag: str) -> None:
+    index_id, asset_id = find(c, tag)
     _, texts = queries()
     tv = []
     for t in texts:
@@ -91,7 +96,7 @@ def embed(c: TwelveLabs, game: str) -> None:
         emb = np.array([s.float_ for s in segs], np.float32)
         emb /= np.linalg.norm(emb, axis=-1, keepdims=True)
         INDEX.mkdir(exist_ok=True)
-        out = INDEX / f"{game}_marengo_{option}.npz"
+        out = INDEX / f"{tag}_marengo_{option}.npz"
         np.savez(out, start=start, end=end, emb=emb, length=float((end - start).mean()),
                  texts=np.array(texts), text_emb=tv)  # fmt: skip
         print(
@@ -99,8 +104,8 @@ def embed(c: TwelveLabs, game: str) -> None:
         )
 
 
-def search(c: TwelveLabs, game: str, delta: float) -> None:
-    index_id, _ = find(c, game)
+def search(c: TwelveLabs, game: str, tag: str, delta: float) -> None:
+    index_id, _ = find(c, tag)
     q, _ = queries()
     moments = json.loads((DATA / f"{game}_moments.json").read_text())
     halves: dict[int, tuple[float, float]] = {}
@@ -113,7 +118,7 @@ def search(c: TwelveLabs, game: str, delta: float) -> None:
         return any(lo <= t <= hi for lo, hi in bounds)
 
     lines = [
-        f"# {game}, TwelveLabs search ({MODEL}); delta = {delta:g} s",
+        f"# {tag}, TwelveLabs search ({MODEL}); delta = {delta:g} s",
         "",
         "| class | n | options | spotted in top-n | chance (p95) | mean clip s |",
         "|---|---|---|---|---|---|",
@@ -149,7 +154,7 @@ def search(c: TwelveLabs, game: str, delta: float) -> None:
             print(lines[-1], flush=True)
     lines += ["", "Spotted: mean over the three phrasings (min-max)."]
     OUT.mkdir(exist_ok=True)
-    (OUT / f"{game}_twelvelabs_search_d{delta:g}.md").write_text("\n".join(lines) + "\n")
+    (OUT / f"{tag}_twelvelabs_search_d{delta:g}.md").write_text("\n".join(lines) + "\n")
 
 
 def match(clips: list[tuple[float, float]], spans: list[tuple[float, float]], delta: float) -> int:
@@ -185,16 +190,19 @@ def main() -> None:
     ap.add_argument("step", choices=["upload", "embed", "search"])
     ap.add_argument("--game", default=None)
     ap.add_argument("--delta", type=float, default=5.0)
+    ap.add_argument("--variant", default="", help="a second index of the same game, e.g. mask")
+    ap.add_argument("--video", default=None, help="file to upload (default: games.json video)")
     args = ap.parse_args()
     games = json.loads((HERE / "games.json").read_text())
     key = args.game or games["primary"]
+    tag = f"{key}-{args.variant}" if args.variant else key
     c = client()
     if args.step == "upload":
-        upload(c, key, DATA / games["games"][key]["video"])
+        upload(c, tag, Path(args.video) if args.video else DATA / games["games"][key]["video"])
     elif args.step == "embed":
-        embed(c, key)
+        embed(c, tag)
     else:
-        search(c, key, args.delta)
+        search(c, key, tag, args.delta)
 
 
 if __name__ == "__main__":
