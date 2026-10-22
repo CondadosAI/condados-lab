@@ -14,6 +14,10 @@ generic "basketball game" query, which removes what every window shares with the
 Each class has three phrasings; the table reports the mean and the spread.
 
     uv run python evaluate.py index/<file>.npz          # -> output/<file>.md
+
+An index may also carry its own per-window `end` (segments of varying length) and its own text
+vectors (`texts`, `text_emb`), as marengo.py writes for TwelveLabs Marengo: then no Gemma model
+is loaded.
 """
 
 import argparse
@@ -90,7 +94,8 @@ def main() -> None:
 
     d = np.load(args.index)
     start, emb, length = d["start"], d["emb"], float(d["length"])
-    centers = start + length / 2
+    end = d["end"] if "end" in d else start + length
+    centers = (start + end) / 2
     moments = json.loads((DATA / f"{key}_moments.json").read_text())
     # Only windows inside a half: no warm-up, half-time show or post-game.
     spans = {}
@@ -102,18 +107,21 @@ def main() -> None:
     keep = np.zeros(len(start), bool)
     for lo, hi in spans.values():
         keep |= (centers >= lo - 30) & (centers <= hi + 30)
-    start, centers, emb = start[keep], centers[keep], emb[keep]
+    start, end, centers, emb = start[keep], end[keep], centers[keep], emb[keep]
     moments = [m for m in moments if centers.min() <= m["t"] <= centers.max()]
 
     q = json.loads((HERE / "queries.json").read_text())
     texts = [q["background"]] + [t for v in q["classes"].values() for t in v]
-    tv = dict(zip(texts, embed_texts(texts, args.device), strict=True))
+    if "text_emb" in d:
+        tv = dict(zip(d["texts"].tolist(), d["text_emb"], strict=True))
+    else:
+        tv = dict(zip(texts, embed_texts(texts, args.device), strict=True))
     bg = emb @ tv[q["background"]]
 
     lines = [
         f"# {Path(args.index).stem}",
         "",
-        f"{len(start)} windows of {length:g} s inside the halves; delta = {args.delta:g} s.",
+        f"{len(start)} windows of {length:g} s (mean) inside the halves; delta = {args.delta:g} s.",
         "",
         "| class | n | positive windows | AP raw | AP contrast | chance AP "
         "| spotted raw | spotted contrast | chance spotted (p95) |",
@@ -129,7 +137,7 @@ def main() -> None:
         if len(ev) < args.min_moments:
             continue
         lo, hi = spans_c[:, 0] - args.delta, spans_c[:, 1] + args.delta
-        pos = np.array([((hi >= s) & (lo <= s + length)).any() for s in start])
+        pos = np.array([((hi >= s) & (lo <= e)).any() for s, e in zip(start, end, strict=True)])
         res = {"raw": [], "contrast": []}
         for p in phrasings:
             raw = emb @ tv[p]
