@@ -10,7 +10,9 @@ Placing a moment in the video (measured on the primary game, 2026-10-21):
 
 - Live play: the bug's clock is in step with the game clock, and the log's clock is right at
   made baskets (the bug's score ticks up 4-6 s after the logged time, the operator's typing
-  lag). So `t` = the first frame whose clock shows the logged value.
+  lag). So `t` = the first frame whose clock shows the logged value. The bug's clock drifts in
+  places, though (the second game's operator let it run through stoppages), so a made basket
+  whose clock time disagrees with its score tick is placed by the score instead (`reanchor`).
 - Stoppages: the log is a few seconds off (a timeout logged at 18:45 starts when the bug clock
   stops at 18:41). So they snap to the first stoppage on the bug (the same clock on screen for
   3 s or more) within 10 s of game clock after the logged value. A foul is the start of the
@@ -61,15 +63,51 @@ def half_runs(rows: list[dict], half: int) -> list[dict]:
     tips = [i for i, r in enumerate(hr) if r["clock"] >= 1199]
     if not tips:
         return []
-    tip = tips[-1]
+    hr = hr[tips[-1] :]
     out, last = [], None
-    for r in hr[tip:]:
+    for k, r in enumerate(hr):
         # The game clock only goes down within a half; allow 2 s of OCR wobble.
         if last is not None and r["clock"] > last["clock"] + 2:
-            continue
+            if not wound_back(hr, k, last["clock"]):
+                continue
+            # The operator let the clock run through a stoppage and then set it back: the
+            # readings since it first showed this value were overrun, not game time. If the
+            # score changed in that stretch, play went on and the bug was simply ahead; the
+            # stoppage then starts at the correction, so drop its earlier readings too.
+            i = len(out)
+            while i and out[i - 1]["clock"] < r["clock"]:
+                i -= 1
+            scored = any((o["a"], o["b"]) != (r["a"], r["b"]) for o in out[i:])
+            while i and scored and out[i - 1]["clock"] <= r["clock"] + 1:
+                i -= 1
+            del out[i:]
         out.append(r)
         last = r
     return out
+
+
+def wound_back(hr: list[dict], k: int, before: float, hold: float = 3.0) -> bool:
+    """Is the upward jump at hr[k] the operator correcting the clock, not a replay?
+
+    Both show a higher clock for a while. After a correction the clock holds, then runs down
+    smoothly from the new value; after a replay it drops straight back to live time. So: the new
+    value holds for `hold` seconds, and the clock then reaches `before` with no step down > 2 s.
+    """
+    v, t = hr[k]["clock"], hr[k]["t"]
+    if v - before > 60:  # e.g. the half-time countdown starting after 0:00
+        return False
+    after = [r for r in hr[k:] if r["t"] <= t + hold]
+    if len(after) < 4 or any(abs(r["clock"] - v) > 1 for r in after):
+        return False
+    prev = v
+    for r in hr[k + 1 :]:
+        if r["clock"] < prev - 2 and r["clock"] < before + 2:
+            return False
+        if r["clock"] <= before:
+            return True
+        if r["clock"] <= prev + 2:  # an upward misread does not reset the descent
+            prev = r["clock"]
+    return True
 
 
 PLAY_ORDER = [
@@ -85,6 +123,53 @@ PLAY_ORDER = [
 ]
 STOPPAGE = {"foul", "timeout", "substitution", "free_throw"}
 FT_LAG = 3.0  # seconds from a made free throw to the score ticking up on the bug
+SCORED = {"dunk", "three", "made_two"}
+
+
+def score_ticks(rows: list[dict], run: list[dict]) -> dict[tuple, float]:
+    """First video time each score is on the bug during a half (read twice in a row)."""
+    if not run:
+        return {}
+    t0, t1 = run[0]["t"], run[-1]["t"] + 30
+    seen: dict[tuple, float] = {}
+    inside = [r for r in rows if t0 <= r["t"] <= t1 and r["a"] is not None and r["b"] is not None]
+    for r, nxt in zip(inside, inside[1:], strict=False):
+        key = (r["a"], r["b"])
+        if key == (nxt["a"], nxt["b"]) and key not in seen:
+            seen[key] = r["t"]
+    return seen
+
+
+def reanchor(placed: list[dict], ticks: dict[int, dict], tol: float = 8.0) -> int:
+    """Move made baskets whose clock time disagrees with the bug's score to the score tick.
+
+    The bug's clock is run by an operator and drifts: tens of seconds ahead after running
+    through a stoppage, or behind after a late start. Its score is set by hand too, but it
+    only ever lags the basket by a few seconds. So the lag is measured on baskets where the two
+    agree (the median), and a basket more than `tol` seconds off that lag is placed by score.
+    """
+    gaps = []
+    for m in placed:
+        tick = ticks[m["half"]].get(tuple(m.get("score") or ()))
+        if m["cls"] in SCORED and tick is not None:
+            gaps.append((tick - m["t"], m))
+    if not gaps:
+        return 0
+    lag = sorted(g for g, _ in gaps)[len(gaps) // 2]
+    shift = {}  # id(basket) -> seconds moved (0 if it stayed)
+    for g, m in gaps:
+        shift[id(m)] = (g - lag) if abs(g - lag) > tol else 0.0
+        m["t"] = m["lo"] = m["hi"] = m["t"] + shift[id(m)]
+    # A miss or turnover in the same drift moves with the nearest basket (game clock, same half).
+    baskets = [m for _, m in gaps]
+    for m in placed:
+        if m["cls"] in STOPPAGE or m["cls"] in SCORED:
+            continue
+        near = [b for b in baskets if b["half"] == m["half"] and abs(b["clock"] - m["clock"]) <= 30]
+        if near:
+            d = shift[id(min(near, key=lambda b: abs(b["clock"] - m["clock"])))]
+            m["t"] = m["lo"] = m["hi"] = m["t"] + d
+    return sum(1 for d in shift.values() if d)
 
 
 def collapse(events: list[dict]) -> list[dict]:
@@ -173,6 +258,8 @@ def main() -> None:
             m["t"], m["lo"], m["hi"] = s["t0"], s["t0"], s["t1"]
         placed.append(m)
 
+    ticks = {h: score_ticks(rows, r) for h, r in runs.items()}
+    moved = reanchor(placed, ticks)
     placed.sort(key=lambda m: m["t"])
     out = DATA / f"{key}_moments.json"
     out.write_text(json.dumps(placed, indent=1))
@@ -181,7 +268,8 @@ def main() -> None:
         counts[m["cls"]] = counts.get(m["cls"], 0) + 1
     halves = {h: (r[0]["t"], r[-1]["t"]) if r else None for h, r in runs.items()}
     print(f"halves (video s): {halves}")
-    print(f"{len(placed)} moments placed, {missing} not found on the bug -> {out.name}")
+    print(f"{len(placed)} moments placed, {missing} not found on the bug, {moved} baskets placed "
+          f"by the score -> {out.name}")  # fmt: skip
     print(", ".join(f"{k} {v}" for k, v in sorted(counts.items(), key=lambda kv: -kv[1])))
 
 
