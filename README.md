@@ -7,6 +7,7 @@ numbers the post publishes.
 | Folder | Post |
 |---|---|
 | [`embeddinggemma-2-video-search/`](embeddinggemma-2-video-search/) | [EmbeddingGemma 2 Video Search on a Laptop iGPU](https://condados.ai/blog/embeddinggemma-2-video-search) |
+| [`embeddinggemma-2-basketball-moments/`](embeddinggemma-2-basketball-moments/) | What a free video model finds in your footage, and what it misses (in progress) |
 
 ```bash
 uv sync
