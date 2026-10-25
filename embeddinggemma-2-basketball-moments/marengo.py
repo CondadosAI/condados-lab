@@ -71,14 +71,15 @@ def upload(c: TwelveLabs, tag: str, video: Path) -> None:
     print(f"indexed {video.name} into egbm-{tag}")
 
 
-def queries() -> tuple[dict, list[str]]:
-    q = json.loads((HERE / "queries.json").read_text())
+def queries(game: str) -> tuple[dict, list[str]]:
+    games = json.loads((HERE / "games.json").read_text())["games"]
+    q = json.loads((HERE / games[game].get("queries", "queries.json")).read_text())
     return q, [q["background"]] + [t for v in q["classes"].values() for t in v]
 
 
-def embed(c: TwelveLabs, tag: str) -> None:
+def embed(c: TwelveLabs, game: str, tag: str) -> None:
     index_id, asset_id = find(c, tag)
-    _, texts = queries()
+    _, texts = queries(game)
     tv = []
     for t in texts:
         r = c.embed.v_2.create(
@@ -90,6 +91,9 @@ def embed(c: TwelveLabs, tag: str) -> None:
 
     for option in ("visual", "audio"):
         v = c.indexes.indexed_assets.retrieve(index_id, asset_id, embedding_option=[option])
+        if v.embedding.video_embedding.segments is None:  # e.g. audio of a silent video
+            print(f"no {option} segments")
+            continue
         segs = [s for s in v.embedding.video_embedding.segments if s.embedding_scope == "clip"]
         start = np.array([s.start_offset_sec for s in segs], np.float64)
         end = np.array([s.end_offset_sec for s in segs], np.float64)
@@ -106,7 +110,7 @@ def embed(c: TwelveLabs, tag: str) -> None:
 
 def search(c: TwelveLabs, game: str, tag: str, delta: float) -> None:
     index_id, _ = find(c, tag)
-    q, _ = queries()
+    q, _ = queries(game)
     moments = json.loads((DATA / f"{game}_moments.json").read_text())
     halves: dict[int, tuple[float, float]] = {}
     for m in moments:
@@ -200,7 +204,7 @@ def main() -> None:
     if args.step == "upload":
         upload(c, tag, Path(args.video) if args.video else DATA / games["games"][key]["video"])
     elif args.step == "embed":
-        embed(c, tag)
+        embed(c, key, tag)
     else:
         search(c, key, tag, args.delta)
 

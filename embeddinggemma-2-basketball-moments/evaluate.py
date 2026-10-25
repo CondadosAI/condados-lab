@@ -34,7 +34,10 @@ MODEL_ID = "google/embeddinggemma-2"
 QUERY_PREFIX = "task: search result | query: "
 RNG = np.random.default_rng(0)
 # A query class can stand for several logged classes: any shot, made or missed.
-GROUPS = {"shot_attempt": {"three", "made_two", "dunk", "miss"}}
+GROUPS = {
+    "shot_attempt": {"three", "made_two", "dunk", "miss"},
+    "vehicle_turns": {"vehicle_turns_left", "vehicle_turns_right"},
+}
 
 
 def embed_texts(texts: list[str], device: str) -> np.ndarray:
@@ -110,7 +113,7 @@ def main() -> None:
     start, end, centers, emb = start[keep], end[keep], centers[keep], emb[keep]
     moments = [m for m in moments if centers.min() <= m["t"] <= centers.max()]
 
-    q = json.loads((HERE / "queries.json").read_text())
+    q = json.loads((HERE / games["games"][key].get("queries", "queries.json")).read_text())
     texts = [q["background"]] + [t for v in q["classes"].values() for t in v]
     if "text_emb" in d:
         tv = dict(zip(d["texts"].tolist(), d["text_emb"], strict=True))

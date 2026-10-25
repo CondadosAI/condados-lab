@@ -81,6 +81,13 @@ def segment_clips(frames, segs: np.ndarray, n: int):
             i += 1
             keep_from = segs[i][0] - 1 if i < len(segs) else t
             buf = [b for b in buf if b[0] >= keep_from]
+    # The last segment usually ends on the video's last frame, so no later frame closes it.
+    ts = np.array([b[0] for b in buf])
+    while buf and i < len(segs):
+        s, e = segs[i]
+        want = s + (np.arange(n) + 0.5) * (e - s) / n
+        yield np.stack([buf[int(np.abs(ts - w).argmin())][1] for w in want])
+        i += 1
 
 
 def tag_of(a) -> str:

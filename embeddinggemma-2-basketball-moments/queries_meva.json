@@ -1,0 +1,70 @@
+{
+ "background": "a fixed security camera view of a road and a parking lot",
+ "classes": {
+  "vehicle_stops": [
+   "a car comes to a stop",
+   "a moving vehicle slows down and stops",
+   "car stopping"
+  ],
+  "vehicle_starts": [
+   "a parked car starts to drive away",
+   "a stopped vehicle begins to move",
+   "car starting to move"
+  ],
+  "vehicle_turns": [
+   "a car turns at an intersection",
+   "a vehicle makes a turn onto another road",
+   "car turning"
+  ],
+  "vehicle_turns_left": [
+   "a car turns left",
+   "a vehicle makes a left turn",
+   "left turn"
+  ],
+  "vehicle_turns_right": [
+   "a car turns right",
+   "a vehicle makes a right turn",
+   "right turn"
+  ],
+  "vehicle_reverses": [
+   "a car backs up in reverse",
+   "a vehicle reversing out of a parking space",
+   "car reversing"
+  ],
+  "vehicle_makes_u_turn": [
+   "a car makes a U-turn",
+   "a vehicle turns around to drive back the way it came",
+   "U-turn"
+  ],
+  "person_opens_vehicle_door": [
+   "a person opens a car door",
+   "someone pulls open the door of a parked car",
+   "opening a car door"
+  ],
+  "person_closes_vehicle_door": [
+   "a person closes a car door",
+   "someone shuts the door of a car",
+   "closing a car door"
+  ],
+  "person_enters_vehicle": [
+   "a person gets into a car",
+   "someone climbs into the driver's seat of a vehicle",
+   "getting into a car"
+  ],
+  "person_exits_vehicle": [
+   "a person gets out of a car",
+   "someone steps out of a parked vehicle",
+   "getting out of a car"
+  ],
+  "vehicle_drops_off_person": [
+   "a car stops to drop someone off",
+   "a passenger gets out and the car drives away",
+   "drop-off"
+  ],
+  "vehicle_picks_up_person": [
+   "a car stops to pick someone up",
+   "a person waiting on the curb gets into a car that pulled up",
+   "pick-up"
+  ]
+ }
+}

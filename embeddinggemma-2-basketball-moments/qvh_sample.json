@@ -1,0 +1,1486 @@
+{
+ "split": "val",
+ "seed": 0,
+ "videos": [
+  "2BzoQ31IPhk_60.0_210.0",
+  "VRoXu96WlbM_660.0_810.0",
+  "Piw-9dOC8YQ_660.0_810.0",
+  "rZQjpKRsPMQ_60.0_210.0",
+  "E6yFTWlChmE_360.0_510.0",
+  "ioWAoEVYaP0_60.0_210.0",
+  "_t21xx94wZw_360.0_510.0",
+  "UaYhvOSmzNc_360.0_510.0",
+  "rsNuM2HcRh8_360.0_510.0",
+  "rRpUM9ZoNkU_210.0_360.0",
+  "Ehpo8gXg27I_660.0_810.0",
+  "rwvwrgx9cTo_60.0_210.0",
+  "ebCzdax-fjA_360.0_510.0",
+  "iH1-Z6eB2cY_360.0_510.0",
+  "QHFy-nWNJYk_360.0_510.0",
+  "iD6VPW7oJ_I_60.0_210.0",
+  "sa-O_S2jzCw_210.0_360.0",
+  "wUgPzvcKK5c_60.0_210.0",
+  "xDaZ261SHZA_360.0_510.0",
+  "n_NdBRz6Z1E_360.0_510.0",
+  "N5g7D9Qk7WI_360.0_510.0",
+  "NzyjaMWxNrU_60.0_210.0",
+  "Piw-9dOC8YQ_210.0_360.0",
+  "00DH3yn5C30_210.0_360.0",
+  "Z3-IZ3HAmIA_360.0_510.0",
+  "UQHx-1rF89U_360.0_510.0",
+  "CltHKz3Zfxc_60.0_210.0",
+  "_NznSSfDxdo_60.0_210.0",
+  "T60_zAvnAsU_210.0_360.0",
+  "UDEfgewcr5E_360.0_510.0",
+  "gDgMQI6q448_60.0_210.0",
+  "FWy5ZcDu_i8_360.0_510.0",
+  "cLvULsyPH4E_510.0_660.0",
+  "SFR7tydO10k_210.0_360.0",
+  "4IYQN95j6ok_210.0_360.0",
+  "6OV8g7JkMvg_360.0_510.0",
+  "N5DpPCcQxJ4_210.0_360.0",
+  "3fESWnyZC0o_360.0_510.0",
+  "gTAvxnQtjXM_210.0_360.0",
+  "kMuq1MNhP00_210.0_360.0",
+  "IAbAn-MkMH8_210.0_360.0",
+  "jyHSYDfqPnU_60.0_210.0",
+  "Uw8hpJfV-uQ_210.0_360.0",
+  "lwNho_1tKrc_210.0_360.0",
+  "uSAGSbauHBs_510.0_660.0",
+  "0zDV_cVzPiI_360.0_510.0",
+  "bTqMo5klaCE_510.0_660.0",
+  "iH1-Z6eB2cY_210.0_360.0",
+  "9Xzrtwiint4_210.0_360.0",
+  "Piw-9dOC8YQ_360.0_510.0",
+  "UdiR9BWQKew_510.0_660.0",
+  "K3lDAtwYt_4_60.0_210.0",
+  "kv3NheAKyb0_210.0_360.0",
+  "VUV77-5ERxA_360.0_510.0",
+  "XzxRMH7G8Lk_60.0_210.0",
+  "pmGyw055pQg_210.0_360.0",
+  "xVeIxhIUT8I_60.0_210.0",
+  "KDpsbJHx1RI_60.0_210.0",
+  "SST7vk2qmCY_60.0_210.0",
+  "j9NNAmqweOA_210.0_360.0",
+  "iJmrusvmEns_60.0_210.0",
+  "YpqH79OnK5M_60.0_210.0",
+  "jdQ_zQJD0I4_660.0_810.0",
+  "wUgPzvcKK5c_210.0_360.0",
+  "bowYAwxuG-c_210.0_360.0",
+  "h6sCcWcLU7A_510.0_660.0",
+  "_i9qWLsZToY_360.0_510.0",
+  "izeyQalOwGg_210.0_360.0",
+  "KRHEqswrh9I_660.0_810.0",
+  "8CCyShsFArg_360.0_510.0",
+  "KWBfQjuwp4E_210.0_360.0",
+  "mbdj8xfSIKo_60.0_210.0",
+  "A5PIgmXGIdI_360.0_510.0",
+  "4HeSJ7tMo48_210.0_360.0",
+  "hl_ErejT_CE_60.0_210.0",
+  "UQHx-1rF89U_60.0_210.0",
+  "TQ0nr6gTX6w_660.0_810.0",
+  "RH9FHjHgiJI_210.0_360.0",
+  "UGafHWHJrLg_60.0_210.0",
+  "bP5KfdFJzC4_360.0_510.0",
+  "74jtgDnsEBU_60.0_210.0",
+  "2boYI6YVkCs_210.0_360.0",
+  "SD3Rg6hTEzw_60.0_210.0",
+  "DHHHHFojz3E_360.0_510.0",
+  "ZxHh_2YdmT4_60.0_210.0",
+  "Lc4D95BLgXI_660.0_810.0",
+  "cLvULsyPH4E_60.0_210.0",
+  "DDiq5C34KL4_60.0_210.0",
+  "XpVt6Z1Gjjo_360.0_510.0",
+  "FdMI99a1TZE_210.0_360.0"
+ ],
+ "failed": [
+  "-oPEG4FKHy8_60.0_210.0",
+  "FYU3KWg9TdQ_60.0_210.0",
+  "iWBU-K5dbhE_60.0_210.0",
+  "ocLUzCNodj4_60.0_210.0",
+  "EjV6yAxwyyI_510.0_660.0",
+  "7PKEbzSNwts_360.0_510.0",
+  "yITWrNLEGLE_60.0_210.0",
+  "XWLHTkh1fAI_60.0_210.0",
+  "m0cZFcXa5sc_60.0_210.0",
+  "XWLHTkh1fAI_660.0_810.0",
+  "uE1ciE0PCIU_60.0_210.0",
+  "Ifgq2XU0G_s_60.0_210.0",
+  "wk2CeU_DcBo_60.0_210.0",
+  "2I9-kvemtSU_510.0_660.0",
+  "Ps1SNAGQTc0_510.0_660.0",
+  "FbUT42sj_os_210.0_360.0",
+  "0rES0DQHGis_60.0_210.0",
+  "zVwsEVwS8Kw_360.0_510.0"
+ ],
+ "queries": [
+  {
+   "qid": 6519,
+   "query": "An asian woman is eating a pastry item in a cone",
+   "vid": "2BzoQ31IPhk_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     40,
+     54
+    ]
+   ]
+  },
+  {
+   "qid": 6896,
+   "query": "Blonde woman drives a car with her children in the back.",
+   "vid": "VRoXu96WlbM_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     98,
+     120
+    ]
+   ]
+  },
+  {
+   "qid": 8646,
+   "query": "A woman energises a group of people to excersise and be fitter.",
+   "vid": "Piw-9dOC8YQ_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     76,
+     90
+    ]
+   ]
+  },
+  {
+   "qid": 9664,
+   "query": "People hold different protest signs.",
+   "vid": "rZQjpKRsPMQ_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     46,
+     56
+    ],
+    [
+     62,
+     68
+    ],
+    [
+     120,
+     126
+    ]
+   ]
+  },
+  {
+   "qid": 6065,
+   "query": "Two guys are competing at table tennis.",
+   "vid": "E6yFTWlChmE_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     98,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 617,
+   "query": "Man in yellow top rides down a escalator.",
+   "vid": "ioWAoEVYaP0_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     24,
+     46
+    ]
+   ]
+  },
+  {
+   "qid": 4378,
+   "query": "A dash cam view of the car drive at night.",
+   "vid": "_t21xx94wZw_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     90,
+     116
+    ]
+   ]
+  },
+  {
+   "qid": 6266,
+   "query": "Woman vacuums rug in living room",
+   "vid": "UaYhvOSmzNc_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     42,
+     68
+    ]
+   ]
+  },
+  {
+   "qid": 3858,
+   "query": "School kids singing at a school",
+   "vid": "rsNuM2HcRh8_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     96
+    ],
+    [
+     98,
+     118
+    ]
+   ]
+  },
+  {
+   "qid": 2698,
+   "query": "Young Mother have some chat with her sun",
+   "vid": "rRpUM9ZoNkU_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     74,
+     102
+    ]
+   ]
+  },
+  {
+   "qid": 7567,
+   "query": "Two man in matching blue sweatshirts eat mcdonalds and walk together after.",
+   "vid": "Ehpo8gXg27I_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     70,
+     88
+    ]
+   ]
+  },
+  {
+   "qid": 9231,
+   "query": "A woman in black suit is talking in front of a camera about weather forecast",
+   "vid": "rwvwrgx9cTo_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     66
+    ]
+   ]
+  },
+  {
+   "qid": 4320,
+   "query": "Three people are riding in the back of a van.",
+   "vid": "ebCzdax-fjA_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     50,
+     74
+    ],
+    [
+     76,
+     84
+    ]
+   ]
+  },
+  {
+   "qid": 2647,
+   "query": "Blonde woman holds a makeup brush and palette and applies it to her face.",
+   "vid": "iH1-Z6eB2cY_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     8,
+     16
+    ],
+    [
+     24,
+     30
+    ],
+    [
+     84,
+     112
+    ]
+   ]
+  },
+  {
+   "qid": 7834,
+   "query": "Tourists are stopping to look at the red rocky plateaus and outcrops.",
+   "vid": "QHFy-nWNJYk_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     14,
+     24
+    ],
+    [
+     26,
+     42
+    ]
+   ]
+  },
+  {
+   "qid": 657,
+   "query": "Woman enters a hotel room and shows it off.",
+   "vid": "iD6VPW7oJ_I_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     46,
+     82
+    ]
+   ]
+  },
+  {
+   "qid": 6824,
+   "query": "A man walking and talking on a mountain path passes a pack mule with a large load walking by itself, with people trailing far behind",
+   "vid": "sa-O_S2jzCw_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     60,
+     86
+    ]
+   ]
+  },
+  {
+   "qid": 5915,
+   "query": "A man films himself while standing in front of a beach.",
+   "vid": "wUgPzvcKK5c_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     88,
+     124
+    ],
+    [
+     130,
+     134
+    ],
+    [
+     140,
+     146
+    ]
+   ]
+  },
+  {
+   "qid": 6657,
+   "query": "A woman in a black dress and sunglasses is relaxing under an orange umbrella on the beach.",
+   "vid": "xDaZ261SHZA_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     48,
+     74
+    ],
+    [
+     76,
+     82
+    ],
+    [
+     86,
+     88
+    ]
+   ]
+  },
+  {
+   "qid": 1874,
+   "query": "Woman talks while looking at herself in the mirror.",
+   "vid": "n_NdBRz6Z1E_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     120,
+     142
+    ]
+   ]
+  },
+  {
+   "qid": 4069,
+   "query": "A man in a black coat with a black and red hat is holding a saxophone while sitting on a bridge.",
+   "vid": "N5g7D9Qk7WI_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     10
+    ],
+    [
+     12,
+     58
+    ],
+    [
+     64,
+     130
+    ]
+   ]
+  },
+  {
+   "qid": 10132,
+   "query": "Two TV show hosts sit on a red couch and discuss the news.",
+   "vid": "NzyjaMWxNrU_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     66,
+     90
+    ]
+   ]
+  },
+  {
+   "qid": 222,
+   "query": "A teacher is writing on a white board.",
+   "vid": "Piw-9dOC8YQ_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     102,
+     116
+    ]
+   ]
+  },
+  {
+   "qid": 5250,
+   "query": "A person makes a gift package while sitting at a table.",
+   "vid": "00DH3yn5C30_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     96,
+     126
+    ]
+   ]
+  },
+  {
+   "qid": 4283,
+   "query": "Woman uses the bottle on her face and wipes it down.",
+   "vid": "Z3-IZ3HAmIA_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     126,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 7751,
+   "query": "Woman looks through a menu.",
+   "vid": "UQHx-1rF89U_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     12,
+     28
+    ],
+    [
+     30,
+     36
+    ]
+   ]
+  },
+  {
+   "qid": 2822,
+   "query": "White American girl having fun in Nigeria at Festival",
+   "vid": "CltHKz3Zfxc_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     106,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 5651,
+   "query": "Man in pink top eats fish.",
+   "vid": "_NznSSfDxdo_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     54,
+     70
+    ]
+   ]
+  },
+  {
+   "qid": 4691,
+   "query": "A historical looking city located on an island is coming into view.",
+   "vid": "T60_zAvnAsU_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     42,
+     74
+    ],
+    [
+     84,
+     86
+    ]
+   ]
+  },
+  {
+   "qid": 8261,
+   "query": "Man in backwards cap monologues to his professional mic.",
+   "vid": "UDEfgewcr5E_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     64
+    ],
+    [
+     70,
+     122
+    ],
+    [
+     130,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 6441,
+   "query": "Four people having some drinks at a restaurant while two of them talk to the camera",
+   "vid": "gDgMQI6q448_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     8,
+     10
+    ],
+    [
+     12,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 9624,
+   "query": "a man in a safety vest is going to a work site",
+   "vid": "FWy5ZcDu_i8_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     116,
+     132
+    ]
+   ]
+  },
+  {
+   "qid": 7412,
+   "query": "Dolls are kept in ornament display cases.",
+   "vid": "cLvULsyPH4E_510.0_660.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     84,
+     98
+    ]
+   ]
+  },
+  {
+   "qid": 9719,
+   "query": "A man and a child are picking through the rubble in an area.",
+   "vid": "SFR7tydO10k_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     40,
+     70
+    ]
+   ]
+  },
+  {
+   "qid": 4543,
+   "query": "A woman walks along a street talking to the camera before meeting up with her friends.",
+   "vid": "4IYQN95j6ok_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     32
+    ]
+   ]
+  },
+  {
+   "qid": 4235,
+   "query": "A driver is showing their view under water.",
+   "vid": "6OV8g7JkMvg_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     10,
+     18
+    ],
+    [
+     22,
+     36
+    ]
+   ]
+  },
+  {
+   "qid": 1893,
+   "query": "Tourist girl filming beautiful neighbourhood with her friend",
+   "vid": "N5DpPCcQxJ4_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     4,
+     30
+    ],
+    [
+     36,
+     46
+    ]
+   ]
+  },
+  {
+   "qid": 2166,
+   "query": "Two girls having ravoli, lasagne, salad and a drink for their lunch",
+   "vid": "3fESWnyZC0o_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     52,
+     82
+    ]
+   ]
+  },
+  {
+   "qid": 1626,
+   "query": "Man with white t shirt stands in front of a ornate European building.",
+   "vid": "gTAvxnQtjXM_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     24
+    ]
+   ]
+  },
+  {
+   "qid": 360,
+   "query": "Plastic bags are tied on top.",
+   "vid": "kMuq1MNhP00_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     102,
+     108
+    ],
+    [
+     110,
+     122
+    ]
+   ]
+  },
+  {
+   "qid": 4831,
+   "query": "Group of graduates in red pose for pictures.",
+   "vid": "IAbAn-MkMH8_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     98,
+     120
+    ]
+   ]
+  },
+  {
+   "qid": 1067,
+   "query": "People do skateboarding tricks in a city.",
+   "vid": "jyHSYDfqPnU_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     134,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 4512,
+   "query": "Woman wears mirror sunglasses in her plane seat.",
+   "vid": "Uw8hpJfV-uQ_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     36,
+     46
+    ],
+    [
+     48,
+     86
+    ]
+   ]
+  },
+  {
+   "qid": 2820,
+   "query": "A group of men are running then stops and walks towards a car and rides in it.",
+   "vid": "lwNho_1tKrc_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     18
+    ],
+    [
+     42,
+     48
+    ],
+    [
+     52,
+     54
+    ]
+   ]
+  },
+  {
+   "qid": 4468,
+   "query": "Men in a car encouraging students on a sidewalk who are running.",
+   "vid": "lwNho_1tKrc_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     20
+    ],
+    [
+     42,
+     48
+    ]
+   ]
+  },
+  {
+   "qid": 8661,
+   "query": "A guy with grey tank top is showing around his work place.",
+   "vid": "uSAGSbauHBs_510.0_660.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     92,
+     124
+    ],
+    [
+     138,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 6590,
+   "query": "Phones are being screencast on a smart TV that is hanging on the wall.",
+   "vid": "0zDV_cVzPiI_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     46,
+     74
+    ],
+    [
+     84,
+     132
+    ]
+   ]
+  },
+  {
+   "qid": 7578,
+   "query": "A large yellow cargo van is getting charged at a terminal it is parked beside.",
+   "vid": "bTqMo5klaCE_510.0_660.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     100,
+     116
+    ]
+   ]
+  },
+  {
+   "qid": 2695,
+   "query": "A girl's applying a face make up",
+   "vid": "iH1-Z6eB2cY_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     62,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 3995,
+   "query": "A woman is shopping for produce at a grocery store.",
+   "vid": "9Xzrtwiint4_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     106,
+     136
+    ]
+   ]
+  },
+  {
+   "qid": 4157,
+   "query": "Teacher and student writing on a electronic whiteboard",
+   "vid": "Piw-9dOC8YQ_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     4,
+     10
+    ],
+    [
+     82,
+     86
+    ],
+    [
+     90,
+     96
+    ],
+    [
+     104,
+     116
+    ]
+   ]
+  },
+  {
+   "qid": 8821,
+   "query": "Lady with black jacket is putting the halter on the horse's head.",
+   "vid": "UdiR9BWQKew_510.0_660.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     26,
+     62
+    ]
+   ]
+  },
+  {
+   "qid": 7746,
+   "query": "Views of a plane wing on the ground and in flight.",
+   "vid": "K3lDAtwYt_4_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     110,
+     128
+    ]
+   ]
+  },
+  {
+   "qid": 4987,
+   "query": "Mom prepares card for kids lunch.",
+   "vid": "kv3NheAKyb0_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     6,
+     30
+    ]
+   ]
+  },
+  {
+   "qid": 3899,
+   "query": "A military camp drill on a night",
+   "vid": "VUV77-5ERxA_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 5097,
+   "query": "Man with gray pants is kneeling next to a large lizard.",
+   "vid": "XzxRMH7G8Lk_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     94,
+     124
+    ],
+    [
+     128,
+     130
+    ],
+    [
+     132,
+     136
+    ],
+    [
+     144,
+     148
+    ]
+   ]
+  },
+  {
+   "qid": 1365,
+   "query": "Indian Girl sharing some beautiful flowers and plants clips",
+   "vid": "pmGyw055pQg_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 687,
+   "query": "Cup of food is sitting on the counter.",
+   "vid": "xVeIxhIUT8I_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     56,
+     70
+    ]
+   ]
+  },
+  {
+   "qid": 9949,
+   "query": "Someone is going over the use of a video software with a youtube demo on the screen.",
+   "vid": "KDpsbJHx1RI_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     98,
+     118
+    ]
+   ]
+  },
+  {
+   "qid": 9474,
+   "query": "A woman wearing glasses shouting with a microphone",
+   "vid": "SST7vk2qmCY_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     96,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 6107,
+   "query": "Man gets a tattoo on his forearm.",
+   "vid": "j9NNAmqweOA_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     20,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 8028,
+   "query": "Man is getting a tattoo on their forearm.",
+   "vid": "j9NNAmqweOA_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     20,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 8075,
+   "query": "Women with mohawk sits in front of a large neon sign.",
+   "vid": "iJmrusvmEns_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     20,
+     24
+    ],
+    [
+     34,
+     40
+    ],
+    [
+     44,
+     46
+    ],
+    [
+     52,
+     54
+    ],
+    [
+     60,
+     64
+    ],
+    [
+     68,
+     72
+    ],
+    [
+     78,
+     92
+    ],
+    [
+     94,
+     108
+    ],
+    [
+     120,
+     126
+    ],
+    [
+     132,
+     134
+    ],
+    [
+     144,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 9229,
+   "query": "A newscast reports on the devstatation of Hurricane Iota",
+   "vid": "YpqH79OnK5M_60.0_210.0",
+   "duration": 130,
+   "relevant_windows": [
+    [
+     94,
+     124
+    ]
+   ]
+  },
+  {
+   "qid": 8747,
+   "query": "A birthday is being celebrated in a club tinted with purple lighting.",
+   "vid": "jdQ_zQJD0I4_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     72,
+     118
+    ]
+   ]
+  },
+  {
+   "qid": 1961,
+   "query": "man enjoying waterfall diving in Philippines",
+   "vid": "wUgPzvcKK5c_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     78,
+     108
+    ]
+   ]
+  },
+  {
+   "qid": 7826,
+   "query": "A woman is having snacks and hanging out near a Christmas tree with a city view of skyscrapers behind her at night.",
+   "vid": "bowYAwxuG-c_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     50,
+     82
+    ]
+   ]
+  },
+  {
+   "qid": 7046,
+   "query": "Woman gives a speech with a mic.",
+   "vid": "h6sCcWcLU7A_510.0_660.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     32,
+     60
+    ],
+    [
+     66,
+     72
+    ]
+   ]
+  },
+  {
+   "qid": 4652,
+   "query": "A woman is sitting at a bar by a big sandwich and she starts to eat it.",
+   "vid": "_i9qWLsZToY_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     122,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 6240,
+   "query": "Liverpool player is interviewed next to a logo wall.",
+   "vid": "izeyQalOwGg_210.0_360.0",
+   "duration": 128,
+   "relevant_windows": [
+    [
+     80,
+     88
+    ],
+    [
+     94,
+     106
+    ]
+   ]
+  },
+  {
+   "qid": 8315,
+   "query": "a woman addresses the camera while driving",
+   "vid": "KRHEqswrh9I_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     128,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 6634,
+   "query": "A man in a blue shirt holds a glass and talks to the cameraperson.",
+   "vid": "8CCyShsFArg_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     18,
+     36
+    ]
+   ]
+  },
+  {
+   "qid": 1505,
+   "query": "A woman talks about yoga and leads people through breathing exercise.",
+   "vid": "KWBfQjuwp4E_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     138
+    ]
+   ]
+  },
+  {
+   "qid": 7840,
+   "query": "View from the desert from a bus window.",
+   "vid": "mbdj8xfSIKo_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     74,
+     100
+    ]
+   ]
+  },
+  {
+   "qid": 532,
+   "query": "Man turns to talk to the camera in a parked car.",
+   "vid": "A5PIgmXGIdI_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     2,
+     24
+    ]
+   ]
+  },
+  {
+   "qid": 4327,
+   "query": "Man without vest in gray stands in rocks with crazy camera moves.",
+   "vid": "4HeSJ7tMo48_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     74,
+     76
+    ],
+    [
+     78,
+     86
+    ],
+    [
+     88,
+     94
+    ],
+    [
+     112,
+     114
+    ],
+    [
+     120,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 374,
+   "query": "Women sharing her experience with her special child",
+   "vid": "hl_ErejT_CE_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     90
+    ],
+    [
+     92,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 5698,
+   "query": "A couple is shopping in the milk section of a grocery store.",
+   "vid": "UQHx-1rF89U_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     28,
+     44
+    ]
+   ]
+  },
+  {
+   "qid": 7000,
+   "query": "A woman is hunched over in very tight jeans while walking down the street with friends.",
+   "vid": "TQ0nr6gTX6w_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     98,
+     112
+    ]
+   ]
+  },
+  {
+   "qid": 7905,
+   "query": "People are walking around a building filled with large Buddha statues.",
+   "vid": "RH9FHjHgiJI_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     64,
+     124
+    ],
+    [
+     126,
+     130
+    ]
+   ]
+  },
+  {
+   "qid": 7745,
+   "query": "A girl is excited about showing her bed with a big red heart in it.",
+   "vid": "UGafHWHJrLg_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     10
+    ],
+    [
+     20,
+     30
+    ],
+    [
+     36,
+     48
+    ]
+   ]
+  },
+  {
+   "qid": 6223,
+   "query": "A woman in plaid black and white is showing images to her kid on her laptop",
+   "vid": "bP5KfdFJzC4_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     10,
+     108
+    ]
+   ]
+  },
+  {
+   "qid": 4178,
+   "query": "Woman hangs out on the balcony and shows the view.",
+   "vid": "74jtgDnsEBU_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     120,
+     148
+    ]
+   ]
+  },
+  {
+   "qid": 1400,
+   "query": "Teen girl does her skin care routine.",
+   "vid": "2boYI6YVkCs_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     96,
+     108
+    ],
+    [
+     118,
+     122
+    ],
+    [
+     130,
+     138
+    ]
+   ]
+  },
+  {
+   "qid": 1115,
+   "query": "Man holds up a steady cam to the mirror.",
+   "vid": "SD3Rg6hTEzw_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     72,
+     94
+    ]
+   ]
+  },
+  {
+   "qid": 7787,
+   "query": "People mess with the bull statues testicles.",
+   "vid": "DHHHHFojz3E_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     100,
+     120
+    ]
+   ]
+  },
+  {
+   "qid": 4499,
+   "query": "Couple Vlog they're Trip to  Thailand",
+   "vid": "ZxHh_2YdmT4_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     0,
+     4
+    ],
+    [
+     14,
+     18
+    ],
+    [
+     20,
+     24
+    ],
+    [
+     34,
+     36
+    ],
+    [
+     90,
+     92
+    ],
+    [
+     100,
+     102
+    ],
+    [
+     104,
+     106
+    ],
+    [
+     110,
+     114
+    ],
+    [
+     122,
+     124
+    ],
+    [
+     142,
+     146
+    ]
+   ]
+  },
+  {
+   "qid": 8314,
+   "query": "A lady is handing the noodle dishes to the guests.",
+   "vid": "Lc4D95BLgXI_660.0_810.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     124,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 210,
+   "query": "Mother does her daughter's hair and makeup.",
+   "vid": "cLvULsyPH4E_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     50,
+     56
+    ],
+    [
+     60,
+     84
+    ]
+   ]
+  },
+  {
+   "qid": 8206,
+   "query": "Map shows where Scotland is.",
+   "vid": "DDiq5C34KL4_60.0_210.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     28,
+     52
+    ]
+   ]
+  },
+  {
+   "qid": 525,
+   "query": "Two men are looking at tools in Home Depot.",
+   "vid": "XpVt6Z1Gjjo_360.0_510.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     104,
+     150
+    ]
+   ]
+  },
+  {
+   "qid": 5644,
+   "query": "Woman does her beauty routine in the mirror.",
+   "vid": "FdMI99a1TZE_210.0_360.0",
+   "duration": 150,
+   "relevant_windows": [
+    [
+     68,
+     76
+    ],
+    [
+     82,
+     88
+    ]
+   ]
+  }
+ ]
+}
