@@ -56,11 +56,11 @@ per frame):
   per-frame meter. Night here means headlights and lit windows at day
   brightness, not a dark scene.
 - A second junction streams in within 9 s of moving there.
-- An articulated bus is labelled as two boxes, one per body, and at least one box truck (a delivery truck) is
-  labelled `car`. Both matter for training: the class a label carries is the simulator's, not necessarily the
-  one a person would give.
-- A ground-truth box's occlusion and its amodal box measure different things: a car 31% hidden behind a truck in
-  front of it keeps an amodal box almost the size of its visible box, because the occluder sits inside the outline.
+- The articulated bus and at least one box truck (a delivery truck) are labelled `car`, one box each. The 218
+  frames of the detector runs hold no `bus` or `bicycle` label at all (`output/splits.json`). Both matter for
+  training: the class a label carries is the simulator's, not necessarily the one a person would give.
+- A ground-truth box's occlusion and its amodal box measure different things: the delivery truck, 31% hidden
+  behind a truck cab in front of it, keeps an amodal box almost the size of its visible box, because the occluder sits inside the outline.
 - Most road users carry `actor_id` 0, like the static city: in a 100-frame recording, 2,371 of 2,674 road-user
   labels over 400 px. Only the vehicles a script spawns get an actor id; the rest is the server's ambient traffic
   and crowd. The instance `id` is what stays fixed: 2,573 of 2,573 box pairs that overlap at IoU > 0.7 in
