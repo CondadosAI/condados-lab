@@ -48,7 +48,11 @@ per frame):
 - The author's `record_dataset.py` runs unchanged: 24 frames, 1,862 boxes, a valid COCO file.
 - Camera poles need a per-site search. Of 48 candidate poses around W 120th St & Amsterdam Ave, 31 pass (less than
   10% vegetation, less than 5% of the frame closer than 5 m, more than 20% road). At a second junction
-  (Broadway & W 96th St) with fixed poses and no search, one camera landed inside a tree.
+  (Broadway & W 96th St) with fixed poses and no search, one camera landed inside a tree (98% vegetation, 96% of
+  the frame closer than 5 m). The same search there passes 0 of 48 (`pole_compare.py`, `output/pole_compare.json`):
+  that corner is inside trees from every pose, and the tree-lined median puts 11–44% vegetation in 40 clear views
+  that have nothing within 5 m. The depth test is the one that finds a camera in a tree; the vegetation cap is per
+  site.
 - Weather and time of day work (day, golden hour, dusk, night, rain), but night comes out as bright as day (mean
   pixel 107 against 96): the web renderer meters exposure on every frame. Setting the camera's
   `exposure_mode="manual"` does not change that (a 100-frame night recording with it: mean pixel 110–122, against 95–97 by day; `label_stats.py`, `output/recording_labels.json`). The
@@ -132,6 +136,8 @@ docker exec valdrada-gpu /f/home/venv/bin/pip install "rfdetr[train]==1.11.2"
 MODE=xorg CHECKS=1 bash probe.sh C2 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
 # the seconds-per-frame budget with 1, 2 and 4 poles:
 MODE=xorg BUDGET="--poses 1,2,4 --captures 12" bash probe.sh B1 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
+# the fixed pole in the tree next to the pose the search ranks first, at Broadway & W 96th St:
+MODE=xorg SCRIPT="pole_compare.py --out /f/out/pole_compare" bash probe.sh P4 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
 # COCO split, fine-tune, score both models on the test split:
 bash train.sh T2
 # a recording (FileSource layout), then read it back with no simulator:
