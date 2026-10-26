@@ -37,18 +37,29 @@ per frame):
 |---|---|---|---|
 | 1 | 2.06 | 2.06 | 11.4 h |
 | 2 | 2.43 | 1.21 | 6.7 h |
-| 4 | 2.99 | **0.75** | 4.2 h |
+| 4 | 2.99 | **0.75** | 4.1 h |
 
 **3. The data checks** (`check3.py`, `output/site_checks.json`):
 - The author's `record_dataset.py` runs unchanged: 24 frames, 1,862 boxes, a valid COCO file.
-- Camera poles need a per-site search. Of 48 candidate poses around W 120th St & Amsterdam Ave, 34 pass (less than
+- Camera poles need a per-site search. Of 48 candidate poses around W 120th St & Amsterdam Ave, 31 pass (less than
   10% vegetation, less than 5% of the frame closer than 5 m, more than 20% road). At a second junction
   (Broadway & W 96th St) with fixed poses and no search, one camera landed inside a tree.
-- Weather and time of day work (day, golden hour, dusk, night, rain), but the RGB camera's default auto exposure
-  meters every frame, so night comes out brighter than day (mean pixel 107 against 96). Night data needs
-  `exposure_mode="manual"`.
+- Weather and time of day work (day, golden hour, dusk, night, rain), but night comes out as bright as day (mean
+  pixel 107 against 96): the web renderer meters exposure on every frame. Setting the camera's
+  `exposure_mode="manual"` does not change that (a 100-frame night recording with it: mean pixel 110–121). The
+  API docs scope that attribute to RGB cameras "on a renderer client", and the web renderer used here keeps its own
+  per-frame meter. Night here means headlights and lit windows at day
+  brightness, not a dark scene.
 - A second junction streams in within 9 s of moving there.
-- An articulated bus is labelled as two boxes, one per body.
+- An articulated bus is labelled as two boxes, one per body, and at least one box truck (a delivery truck) is
+  labelled `car`. Both matter for training: the class a label carries is the simulator's, not necessarily the
+  one a person would give.
+- A ground-truth box's occlusion and its amodal box measure different things: a car 31% hidden behind a truck in
+  front of it keeps an amodal box almost the size of its visible box, because the occluder sits inside the outline.
+- Most road users carry `actor_id` 0, like the static city: in a 100-frame recording, 2,371 of 2,674 road-user
+  labels over 400 px. Only the vehicles a script spawns get an actor id; the rest is the server's ambient traffic
+  and crowd. The instance `id` is what stays fixed: every one of 2,573 box pairs that overlap at IoU > 0.7 in
+  consecutive frames keeps its id, so the labels give tracking ground truth for ambient traffic too.
 
 **4. A COCO detector on simulated frames** (`zeroshot.py`, RF-DETR Small, COCO weights, no training, all 218
 frames, `output/zeroshot_all.json`). Recall counts a ground-truth box as found when a detection of a matching class
@@ -66,7 +77,14 @@ overlaps it at IoU ≥ 0.5:
 1.1 false positives per frame. The render is close enough to real footage that a COCO model finds nearly every
 easy vehicle; what it misses is small, distant and occluded, which is what fine-tuning is for.
 
-**5. A first fine-tune** (`to_coco.py`, `finetune.py`, `train.sh`). The frames above, split by capture run so no
+**5. Record here, run anywhere** (`sources.py`, `record.py`, `read_recording.py`). The pipeline reads frames
+only through a frame source: `FileSource` (a recording folder), `StreamSource` (a video file, an RTSP URL or a
+webcam) or `ValdradaSource` (live from the simulator). `record.py` writes a recording as `frames/`,
+`timestamps.csv` and `camera.json` (K and pose), with the ground truth in a `gt/` sidecar that only an evaluator
+opens. 100 frames at 10 fps with RGB, instance labels and depth took 38 s to record. `read_recording.py` runs
+unchanged on that folder and on a plain video file; the only difference it sees is that the video has no K or pose.
+
+**6. A first fine-tune** (`to_coco.py`, `finetune.py`, `train.sh`). The frames above, split by capture run so no
 split shares a frame or a 10 fps neighbour of one (`output/splits.json`):
 
 | Split | Frames | Boxes | Where from |
@@ -111,7 +129,13 @@ MODE=xorg CHECKS=1 bash probe.sh C2 "--use-gl=angle --use-angle=gl --ignore-gpu-
 MODE=xorg BUDGET="--poses 1,2,4 --captures 12" bash probe.sh B1 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
 # COCO split, fine-tune, score both models on the test split:
 bash train.sh T2
+# a recording (FileSource layout), then read it back with no simulator:
+MODE=xorg RECORDS="--out /f/out/rec_day --frames 100" bash probe.sh R1 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
+python read_recording.py out/rec_day          # or any .mp4, rtsp:// URL or webcam index
 ```
+
+`notebook.ipynb` recomputes every number above from `output/` with no server or GPU, and reads a recording if
+you have one.
 
 Each batch writes `logs/<name>.batch.log` and ends with a `logs/<name>_DONE` or `_FAILED` marker naming the step
 that failed. `probe.sh` and `train.sh` were written for a shared machine: they record which GPU processes exist at

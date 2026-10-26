@@ -1,6 +1,6 @@
 #!/bin/bash
 # P0 check 1: does the Valdrada server render on the RTX 5060 under Xvfb in a container, or fall back to SwiftShader?
-# Usage: [MODE=xvfb|xorg|vgl] [BUDGET="<budget.py args>"] [CHECKS=1] bash probe.sh <variant> "<chromium flags>"
+# Usage: [MODE=xvfb|xorg|vgl] [BUDGET="<budget.py args>"] [CHECKS=1] [RECORDS="<record.py args>|..."] bash probe.sh <variant> "<chromium flags>"
 # xorg: a headless NVIDIA Xorg on :1 instead of Xvfb; vgl: Xvfb with GL redirected to the GPU by VirtualGL (EGL back end).   Markers: logs/probe_<variant>_DONE / _FAILED.
 # The GPU processes at launch are the baseline; a new foreign compute process stops OUR container only.
 set -uo pipefail
@@ -48,6 +48,9 @@ if [ -n "${CHECKS:-}" ]; then
   step check3 "timeout 2400 $PY /f/check3.py --out /f/out/${N}_check3"
   X "pkill -f [e]lectron" >/dev/null 2>&1; sleep 5                 # free the 5.8 GB the renderer holds
   step zeroshot "timeout 1800 $PY /f/zeroshot.py /f/out/${N}_check2 /f/out/${N}_check3 /f/out/probe_B1_budget --model small --out /f/out/${N}_zeroshot.json"
+elif [ -n "${RECORDS:-}" ]; then                 # "args1|args2|...": one record.py run each
+  IFS='|' read -ra RECS <<< "$RECORDS"; k=0
+  for r in "${RECS[@]}"; do k=$((k+1)); step record$k "cd /f && env PYTHONUNBUFFERED=1 timeout 1800 /f/home/venv/bin/python record.py $r"; done
 elif [ -n "${BUDGET:-}" ]; then
   step budget "PYTHONUNBUFFERED=1 timeout 2400 /f/home/venv/bin/python /f/budget.py $BUDGET --out /f/out/${N}_budget"
   nvidia-smi > $O/${N}_nvsmi.txt
