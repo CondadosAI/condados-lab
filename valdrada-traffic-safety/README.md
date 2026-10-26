@@ -14,21 +14,26 @@ The pipeline is built so that the camera is a swappable source: the simulator is
 
 Everything below was measured on one desktop, RTX 5060 (8 GB), Valdrada v0.5.2, server at 1280x720.
 
-**1. The GPU-backed display is the whole game.** Under Xvfb the server falls back to software GL and does not
-finish loading the city. A headless Xorg running the NVIDIA driver inside the container
-(`docker/Dockerfile.xorg`, `docker/xorg-nvidia.conf`) plus Chromium's ANGLE-on-GL backend
-(`--use-gl=angle --use-angle=gl --ignore-gpu-blocklist`) renders on the GPU. Two other routes failed: ANGLE over
-EGL on Xvfb (still software), and the Vulkan flags on the NVIDIA Xorg (no WebGL context).
+**1. Which display and which GL backend.** Seven render paths were tried in the container
+(`output/render_paths.md`, with each one's renderer string and benchmark output). Xvfb with Chromium's defaults
+renders in software (Mesa llvmpipe) and the city does not finish loading in 210 s; so does ANGLE over EGL. ANGLE
+over Vulkan on Xvfb does reach the RTX 5060. The fastest path is a headless Xorg running the NVIDIA driver inside the
+container (`docker/Dockerfile.xorg`, `docker/xorg-nvidia.conf`) with ANGLE over OpenGL
+(`--use-gl=angle --use-angle=gl --ignore-gpu-blocklist`). Chromium's headless platform with Vulkan
+(`--ozone-platform=headless`, close to the route in Valdrada's `docs/install.md` but not identical) crashed the GPU
+process at start in this container, and the Vulkan flags on the NVIDIA Xorg found no buffer format for WebGL. None of
+this was tried outside the container.
 
-| Seconds per tick (`PythonAPI/examples/benchmark.py`) | Headless Xorg + ANGLE/GL |
-|---|---|
-| No sensors | 0.09–0.11 |
-| RGB + semantic + instance | 0.22 |
-| + 8 amodal masks | 0.28 |
+| Seconds per tick (`PythonAPI/examples/benchmark.py`, two runs) | Xvfb + ANGLE/Vulkan | Headless Xorg + ANGLE/GL |
+|---|---|---|
+| No sensors | 0.125–0.130 | 0.091–0.109 |
+| RGB + semantic + instance | 0.334–0.335 | 0.217–0.220 |
+| + 8 amodal masks | 0.395–0.397 | 0.279–0.283 |
 
-The GPU sat at about 28% busy at 45 W during these runs: the remaining cost is on the CPU side of the server.
+Over the whole Xorg batch, `nvidia-smi` reported 29% mean utilisation at 45 W in the samples where the GPU was
+working at all, which suggests the GPU is not what limits the tick; I did not profile the server's CPU side.
 
-**2. Several cameras on one tick are almost free.** Sensors capture every N steps (`sensor_tick`), and the steps
+**2. Several cameras share one capture tick.** Sensors capture every N steps (`sensor_tick`), and the steps
 in between cost only the world update (0.10 s). Put P pole cameras on the same capture step and they share it
 (`budget.py`, `output/budget.json`, 12 captures per arm, RGB + instance with 8 amodal masks, about 55 road users
 per frame):
@@ -46,7 +51,7 @@ per frame):
   (Broadway & W 96th St) with fixed poses and no search, one camera landed inside a tree.
 - Weather and time of day work (day, golden hour, dusk, night, rain), but night comes out as bright as day (mean
   pixel 107 against 96): the web renderer meters exposure on every frame. Setting the camera's
-  `exposure_mode="manual"` does not change that (a 100-frame night recording with it: mean pixel 110–121). The
+  `exposure_mode="manual"` does not change that (a 100-frame night recording with it: mean pixel 110–122, against 95–97 by day; `label_stats.py`, `output/recording_labels.json`). The
   API docs scope that attribute to RGB cameras "on a renderer client", and the web renderer used here keeps its own
   per-frame meter. Night here means headlights and lit windows at day
   brightness, not a dark scene.
@@ -58,8 +63,8 @@ per frame):
   front of it keeps an amodal box almost the size of its visible box, because the occluder sits inside the outline.
 - Most road users carry `actor_id` 0, like the static city: in a 100-frame recording, 2,371 of 2,674 road-user
   labels over 400 px. Only the vehicles a script spawns get an actor id; the rest is the server's ambient traffic
-  and crowd. The instance `id` is what stays fixed: every one of 2,573 box pairs that overlap at IoU > 0.7 in
-  consecutive frames keeps its id, so the labels give tracking ground truth for ambient traffic too.
+  and crowd. The instance `id` is what stays fixed: 2,573 of 2,573 box pairs that overlap at IoU > 0.7 in
+  consecutive frames keep their id by day, 2,657 of 2,662 at night (`output/recording_labels.json`), so the labels give tracking ground truth for ambient traffic too.
 
 **4. A COCO detector on simulated frames** (`zeroshot.py`, RF-DETR Small, COCO weights, no training, all 218
 frames, `output/zeroshot_all.json`). Recall counts a ground-truth box as found when a detection of a matching class
@@ -132,6 +137,7 @@ bash train.sh T2
 # a recording (FileSource layout), then read it back with no simulator:
 MODE=xorg RECORDS="--out /f/out/rec_day --frames 100" bash probe.sh R1 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
 python read_recording.py out/rec_day          # or any .mp4, rtsp:// URL or webcam index
+python label_stats.py out/rec_day out/rec_night  # brightness, actor ids, id continuity -> output/
 ```
 
 `notebook.ipynb` recomputes every number above from `output/` with no server or GPU, and reads a recording if
