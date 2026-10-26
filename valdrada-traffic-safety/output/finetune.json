@@ -1,0 +1,9 @@
+{
+ "model": "small",
+ "epochs": 40,
+ "batch": 4,
+ "accum": 4,
+ "lr": 0.0001,
+ "train_s": 522.7359306067228,
+ "rfdetr": "?"
+}

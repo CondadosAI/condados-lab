@@ -8,6 +8,7 @@ numbers the post publishes.
 |---|---|
 | [`embeddinggemma-2-video-search/`](embeddinggemma-2-video-search/) | [EmbeddingGemma 2 Video Search on a Laptop iGPU](https://condados.ai/blog/embeddinggemma-2-video-search) |
 | [`embeddinggemma-2-basketball-moments/`](embeddinggemma-2-basketball-moments/) | What a free video model finds in your footage, and what it misses (in progress) |
+| [`valdrada-traffic-safety/`](valdrada-traffic-safety/) | Traffic-safety cameras in a simulated New York (in progress) |
 
 ```bash
 uv sync

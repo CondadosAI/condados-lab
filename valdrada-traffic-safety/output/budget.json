@@ -1,0 +1,237 @@
+{
+ "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce RTX 5060/PCIe/SSE2, OpenGL 4.5.0)",
+ "results": [
+  {
+   "poses": 1,
+   "kinds": [
+    "rgb",
+    "instance"
+   ],
+   "every": 20,
+   "captures": 12,
+   "wall_s_per_capture": 2.0550231862192354,
+   "wall_s_per_frame": 2.0550231862192354,
+   "idle_tick_s": 0.09876025821701691,
+   "capture_tick_s": 0.22933381547530493,
+   "save_s_per_capture": 0.10544669065469255,
+   "labels_per_frame": 56.25,
+   "timing_idle_example": {
+    "step_ms": 61.5,
+    "sensors": [],
+    "total_ms": 61.5
+   },
+   "timing_capture_example": {
+    "step_ms": 74.7,
+    "sensors": [
+     {
+      "sensors": [
+       120,
+       121
+      ],
+      "switch": false,
+      "rgb_ms": 0,
+      "labels_ms": 107,
+      "labels": {
+       "instance": 52.2,
+       "labels": 3,
+       "amodal": 48.6,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 3,
+       "pass_enter": 41.8,
+       "pass_sweep": 3.7,
+       "pass_submit": 20.4,
+       "pass_read": 23.6
+      },
+      "encode_send_ms": 10.3
+     }
+    ],
+    "total_ms": 192
+   }
+  },
+  {
+   "poses": 2,
+   "kinds": [
+    "rgb",
+    "instance"
+   ],
+   "every": 20,
+   "captures": 12,
+   "wall_s_per_capture": 2.42686009061678,
+   "wall_s_per_frame": 1.21343004530839,
+   "idle_tick_s": 0.10140370545267131,
+   "capture_tick_s": 0.4399287614117687,
+   "save_s_per_capture": 0.2206722565849001,
+   "labels_per_frame": 59.5,
+   "timing_idle_example": {
+    "step_ms": 65.4,
+    "sensors": [],
+    "total_ms": 65.4
+   },
+   "timing_capture_example": {
+    "step_ms": 70.4,
+    "sensors": [
+     {
+      "sensors": [
+       122,
+       123
+      ],
+      "switch": false,
+      "rgb_ms": 0,
+      "labels_ms": 130.1,
+      "labels": {
+       "instance": 77.6,
+       "labels": 3.1,
+       "amodal": 46.4,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 2.9,
+       "pass_enter": 70.4,
+       "pass_sweep": 3.2,
+       "pass_submit": 18.8,
+       "pass_read": 20.6
+      },
+      "encode_send_ms": 10.1
+     },
+     {
+      "sensors": [
+       124,
+       125
+      ],
+      "switch": true,
+      "switch_ms": 41.2,
+      "labels_ms": 123.3,
+      "labels": {
+       "instance": 70.5,
+       "labels": 3.8,
+       "amodal": 46.6,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 2.3,
+       "pass_enter": 64.2,
+       "pass_sweep": 3.3,
+       "pass_submit": 16.8,
+       "pass_read": 21.5
+      },
+      "encode_send_ms": 10.3
+     }
+    ],
+    "total_ms": 385.5
+   }
+  },
+  {
+   "poses": 4,
+   "kinds": [
+    "rgb",
+    "instance"
+   ],
+   "every": 20,
+   "captures": 12,
+   "wall_s_per_capture": 2.985795074996228,
+   "wall_s_per_frame": 0.746448768749057,
+   "idle_tick_s": 0.10005786504961871,
+   "capture_tick_s": 0.8072077846930673,
+   "save_s_per_capture": 0.43576293198081356,
+   "labels_per_frame": 54.291666666666664,
+   "timing_idle_example": {
+    "step_ms": 66.1,
+    "sensors": [],
+    "total_ms": 66.1
+   },
+   "timing_capture_example": {
+    "step_ms": 74.2,
+    "sensors": [
+     {
+      "sensors": [
+       126,
+       127
+      ],
+      "switch": false,
+      "rgb_ms": 0,
+      "labels_ms": 124,
+      "labels": {
+       "instance": 71.8,
+       "labels": 3.1,
+       "amodal": 46.2,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 2.9,
+       "pass_enter": 64.7,
+       "pass_sweep": 3.1,
+       "pass_submit": 19.3,
+       "pass_read": 19.8
+      },
+      "encode_send_ms": 10.7
+     },
+     {
+      "sensors": [
+       128,
+       129
+      ],
+      "switch": true,
+      "switch_ms": 44,
+      "labels_ms": 123.3,
+      "labels": {
+       "instance": 71.7,
+       "labels": 3.9,
+       "amodal": 45.3,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 2.4,
+       "pass_enter": 66,
+       "pass_sweep": 3.6,
+       "pass_submit": 17.1,
+       "pass_read": 18.3
+      },
+      "encode_send_ms": 11
+     },
+     {
+      "sensors": [
+       130,
+       131
+      ],
+      "switch": true,
+      "switch_ms": 44.8,
+      "labels_ms": 125.2,
+      "labels": {
+       "instance": 71.2,
+       "labels": 2.6,
+       "amodal": 48.1,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 3.2,
+       "pass_enter": 64.8,
+       "pass_sweep": 3.5,
+       "pass_submit": 19,
+       "pass_read": 21.2
+      },
+      "encode_send_ms": 10.3
+     },
+     {
+      "sensors": [
+       132,
+       133
+      ],
+      "switch": true,
+      "switch_ms": 46.9,
+      "labels_ms": 124.6,
+      "labels": {
+       "instance": 71.9,
+       "labels": 2.9,
+       "amodal": 46.6,
+       "semantic": 0,
+       "depth": 0,
+       "exit": 3.2,
+       "pass_enter": 64,
+       "pass_sweep": 2.8,
+       "pass_submit": 18.5,
+       "pass_read": 22.7
+      },
+      "encode_send_ms": 11.7
+     }
+    ],
+    "total_ms": 750.8
+   }
+  }
+ ]
+}
