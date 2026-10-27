@@ -59,7 +59,7 @@ per frame):
   API docs scope that attribute to RGB cameras "on a renderer client", and the web renderer used here keeps its own
   per-frame meter. Night here means headlights and lit windows at day
   brightness, not a dark scene.
-- A second junction streams in within 9 s of moving there.
+- A second junction streams in 9–14 s after moving there (four runs: `site_checks.json`, `pole_compare.json`).
 - The articulated bus and at least one box truck (a delivery truck) are labelled `car`, one box each. The 218
   frames of the detector runs hold no `bus` or `bicycle` label at all (`output/splits.json`). Both matter for
   training: the class a label carries is the simulator's, not necessarily the one a person would give.
