@@ -1,0 +1,46 @@
+{
+ "rec_day": {
+  "frames": 100,
+  "mean_pixel": {
+   "mean": 95.71327086226852,
+   "min": 94.76593098958334,
+   "max": 96.66358072916667
+  },
+  "road_user_labels_over_400px": {
+   "actor_id 0": 2371,
+   "actor_id > 0": 303
+  },
+  "classes": {
+   "car": 1368,
+   "truck": 376,
+   "pedestrian": 930
+  },
+  "consecutive_matches_iou_0.7": {
+   "same_id": 2573,
+   "different_id": 0
+  },
+  "distinct_ids": 36
+ },
+ "rec_night_manual": {
+  "frames": 100,
+  "mean_pixel": {
+   "mean": 118.50899896195024,
+   "min": 109.97337058738425,
+   "max": 122.11912073206018
+  },
+  "road_user_labels_over_400px": {
+   "actor_id 0": 2596,
+   "actor_id > 0": 179
+  },
+  "classes": {
+   "car": 1178,
+   "truck": 398,
+   "pedestrian": 1199
+  },
+  "consecutive_matches_iou_0.7": {
+   "same_id": 2657,
+   "different_id": 5
+  },
+  "distinct_ids": 38
+ }
+}

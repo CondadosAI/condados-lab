@@ -1,0 +1,7 @@
+# GPU-backed X for the headless server: a real Xorg on the NVIDIA driver (its modules mounted from the host at run
+# time, see create.sh). VirtualGL is here for the EGL variant probe.sh can also try.
+FROM valdrada-env:v0.5.2
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      xserver-xorg-core x11-xserver-utils x11-utils libglu1-mesa libxv1 libxtst6 curl \
+    && curl -fsSL -o /tmp/vgl.deb https://github.com/VirtualGL/virtualgl/releases/download/3.1.1/virtualgl_3.1.1_amd64.deb \
+    && apt-get install -y /tmp/vgl.deb && rm /tmp/vgl.deb && rm -rf /var/lib/apt/lists/*

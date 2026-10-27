@@ -1,0 +1,44 @@
+{
+ "train": {
+  "images": 84,
+  "boxes": 4709,
+  "per_class": {
+   "car": 1151,
+   "bus": 0,
+   "truck": 436,
+   "bicycle": 0,
+   "pedestrian": 3122
+  },
+  "dirs": [
+   "/f/out/probe_B1_budget"
+  ]
+ },
+ "valid": {
+  "images": 24,
+  "boxes": 1862,
+  "per_class": {
+   "car": 246,
+   "bus": 0,
+   "truck": 141,
+   "bicycle": 0,
+   "pedestrian": 1475
+  },
+  "dirs": [
+   "/f/out/probe_C2_check2"
+  ]
+ },
+ "test": {
+  "images": 110,
+  "boxes": 4408,
+  "per_class": {
+   "car": 1719,
+   "bus": 0,
+   "truck": 855,
+   "bicycle": 0,
+   "pedestrian": 1834
+  },
+  "dirs": [
+   "/f/out/probe_C2_check3"
+  ]
+ }
+}

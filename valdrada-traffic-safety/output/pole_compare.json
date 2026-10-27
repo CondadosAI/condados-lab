@@ -1,0 +1,462 @@
+{
+ "site": "broadway_w96",
+ "load_s": 10.470208229962736,
+ "frame": 221,
+ "fixed": {
+  "bearing": 225,
+  "dist": 20.0,
+  "height": 7.0,
+  "pitch": -15.0,
+  "vegetation": 0.9771354166666667,
+  "near": 0.9592730034722222,
+  "road": 0.0015581597222222223,
+  "clear": false,
+  "road_users": 0
+ },
+ "search_pick": {
+  "bearing": 45,
+  "dist": 26.0,
+  "height": 8.0,
+  "vegetation": 0.11037326388888889,
+  "near": 0.0,
+  "road": 0.34702582465277776,
+  "clear": false,
+  "road_users": 25,
+  "same_bearing": false
+ },
+ "search_clear": "0/48",
+ "search": [
+  {
+   "bearing": 0,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.19747178819444444,
+   "near": 0.0,
+   "road": 0.35623372395833336,
+   "clear": false
+  },
+  {
+   "bearing": 0,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.1675640190972222,
+   "near": 0.0,
+   "road": 0.3959559461805556,
+   "clear": false
+  },
+  {
+   "bearing": 0,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.2451584201388889,
+   "near": 0.0,
+   "road": 0.3680295138888889,
+   "clear": false
+  },
+  {
+   "bearing": 0,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.24064887152777778,
+   "near": 0.0,
+   "road": 0.40355577256944447,
+   "clear": false
+  },
+  {
+   "bearing": 0,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.224365234375,
+   "near": 0.0,
+   "road": 0.305087890625,
+   "clear": false
+  },
+  {
+   "bearing": 0,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.2338031684027778,
+   "near": 0.0,
+   "road": 0.3188346354166667,
+   "clear": false
+  },
+  {
+   "bearing": 45,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.1452615017361111,
+   "near": 0.0,
+   "road": 0.3329839409722222,
+   "clear": false
+  },
+  {
+   "bearing": 45,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.12331705729166667,
+   "near": 0.0,
+   "road": 0.3507172309027778,
+   "clear": false
+  },
+  {
+   "bearing": 45,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.1358843315972222,
+   "near": 0.0,
+   "road": 0.3719618055555556,
+   "clear": false
+  },
+  {
+   "bearing": 45,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.13079210069444444,
+   "near": 0.0,
+   "road": 0.3772916666666667,
+   "clear": false
+  },
+  {
+   "bearing": 45,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.10725260416666667,
+   "near": 0.0,
+   "road": 0.3184038628472222,
+   "clear": false
+  },
+  {
+   "bearing": 45,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.11037326388888889,
+   "near": 0.0,
+   "road": 0.34702582465277776,
+   "clear": false
+  },
+  {
+   "bearing": 90,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.16915364583333334,
+   "near": 0.0,
+   "road": 0.28921766493055556,
+   "clear": false
+  },
+  {
+   "bearing": 90,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.17274631076388888,
+   "near": 0.0,
+   "road": 0.3169900173611111,
+   "clear": false
+  },
+  {
+   "bearing": 90,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.16594618055555554,
+   "near": 0.0,
+   "road": 0.33374891493055553,
+   "clear": false
+  },
+  {
+   "bearing": 90,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.16887803819444444,
+   "near": 0.0,
+   "road": 0.3385763888888889,
+   "clear": false
+  },
+  {
+   "bearing": 90,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.14777994791666665,
+   "near": 0.0,
+   "road": 0.3315668402777778,
+   "clear": false
+  },
+  {
+   "bearing": 90,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.15231119791666667,
+   "near": 0.0,
+   "road": 0.36507378472222224,
+   "clear": false
+  },
+  {
+   "bearing": 135,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.28722764756944447,
+   "near": 0.0,
+   "road": 0.26468207465277777,
+   "clear": false
+  },
+  {
+   "bearing": 135,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.2912152777777778,
+   "near": 0.0,
+   "road": 0.28935872395833334,
+   "clear": false
+  },
+  {
+   "bearing": 135,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.25818901909722225,
+   "near": 0.0,
+   "road": 0.30549479166666665,
+   "clear": false
+  },
+  {
+   "bearing": 135,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.27748589409722224,
+   "near": 0.0,
+   "road": 0.3114963107638889,
+   "clear": false
+  },
+  {
+   "bearing": 135,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.22293511284722223,
+   "near": 0.0015516493055555555,
+   "road": 0.30558485243055555,
+   "clear": false
+  },
+  {
+   "bearing": 135,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.246455078125,
+   "near": 0.0,
+   "road": 0.29110026041666665,
+   "clear": false
+  },
+  {
+   "bearing": 180,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.35354383680555557,
+   "near": 0.023965928819444444,
+   "road": 0.18805230034722223,
+   "clear": false
+  },
+  {
+   "bearing": 180,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.439658203125,
+   "near": 0.026903211805555556,
+   "road": 0.16313802083333334,
+   "clear": false
+  },
+  {
+   "bearing": 180,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.29483832465277776,
+   "near": 0.0,
+   "road": 0.24564019097222223,
+   "clear": false
+  },
+  {
+   "bearing": 180,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.33991319444444446,
+   "near": 0.0,
+   "road": 0.23408203125,
+   "clear": false
+  },
+  {
+   "bearing": 180,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.2613650173611111,
+   "near": 0.0,
+   "road": 0.24747938368055555,
+   "clear": false
+  },
+  {
+   "bearing": 180,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.28414713541666664,
+   "near": 0.0,
+   "road": 0.2500227864583333,
+   "clear": false
+  },
+  {
+   "bearing": 225,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.7869249131944445,
+   "near": 0.7428396267361111,
+   "road": 0.08379557291666667,
+   "clear": false
+  },
+  {
+   "bearing": 225,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.9955392795138889,
+   "near": 0.9878917100694444,
+   "road": 0.0010243055555555556,
+   "clear": false
+  },
+  {
+   "bearing": 225,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.8865755208333334,
+   "near": 0.8850824652777778,
+   "road": 0.049778645833333336,
+   "clear": false
+  },
+  {
+   "bearing": 225,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.9724370659722222,
+   "near": 0.8486588541666666,
+   "road": 0.012294921875,
+   "clear": false
+  },
+  {
+   "bearing": 225,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.904482421875,
+   "near": 0.8999153645833333,
+   "road": 0.04313802083333333,
+   "clear": false
+  },
+  {
+   "bearing": 225,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.958232421875,
+   "near": 0.8597634548611112,
+   "road": 0.00021484375,
+   "clear": false
+  },
+  {
+   "bearing": 270,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.17046006944444445,
+   "near": 0.0,
+   "road": 0.33362413194444446,
+   "clear": false
+  },
+  {
+   "bearing": 270,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.19793294270833334,
+   "near": 0.0,
+   "road": 0.3632454427083333,
+   "clear": false
+  },
+  {
+   "bearing": 270,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.22714518229166666,
+   "near": 0.0,
+   "road": 0.3039724392361111,
+   "clear": false
+  },
+  {
+   "bearing": 270,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.27123372395833334,
+   "near": 8.680555555555556e-06,
+   "road": 0.30585177951388887,
+   "clear": false
+  },
+  {
+   "bearing": 270,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.26449327256944444,
+   "near": 0.0,
+   "road": 0.2788444010416667,
+   "clear": false
+  },
+  {
+   "bearing": 270,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.29876627604166667,
+   "near": 0.0,
+   "road": 0.2604069010416667,
+   "clear": false
+  },
+  {
+   "bearing": 315,
+   "dist": 14.0,
+   "height": 6.0,
+   "vegetation": 0.15047309027777778,
+   "near": 0.0,
+   "road": 0.3522829861111111,
+   "clear": false
+  },
+  {
+   "bearing": 315,
+   "dist": 14.0,
+   "height": 8.0,
+   "vegetation": 0.15563802083333333,
+   "near": 0.0,
+   "road": 0.3840473090277778,
+   "clear": false
+  },
+  {
+   "bearing": 315,
+   "dist": 20.0,
+   "height": 6.0,
+   "vegetation": 0.1917458767361111,
+   "near": 0.0,
+   "road": 0.31193793402777775,
+   "clear": false
+  },
+  {
+   "bearing": 315,
+   "dist": 20.0,
+   "height": 8.0,
+   "vegetation": 0.19624674479166668,
+   "near": 0.0,
+   "road": 0.3410991753472222,
+   "clear": false
+  },
+  {
+   "bearing": 315,
+   "dist": 26.0,
+   "height": 6.0,
+   "vegetation": 0.07963758680555555,
+   "near": 0.29830729166666664,
+   "road": 0.1734765625,
+   "clear": false
+  },
+  {
+   "bearing": 315,
+   "dist": 26.0,
+   "height": 8.0,
+   "vegetation": 0.07434461805555556,
+   "near": 0.3045844184027778,
+   "road": 0.20587348090277777,
+   "clear": false
+  }
+ ]
+}

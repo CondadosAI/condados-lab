@@ -1,0 +1,40 @@
+{
+ "args": {
+  "out": "/f/out/rec_night_manual",
+  "lat": 40.80955,
+  "lon": -73.95905,
+  "bearing": 0.0,
+  "dist": 14.0,
+  "height": 8.0,
+  "frames": 100,
+  "every": 2,
+  "time": "night",
+  "rain": 0.0,
+  "exposure": "manual",
+  "vehicles": 20,
+  "seed": 5
+ },
+ "frames": 100,
+ "wall_s": 41.80644052289426,
+ "server": {
+  "api_version": "0.1.0",
+  "engine": "valdrada",
+  "map": "NYC",
+  "frame": 638,
+  "timestamp": 31.90000000000032,
+  "synchronous_mode": true,
+  "fixed_delta_seconds": 0.05,
+  "resolution": [
+   1280,
+   720
+  ],
+  "gpu": "ANGLE (NVIDIA Corporation, NVIDIA GeForce RTX 5060/PCIe/SSE2, OpenGL 4.5.0)",
+  "fps": 25.6,
+  "geo_origin": {
+   "lat": 40.7831,
+   "lon": -73.9712
+  },
+  "vehicles": 23,
+  "walker_variants": 0
+ }
+}
