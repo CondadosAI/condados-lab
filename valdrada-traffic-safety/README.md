@@ -69,6 +69,11 @@ per frame):
   labels over 400 px. Only the vehicles a script spawns get an actor id; the rest is the server's ambient traffic
   and crowd. The instance `id` is what stays fixed: 2,573 of 2,573 box pairs that overlap at IoU > 0.7 in
   consecutive frames keep their id by day, 2,657 of 2,662 at night (`output/recording_labels.json`), so the labels give tracking ground truth for ambient traffic too.
+- The ambient vehicles in view of the W 120th St pole are parked, and the autopilot does not get through this
+  junction: with nothing else on the street, one autopilot car per arm either waited at the line through every
+  green or made a U-turn. The moving traffic in the post's opening clip is driven by `demo_clip.py`, a lane follower
+  adapted from Valdrada's `examples/intersection_120_amsterdam.py`: in 120 s, 43 of 57 spawned vehicles went
+  through and none stalled (`output/demo_clip.json`). The labels are the simulator's either way.
 
 **4. A COCO detector on simulated frames** (`zeroshot.py`, RF-DETR Small, COCO weights, no training, all 218
 frames, `output/zeroshot_all.json`). Recall counts a ground-truth box as found when a detection of a matching class
@@ -142,6 +147,8 @@ MODE=xorg SCRIPT="pole_compare.py --out /f/out/pole_compare" bash probe.sh P4 "-
 bash train.sh T2
 # a recording (FileSource layout), then read it back with no simulator:
 MODE=xorg RECORDS="--out /f/out/rec_day --frames 100" bash probe.sh R1 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
+# the opening clip: script-driven traffic, a 90 s gate without cameras first, then 120 s at 10 fps:
+MODE=xorg TIMEOUT=3600 SCRIPT="demo_clip.py --gate --out /f/out/demo_clip_gate && /f/home/venv/bin/python demo_clip.py --out /f/out/demo_clip" bash probe.sh D1 "--use-gl=angle --use-angle=gl --ignore-gpu-blocklist"
 python read_recording.py out/rec_day          # or any .mp4, rtsp:// URL or webcam index
 python label_stats.py out/rec_day out/rec_night  # brightness, actor ids, id continuity -> output/
 ```

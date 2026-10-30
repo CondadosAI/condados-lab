@@ -1,0 +1,24 @@
+{
+ "active": 14,
+ "walkers": 120,
+ "spawned": 57,
+ "through": 43,
+ "stuck": 0,
+ "too_long": 24,
+ "spawn_failed": 4,
+ "pose": {
+  "bearing": 0,
+  "dist": 14.0,
+  "height": 8.0
+ },
+ "frames": 1200,
+ "wall_s": 1550,
+ "mean_driven_in_view": 5.01,
+ "mean_moving": 2.92,
+ "site_clip": {
+  "frames": "0735-0934",
+  "mean_driven_in_view": 6.76,
+  "mean_moving": 3.95
+ },
+ "note": "driven = vehicles this script spawned (actor_id > 0, over 400 px); moving = box centre moved over 1 px between frames 0.1 s apart"
+}
