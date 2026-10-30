@@ -50,21 +50,26 @@ def panel(img, x0, y0, x1, y1, alpha=0.72):
     roi[:] = (roi * (1 - alpha) + np.array(SCRIM) * alpha).astype(np.uint8)
 
 
-def side_view(img, fits, t, court, box):
+def side_view(img, fits, t, court, box, small=False):
     """The court from the side, x along the court and height up, with the arc so far."""
     x0, y0, x1, y1 = box
     panel(img, x0, y0, x1, y1)
-    pad, top_m = 30, 2.5
-    sx = (x1 - x0 - 2 * pad) / court["length_m"]
-    sz = (y1 - y0 - 2 * pad - 30) / top_m
+    pad, title, top_m = (16, 24, 2.2) if small else (30, 30, 2.5)
+    sx = (x1 - x0 - 2 * pad - 30) / court["length_m"]
+    sz = (y1 - y0 - 2 * pad - title) / top_m
 
     def to_px(x, z):
-        return int(x0 + pad + x * sx), int(y1 - pad - z * sz)
+        return int(x0 + pad + 30 + x * sx), int(y1 - pad - z * sz)
 
+    for metres in (1, 2):
+        a, b = to_px(0, metres), to_px(court["length_m"], metres)
+        cv2.line(img, a, b, (70, 62, 58), 1, cv2.LINE_AA)
+        text(img, f"{metres} m", (x0 + pad - 4, a[1] + 5), 0.45 if small else 0.55, MUTED, 1)
     cv2.line(img, to_px(0, 0), to_px(court["length_m"], 0), MUTED, 2, cv2.LINE_AA)
     net = court["net_x_m"]
     cv2.line(img, to_px(net, 0), to_px(net, court["net_height_centre_m"]), INK, 3, cv2.LINE_AA)
-    text(img, "side view, from the fit", (x0 + pad, y0 + 34), 0.7, MUTED, 1)
+    label = (x0 + pad, y0 + (20 if small else 34))
+    text(img, "side view, from the fit", label, 0.55 if small else 0.7, MUTED, 1)
     for fit in fits:
         if not fit["bounce1_t"] <= t <= fit["bounce2_t"] + 1.5:
             continue
@@ -258,6 +263,8 @@ def compose_tall(frame, camera, fits, t, court, start, stop, src):
     draw(frame, camera, fits, t, court, hud=False)
     out = np.empty((H, W, 3), np.uint8)
     out[:top_h] = cv2.resize(frame, (W, top_h), interpolation=cv2.INTER_AREA)
+    # Over the stands, clear of the players' heads.
+    side_view(out, fits, t, court, (W - 520, 8, W - 8, 160), small=True)
     below = np.full((H - top_h, W, 3), SCRIM, np.uint8)
     ball = view3d(below, fits, t, court, orbit_at(t, start, stop, W, H - top_h), scale=1.3)
     out[top_h:] = below
