@@ -54,22 +54,37 @@ def side_view(img, fits, t, court, box, small=False):
     """The court from the side, x along the court and height up, with the arc so far."""
     x0, y0, x1, y1 = box
     panel(img, x0, y0, x1, y1)
-    pad, title, top_m = (16, 24, 2.2) if small else (30, 30, 2.5)
-    sx = (x1 - x0 - 2 * pad - 30) / court["length_m"]
+    pad, title, top_m = (16, 34, 2.2) if small else (30, 30, 2.5)
+    gutter = 60 if small else 30
+    sx = (x1 - x0 - 2 * pad - gutter) / court["length_m"]
     sz = (y1 - y0 - 2 * pad - title) / top_m
 
     def to_px(x, z):
-        return int(x0 + pad + 30 + x * sx), int(y1 - pad - z * sz)
+        return int(x0 + pad + gutter + x * sx), int(y1 - pad - z * sz)
 
     for metres in (1, 2):
         a, b = to_px(0, metres), to_px(court["length_m"], metres)
         cv2.line(img, a, b, (70, 62, 58), 1, cv2.LINE_AA)
-        text(img, f"{metres} m", (x0 + pad - 4, a[1] + 5), 0.45 if small else 0.55, MUTED, 1)
+        text(
+            img,
+            f"{metres} m",
+            (x0 + pad - 4, a[1] + 8),
+            0.75 if small else 0.55,
+            MUTED,
+            2 if small else 1,
+        )
     cv2.line(img, to_px(0, 0), to_px(court["length_m"], 0), MUTED, 2, cv2.LINE_AA)
     net = court["net_x_m"]
     cv2.line(img, to_px(net, 0), to_px(net, court["net_height_centre_m"]), INK, 3, cv2.LINE_AA)
-    label = (x0 + pad, y0 + (20 if small else 34))
-    text(img, "side view, from the fit", label, 0.55 if small else 0.7, MUTED, 1)
+    label = (x0 + pad, y0 + 34)
+    text(
+        img,
+        "side view" if small else "side view, from the fit",
+        label,
+        0.85 if small else 0.7,
+        MUTED,
+        2 if small else 1,
+    )
     for fit in fits:
         if not fit["bounce1_t"] <= t <= fit["bounce2_t"] + 1.5:
             continue
@@ -264,24 +279,22 @@ def compose_tall(frame, camera, fits, t, court, start, stop, src):
     out = np.empty((H, W, 3), np.uint8)
     out[:top_h] = cv2.resize(frame, (W, top_h), interpolation=cv2.INTER_AREA)
     # Over the stands, clear of the players' heads.
-    side_view(out, fits, t, court, (W - 520, 8, W - 8, 160), small=True)
+    side_view(out, fits, t, court, (W - 540, 8, W - 8, 190), small=True)
     below = np.full((H - top_h, W, 3), SCRIM, np.uint8)
     ball = view3d(below, fits, t, court, orbit_at(t, start, stop, W, H - top_h), scale=1.3)
     out[top_h:] = below
     live = [f for f in fits if f["bounce1_t"] <= t <= f["bounce2_t"]]
     panel(out, 0, top_h, W, top_h + 118, 0.55)
     if ball is not None:
-        text(out, "height above the floor", (40, top_h + 40), 0.8, MUTED, 1)
+        text(out, "height above the floor", (40, top_h + 42), 0.95, MUTED, 2)
         text(out, f"{ball[2]:.2f} m", (40, top_h + 100), 1.8, INK, 3)
     if live and t >= live[0]["hit_t"]:
         mph = live[0]["paddle_speed_m_s"] * MPH
-        text(out, "speed off the paddle", (600, top_h + 40), 0.8, MUTED, 1)
+        text(out, "speed off the paddle", (600, top_h + 42), 0.95, MUTED, 2)
         text(out, f"{mph:.0f} mph", (600, top_h + 100), 1.8, CYAN, 3)
-    panel(out, 0, H - 48, W, H, 0.7)
-    text(
-        out, "One fixed camera, no depth sensor. 3D from a physics fit.", (24, H - 16), 0.7, INK, 1
-    )
-    text(out, "Video: pickleball4you, CC BY 3.0", (W - 380, H - 16), 0.6, MUTED, 1)
+    panel(out, 0, H - 60, W, H, 0.7)
+    text(out, "One camera. 3D from a physics fit.", (24, H - 20), 0.9, INK, 2)
+    text(out, "Video: pickleball4you, CC BY 3.0", (W - 470, H - 20), 0.8, MUTED, 1)
     cv2.line(out, (0, top_h), (W, top_h), MUTED, 1)
     return out
 
