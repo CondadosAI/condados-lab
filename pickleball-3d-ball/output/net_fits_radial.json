@@ -1,0 +1,739 @@
+{
+ "source": "fits_radial.json",
+ "flights": 80,
+ "cross_the_net": 76,
+ "clear_it": 65,
+ "miss_within_noise": 1,
+ "miss_beyond_noise": 10,
+ "clearance_m": {
+  "min": -0.912,
+  "p10": -0.125,
+  "median": 0.379
+ },
+ "apex_m": {
+  "median": 1.5,
+  "max": 2.84
+ },
+ "rows": [
+  {
+   "flight": 0,
+   "t_cross": 604.5595,
+   "y_m": 3.983,
+   "height_m": 1.4,
+   "net_m": 0.914,
+   "clearance_m": 0.486,
+   "median_px": 1.35
+  },
+  {
+   "flight": 1,
+   "t_cross": 606.1688,
+   "y_m": 3.74,
+   "height_m": 0.753,
+   "net_m": 0.911,
+   "clearance_m": -0.158,
+   "median_px": 1.18
+  },
+  {
+   "flight": 2,
+   "t_cross": 610.4338,
+   "y_m": 3.752,
+   "height_m": 1.045,
+   "net_m": 0.911,
+   "clearance_m": 0.134,
+   "median_px": 1.31
+  },
+  {
+   "flight": 3,
+   "t_cross": 614.161,
+   "y_m": -0.133,
+   "height_m": 0.369,
+   "net_m": 0.948,
+   "clearance_m": -0.579,
+   "median_px": 1.12
+  },
+  {
+   "flight": 4,
+   "t_cross": 637.9967,
+   "y_m": 2.934,
+   "height_m": 1.068,
+   "net_m": 0.902,
+   "clearance_m": 0.166,
+   "median_px": 1.6
+  },
+  {
+   "flight": 5,
+   "t_cross": 652.8033,
+   "y_m": 1.481,
+   "height_m": 1.262,
+   "net_m": 0.924,
+   "clearance_m": 0.338,
+   "median_px": 2.35
+  },
+  {
+   "flight": 6,
+   "t_cross": 682.5535,
+   "y_m": 3.683,
+   "height_m": 1.912,
+   "net_m": 0.91,
+   "clearance_m": 1.002,
+   "median_px": 1.41
+  },
+  {
+   "flight": 7,
+   "t_cross": 686.1889,
+   "y_m": 2.195,
+   "height_m": 1.002,
+   "net_m": 0.913,
+   "clearance_m": 0.089,
+   "median_px": 1.15
+  },
+  {
+   "flight": 8,
+   "t_cross": 688.1764,
+   "y_m": 4.609,
+   "height_m": 1.289,
+   "net_m": 0.924,
+   "clearance_m": 0.365,
+   "median_px": 1.11
+  },
+  {
+   "flight": 9,
+   "t_cross": 689.1074,
+   "y_m": 0.324,
+   "height_m": 0.4,
+   "net_m": 0.941,
+   "clearance_m": -0.541,
+   "median_px": 1.55
+  },
+  {
+   "flight": 10,
+   "t_cross": 712.2934,
+   "y_m": 3.464,
+   "height_m": 1.563,
+   "net_m": 0.907,
+   "clearance_m": 0.657,
+   "median_px": 3.53
+  },
+  {
+   "flight": 11,
+   "t_cross": 734.319,
+   "y_m": 2.086,
+   "height_m": 1.483,
+   "net_m": 0.915,
+   "clearance_m": 0.568,
+   "median_px": 1.7
+  },
+  {
+   "flight": 12,
+   "t_cross": 769.7422,
+   "y_m": 2.253,
+   "height_m": 1.31,
+   "net_m": 0.912,
+   "clearance_m": 0.397,
+   "median_px": 1.99
+  },
+  {
+   "flight": 13,
+   "t_cross": 849.462,
+   "y_m": 3.956,
+   "height_m": 2.031,
+   "net_m": 0.914,
+   "clearance_m": 1.117,
+   "median_px": 4.59
+  },
+  {
+   "flight": 14,
+   "t_cross": NaN,
+   "y_m": NaN,
+   "height_m": NaN,
+   "net_m": NaN,
+   "clearance_m": NaN,
+   "median_px": 4.18
+  },
+  {
+   "flight": 15,
+   "t_cross": 892.1779,
+   "y_m": 2.2,
+   "height_m": 0.189,
+   "net_m": 0.913,
+   "clearance_m": -0.724,
+   "median_px": 4.13
+  },
+  {
+   "flight": 16,
+   "t_cross": 904.3521,
+   "y_m": 3.401,
+   "height_m": 1.403,
+   "net_m": 0.906,
+   "clearance_m": 0.498,
+   "median_px": 2.97
+  },
+  {
+   "flight": 17,
+   "t_cross": 921.8855,
+   "y_m": 3.723,
+   "height_m": 2.078,
+   "net_m": 0.91,
+   "clearance_m": 1.168,
+   "median_px": 4.49
+  },
+  {
+   "flight": 18,
+   "t_cross": 928.3075,
+   "y_m": 4.281,
+   "height_m": 1.123,
+   "net_m": 0.919,
+   "clearance_m": 0.204,
+   "median_px": 1.22
+  },
+  {
+   "flight": 19,
+   "t_cross": 929.8164,
+   "y_m": 3.336,
+   "height_m": 1.384,
+   "net_m": 0.905,
+   "clearance_m": 0.479,
+   "median_px": 0.91
+  },
+  {
+   "flight": 20,
+   "t_cross": 931.1167,
+   "y_m": 4.173,
+   "height_m": 1.123,
+   "net_m": 0.917,
+   "clearance_m": 0.206,
+   "median_px": 1.94
+  },
+  {
+   "flight": 21,
+   "t_cross": 964.4805,
+   "y_m": 3.98,
+   "height_m": 1.746,
+   "net_m": 0.914,
+   "clearance_m": 0.832,
+   "median_px": 2.68
+  },
+  {
+   "flight": 22,
+   "t_cross": 993.0605,
+   "y_m": 2.601,
+   "height_m": 1.7,
+   "net_m": 0.907,
+   "clearance_m": 0.793,
+   "median_px": 2.33
+  },
+  {
+   "flight": 23,
+   "t_cross": 1016.9132,
+   "y_m": 4.578,
+   "height_m": 1.496,
+   "net_m": 0.923,
+   "clearance_m": 0.573,
+   "median_px": 2.35
+  },
+  {
+   "flight": 24,
+   "t_cross": 1018.2577,
+   "y_m": 2.22,
+   "height_m": 1.54,
+   "net_m": 0.913,
+   "clearance_m": 0.627,
+   "median_px": 1.52
+  },
+  {
+   "flight": 25,
+   "t_cross": 1022.1362,
+   "y_m": 2.602,
+   "height_m": 1.173,
+   "net_m": 0.907,
+   "clearance_m": 0.266,
+   "median_px": 1.18
+  },
+  {
+   "flight": 26,
+   "t_cross": NaN,
+   "y_m": NaN,
+   "height_m": NaN,
+   "net_m": NaN,
+   "clearance_m": NaN,
+   "median_px": 4.58
+  },
+  {
+   "flight": 27,
+   "t_cross": 1042.4556,
+   "y_m": 3.497,
+   "height_m": 2.093,
+   "net_m": 0.907,
+   "clearance_m": 1.186,
+   "median_px": 3.94
+  },
+  {
+   "flight": 28,
+   "t_cross": 1043.5092,
+   "y_m": 2.092,
+   "height_m": 1.15,
+   "net_m": 0.915,
+   "clearance_m": 0.235,
+   "median_px": 1.28
+  },
+  {
+   "flight": 29,
+   "t_cross": 1094.6897,
+   "y_m": 4.453,
+   "height_m": 2.128,
+   "net_m": 0.921,
+   "clearance_m": 1.207,
+   "median_px": 4.0
+  },
+  {
+   "flight": 30,
+   "t_cross": 1096.0323,
+   "y_m": 2.314,
+   "height_m": 1.078,
+   "net_m": 0.911,
+   "clearance_m": 0.167,
+   "median_px": 3.97
+  },
+  {
+   "flight": 31,
+   "t_cross": 1156.1823,
+   "y_m": 2.4,
+   "height_m": 1.361,
+   "net_m": 0.91,
+   "clearance_m": 0.451,
+   "median_px": 3.41
+  },
+  {
+   "flight": 32,
+   "t_cross": 1195.6272,
+   "y_m": 3.778,
+   "height_m": 1.46,
+   "net_m": 0.911,
+   "clearance_m": 0.549,
+   "median_px": 1.87
+  },
+  {
+   "flight": 33,
+   "t_cross": 1197.1649,
+   "y_m": 3.94,
+   "height_m": 1.447,
+   "net_m": 0.914,
+   "clearance_m": 0.533,
+   "median_px": 0.92
+  },
+  {
+   "flight": 34,
+   "t_cross": 1198.3382,
+   "y_m": 4.736,
+   "height_m": 0.941,
+   "net_m": 0.926,
+   "clearance_m": 0.015,
+   "median_px": 1.28
+  },
+  {
+   "flight": 35,
+   "t_cross": 1219.6456,
+   "y_m": 2.512,
+   "height_m": 1.463,
+   "net_m": 0.908,
+   "clearance_m": 0.555,
+   "median_px": 1.14
+  },
+  {
+   "flight": 36,
+   "t_cross": 1295.285,
+   "y_m": 1.539,
+   "height_m": 1.032,
+   "net_m": 0.923,
+   "clearance_m": 0.109,
+   "median_px": 1.02
+  },
+  {
+   "flight": 37,
+   "t_cross": 1313.4137,
+   "y_m": 2.453,
+   "height_m": 1.368,
+   "net_m": 0.909,
+   "clearance_m": 0.458,
+   "median_px": 3.07
+  },
+  {
+   "flight": 38,
+   "t_cross": 1329.3026,
+   "y_m": 4.462,
+   "height_m": 1.327,
+   "net_m": 0.921,
+   "clearance_m": 0.405,
+   "median_px": 1.96
+  },
+  {
+   "flight": 39,
+   "t_cross": 1367.3691,
+   "y_m": 1.812,
+   "height_m": 1.407,
+   "net_m": 0.919,
+   "clearance_m": 0.488,
+   "median_px": 1.64
+  },
+  {
+   "flight": 40,
+   "t_cross": 1380.6862,
+   "y_m": 3.977,
+   "height_m": 0.132,
+   "net_m": 0.914,
+   "clearance_m": -0.782,
+   "median_px": 1.71
+  },
+  {
+   "flight": 41,
+   "t_cross": 1422.5622,
+   "y_m": 4.537,
+   "height_m": 0.81,
+   "net_m": 0.923,
+   "clearance_m": -0.113,
+   "median_px": 1.41
+  },
+  {
+   "flight": 42,
+   "t_cross": NaN,
+   "y_m": NaN,
+   "height_m": NaN,
+   "net_m": NaN,
+   "clearance_m": NaN,
+   "median_px": 25.06
+  },
+  {
+   "flight": 43,
+   "t_cross": 1513.2242,
+   "y_m": 1.886,
+   "height_m": 1.068,
+   "net_m": 0.918,
+   "clearance_m": 0.15,
+   "median_px": 1.27
+  },
+  {
+   "flight": 44,
+   "t_cross": 1530.7341,
+   "y_m": 3.557,
+   "height_m": 1.757,
+   "net_m": 0.908,
+   "clearance_m": 0.849,
+   "median_px": 1.91
+  },
+  {
+   "flight": 45,
+   "t_cross": 1540.6431,
+   "y_m": 3.573,
+   "height_m": 1.618,
+   "net_m": 0.908,
+   "clearance_m": 0.71,
+   "median_px": 9.05
+  },
+  {
+   "flight": 46,
+   "t_cross": 1551.7315,
+   "y_m": 3.092,
+   "height_m": 2.094,
+   "net_m": 0.901,
+   "clearance_m": 1.193,
+   "median_px": 3.49
+  },
+  {
+   "flight": 47,
+   "t_cross": 1564.2643,
+   "y_m": 2.175,
+   "height_m": 1.199,
+   "net_m": 0.913,
+   "clearance_m": 0.285,
+   "median_px": 1.01
+  },
+  {
+   "flight": 48,
+   "t_cross": 1565.9952,
+   "y_m": 3.857,
+   "height_m": 1.233,
+   "net_m": 0.912,
+   "clearance_m": 0.321,
+   "median_px": 1.73
+  },
+  {
+   "flight": 49,
+   "t_cross": 1614.5318,
+   "y_m": 4.28,
+   "height_m": 1.664,
+   "net_m": 0.919,
+   "clearance_m": 0.745,
+   "median_px": 3.21
+  },
+  {
+   "flight": 50,
+   "t_cross": 1615.5373,
+   "y_m": 5.137,
+   "height_m": 1.561,
+   "net_m": 0.932,
+   "clearance_m": 0.629,
+   "median_px": 3.53
+  },
+  {
+   "flight": 51,
+   "t_cross": 1646.8364,
+   "y_m": 2.617,
+   "height_m": 1.264,
+   "net_m": 0.907,
+   "clearance_m": 0.357,
+   "median_px": 1.33
+  },
+  {
+   "flight": 52,
+   "t_cross": 1648.1428,
+   "y_m": 2.637,
+   "height_m": 1.094,
+   "net_m": 0.907,
+   "clearance_m": 0.188,
+   "median_px": 1.62
+  },
+  {
+   "flight": 53,
+   "t_cross": 1649.5044,
+   "y_m": 3.07,
+   "height_m": 1.293,
+   "net_m": 0.901,
+   "clearance_m": 0.392,
+   "median_px": 1.28
+  },
+  {
+   "flight": 54,
+   "t_cross": 1650.795,
+   "y_m": 1.224,
+   "height_m": 0.864,
+   "net_m": 0.928,
+   "clearance_m": -0.064,
+   "median_px": 0.9
+  },
+  {
+   "flight": 55,
+   "t_cross": 1694.3759,
+   "y_m": 1.404,
+   "height_m": 1.593,
+   "net_m": 0.925,
+   "clearance_m": 0.668,
+   "median_px": 1.3
+  },
+  {
+   "flight": 56,
+   "t_cross": 1756.39,
+   "y_m": 4.94,
+   "height_m": 1.367,
+   "net_m": 0.929,
+   "clearance_m": 0.439,
+   "median_px": 7.01
+  },
+  {
+   "flight": 57,
+   "t_cross": 1782.9407,
+   "y_m": 2.208,
+   "height_m": 1.442,
+   "net_m": 0.913,
+   "clearance_m": 0.529,
+   "median_px": 1.47
+  },
+  {
+   "flight": 58,
+   "t_cross": NaN,
+   "y_m": NaN,
+   "height_m": NaN,
+   "net_m": NaN,
+   "clearance_m": NaN,
+   "median_px": 14.95
+  },
+  {
+   "flight": 59,
+   "t_cross": 1787.1588,
+   "y_m": 4.418,
+   "height_m": 1.544,
+   "net_m": 0.921,
+   "clearance_m": 0.623,
+   "median_px": 2.95
+  },
+  {
+   "flight": 60,
+   "t_cross": 1788.6815,
+   "y_m": 1.21,
+   "height_m": 0.963,
+   "net_m": 0.928,
+   "clearance_m": 0.036,
+   "median_px": 0.91
+  },
+  {
+   "flight": 61,
+   "t_cross": 1791.6457,
+   "y_m": 3.718,
+   "height_m": 1.072,
+   "net_m": 0.91,
+   "clearance_m": 0.162,
+   "median_px": 0.96
+  },
+  {
+   "flight": 62,
+   "t_cross": 1797.4093,
+   "y_m": 6.003,
+   "height_m": 1.233,
+   "net_m": 0.944,
+   "clearance_m": 0.289,
+   "median_px": 1.24
+  },
+  {
+   "flight": 63,
+   "t_cross": 1832.329,
+   "y_m": 2.801,
+   "height_m": 1.707,
+   "net_m": 0.904,
+   "clearance_m": 0.803,
+   "median_px": 1.99
+  },
+  {
+   "flight": 64,
+   "t_cross": 1848.651,
+   "y_m": 4.698,
+   "height_m": 1.277,
+   "net_m": 0.925,
+   "clearance_m": 0.352,
+   "median_px": 1.54
+  },
+  {
+   "flight": 65,
+   "t_cross": 1857.8641,
+   "y_m": 1.518,
+   "height_m": 0.787,
+   "net_m": 0.923,
+   "clearance_m": -0.137,
+   "median_px": 0.66
+  },
+  {
+   "flight": 66,
+   "t_cross": 1858.9977,
+   "y_m": 3.735,
+   "height_m": 0.977,
+   "net_m": 0.911,
+   "clearance_m": 0.066,
+   "median_px": 1.01
+  },
+  {
+   "flight": 67,
+   "t_cross": 1860.2909,
+   "y_m": 1.511,
+   "height_m": 0.961,
+   "net_m": 0.923,
+   "clearance_m": 0.037,
+   "median_px": 1.18
+  },
+  {
+   "flight": 68,
+   "t_cross": 1861.6831,
+   "y_m": 3.749,
+   "height_m": 1.086,
+   "net_m": 0.911,
+   "clearance_m": 0.175,
+   "median_px": 1.08
+  },
+  {
+   "flight": 69,
+   "t_cross": 1862.7756,
+   "y_m": 2.6,
+   "height_m": 1.112,
+   "net_m": 0.907,
+   "clearance_m": 0.205,
+   "median_px": 0.89
+  },
+  {
+   "flight": 70,
+   "t_cross": 1864.1845,
+   "y_m": 2.809,
+   "height_m": 1.033,
+   "net_m": 0.904,
+   "clearance_m": 0.129,
+   "median_px": 1.74
+  },
+  {
+   "flight": 71,
+   "t_cross": 1865.274,
+   "y_m": 4.083,
+   "height_m": 0.941,
+   "net_m": 0.916,
+   "clearance_m": 0.025,
+   "median_px": 0.92
+  },
+  {
+   "flight": 72,
+   "t_cross": 1895.8876,
+   "y_m": 1.998,
+   "height_m": 0.417,
+   "net_m": 0.916,
+   "clearance_m": -0.499,
+   "median_px": 1.24
+  },
+  {
+   "flight": 73,
+   "t_cross": 1911.6456,
+   "y_m": 4.349,
+   "height_m": 1.732,
+   "net_m": 0.92,
+   "clearance_m": 0.812,
+   "median_px": 1.53
+  },
+  {
+   "flight": 74,
+   "t_cross": 1932.1769,
+   "y_m": 3.478,
+   "height_m": 1.788,
+   "net_m": 0.907,
+   "clearance_m": 0.881,
+   "median_px": 1.51
+  },
+  {
+   "flight": 75,
+   "t_cross": 1935.8953,
+   "y_m": 1.921,
+   "height_m": 1.335,
+   "net_m": 0.917,
+   "clearance_m": 0.418,
+   "median_px": 1.82
+  },
+  {
+   "flight": 76,
+   "t_cross": 1962.8182,
+   "y_m": -0.206,
+   "height_m": 0.037,
+   "net_m": 0.949,
+   "clearance_m": -0.912,
+   "median_px": 0.89
+  },
+  {
+   "flight": 77,
+   "t_cross": 1993.4008,
+   "y_m": 2.779,
+   "height_m": 1.954,
+   "net_m": 0.904,
+   "clearance_m": 1.05,
+   "median_px": 2.59
+  },
+  {
+   "flight": 78,
+   "t_cross": 2003.2138,
+   "y_m": 0.671,
+   "height_m": 0.887,
+   "net_m": 0.936,
+   "clearance_m": -0.049,
+   "median_px": 1.41
+  },
+  {
+   "flight": 79,
+   "t_cross": 2025.8389,
+   "y_m": 5.66,
+   "height_m": 2.263,
+   "net_m": 0.939,
+   "clearance_m": 1.324,
+   "median_px": 3.45
+  }
+ ]
+}

@@ -40,8 +40,15 @@ egbm = [
     "yt-dlp-ejs>=0.8.0",
 ]
 
+# pickleball-3d-ball
+pb3d = [
+    "numpy>=1.26",
+    "scipy>=1.14",
+    "matplotlib>=3.11.2",
+]
+
 [tool.uv]
-default-groups = ["egv", "egbm"]
+default-groups = ["egv", "egbm", "pb3d"]
 
 [tool.uv.sources]
 torch = { index = "pytorch-cpu" }
