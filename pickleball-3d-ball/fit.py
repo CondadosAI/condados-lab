@@ -36,7 +36,7 @@ STEP_S = 1.0 / 60.0
 FLOOR_PX_PER_M = 200.0
 
 HERE = Path(__file__).parent
-DATA = HERE / "data" / "flights.json"
+DATA = HERE / "flights.json"
 
 
 # --- the camera -------------------------------------------------------------
