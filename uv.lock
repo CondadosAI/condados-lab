@@ -286,6 +286,11 @@ egv = [
     { name = "torchvision", version = "0.29.1+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "sys_platform != 'darwin'" },
     { name = "transformers" },
 ]
+pb3d = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "scipy" },
+]
 
 [package.metadata]
 
@@ -323,6 +328,11 @@ egv = [
     { name = "torch", specifier = ">=2.8", index = "https://download.pytorch.org/whl/cpu" },
     { name = "torchvision", specifier = ">=0.23", index = "https://download.pytorch.org/whl/cpu" },
     { name = "transformers", specifier = ">=4.57" },
+]
+pb3d = [
+    { name = "matplotlib", specifier = ">=3.11.2" },
+    { name = "numpy", specifier = ">=1.26" },
+    { name = "scipy", specifier = ">=1.14" },
 ]
 
 [[package]]

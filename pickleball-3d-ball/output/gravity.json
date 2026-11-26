@@ -1,0 +1,69 @@
+{
+ "options": {
+  "fit_gravity": true,
+  "fit_drag": false,
+  "drag": 0.05,
+  "hit_window_s": 0.15
+ },
+ "true_g": 9.81,
+ "synthetic": {
+  "true radial, fitted radial": {
+   "median": 9.78,
+   "se": 0.042,
+   "iqr": [
+    9.56,
+    10.09
+   ],
+   "n": 91
+  },
+  "true radial, fitted pinhole": {
+   "median": 10.204,
+   "se": 0.049,
+   "iqr": [
+    9.96,
+    10.46
+   ],
+   "n": 91
+  },
+  "true pinhole, fitted radial": {
+   "median": 9.359,
+   "se": 0.057,
+   "iqr": [
+    9.16,
+    9.69
+   ],
+   "n": 91
+  },
+  "true pinhole, fitted pinhole": {
+   "median": 9.784,
+   "se": 0.044,
+   "iqr": [
+    9.57,
+    10.09
+   ],
+   "n": 91
+  }
+ },
+ "real": {
+  "radial": {
+   "median": 9.547,
+   "se": 0.124,
+   "iqr": [
+    9.07,
+    10.65
+   ],
+   "n": 80,
+   "median_residual_px": 1.57
+  },
+  "pinhole": {
+   "median": 10.059,
+   "se": 0.15,
+   "iqr": [
+    9.36,
+    11.24
+   ],
+   "n": 80,
+   "median_residual_px": 1.73
+  }
+ }
+}
