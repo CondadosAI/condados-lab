@@ -14,7 +14,7 @@ ray of the flight and touch the floor at both bounces. `fit.py` finds it by leas
 | Gravity left free in every fit | is the reconstruction physically plausible on average? | median **9.55 ± 0.12** m/s² over 80 flights (true 9.81; ± is the bootstrap standard error of the median); 10.06 ± 0.15 with the camera's lens distortion switched off | `output/gravity.json` |
 | Synthetic control | does the fit recover g when everything is known? | 9.78 ± 0.04 (lens model right), 10.20 or 9.36 (lens model wrong) | `output/gravity.json` |
 | Pixel fit, g fixed at 9.81 | do the arcs explain the detections? | median residual 1.6 px | `output/fits.json` |
-| The net | does every flight that crossed it clear it? | 78 cross; **65 clear**, 3 miss by under 5 cm, **10 miss by more** (up to 0.80 m); 8 of those 10 have a good pixel fit (≤ 3 px) | `output/net.json` |
+| The net | does every flight that crossed it clear it? | 78 cross; 78 cross; **65 clear**, 3 miss by under 5 cm, **10 miss by more** (up to 0.80 m); 8 of those 10 have a good pixel fit (≤ 3 px) | `output/net.json` |
 | The 8 good fits under the net | does drag, the paddle time, spin or the lens explain them? | no single change lifts all 8 over | `output/diagnose_net.json` |
 
 One flight's gravity is not a measurement (interquartile range 9.07 to 10.65 m/s²); the median over 80 is a check
@@ -50,8 +50,9 @@ saved tables for all 80. No GPU anywhere.
 ## What the fit assumes
 
 - **Gravity and quadratic drag**, a = −g ẑ − k|v|v with k = 0.05 per metre. k comes from the ball's mass and diameter
-  in the USA Pickleball rules (2.D) and an assumed drag coefficient of 0.4 to 0.5 for a perforated ball; I did not
-  find a published measurement for it.
+  (USA Pickleball Equipment Standards Manual rev. 3.0, 2.D.3 and 2.D.4) and a drag coefficient of 0.4 to 0.5. Two
+  later measurements from filmed trajectories give about 0.45 for an indoor ball and 0.30 to 0.33 for an outdoor one
+  (Steyn et al., arXiv:2501.00163; Lindsey, Tennis Warehouse University, 2025), so 0.05 is the indoor value.
 - **No spin.**
 - **The bounce is on the floor**: the ball's centre at height 0, which ignores its 3.6 cm radius at contact.
 - **The paddle time may move** up to 0.15 s from the detected hit; the fit keeps the time that explains the pixels

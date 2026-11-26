@@ -6,11 +6,12 @@ has to be above the net where it crosses: its centre at least one ball radius
 over the tape. A fit that passes under the net is wrong, however small its
 pixel residual.
 
-The net is 0.864 m at the centre and 0.914 m at the posts, 0.3048 m outside each
-sideline (USA Pickleball rules 2.B). Between the two the height is interpolated
-linearly, which slightly overstates the net near the sidelines (a real net sags
-in a curve), so the check errs on the strict side. The ball is 7.29-7.54 cm
-across (rule 2.D); the radius used is half the smaller.
+The net is 0.864 m at the centre and 0.914 m where it crosses the outer edge of
+each sideline (USA Pickleball 2026 Official Rulebook, 3.B.7 and 3.B.6). Between
+the two the height is interpolated linearly, which slightly overstates the net
+between them (a real net sags in a curve), so the check errs on the strict side;
+outside the sidelines it is held at 0.914 m. The ball is 7.29-7.54 cm across
+(Equipment Standards Manual rev. 3.0, 2.D.3); the radius used is half the smaller.
 
 A miss is split by size. At the 1.6 px median residual the fit's height is good
 to a few centimetres, so a miss under 5 cm is within its noise, and a miss of
@@ -33,13 +34,12 @@ import numpy as np
 from fit import HERE, load, trajectory
 
 OUT = HERE / "output"
-POST_OUTSIDE_M = 0.3048
 BALL_RADIUS_M = 0.0729 / 2
 NOISE_M = 0.05
 
 
 def net_height(y: float, court: dict) -> float:
-    centre, half = court["width_m"] / 2, court["width_m"] / 2 + POST_OUTSIDE_M
+    centre = half = court["width_m"] / 2
     frac = min(abs(y - centre) / half, 1.0)
     return float(
         court["net_height_centre_m"]

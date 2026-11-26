@@ -6,9 +6,9 @@
  "miss_within_noise": 3,
  "miss_beyond_noise": 10,
  "clearance_m": {
-  "min": -0.795,
-  "p10": -0.124,
-  "median": 0.367
+  "min": -0.8,
+  "p10": -0.127,
+  "median": 0.365
  },
  "apex_m": {
   "median": 1.5,
@@ -20,8 +20,8 @@
    "t_cross": 604.7377,
    "y_m": 2.302,
    "height_m": 0.884,
-   "net_m": 0.912,
-   "clearance_m": -0.028,
+   "net_m": 0.913,
+   "clearance_m": -0.029,
    "median_px": 1.43
   },
   {
@@ -29,8 +29,8 @@
    "t_cross": 606.0462,
    "y_m": 3.181,
    "height_m": 1.077,
-   "net_m": 0.902,
-   "clearance_m": 0.175,
+   "net_m": 0.903,
+   "clearance_m": 0.174,
    "median_px": 1.15
   },
   {
@@ -38,8 +38,8 @@
    "t_cross": 610.3849,
    "y_m": 3.432,
    "height_m": 1.107,
-   "net_m": 0.906,
-   "clearance_m": 0.201,
+   "net_m": 0.907,
+   "clearance_m": 0.2,
    "median_px": 1.18
   },
   {
@@ -47,8 +47,8 @@
    "t_cross": 613.9749,
    "y_m": 1.821,
    "height_m": 1.014,
-   "net_m": 0.919,
-   "clearance_m": 0.095,
+   "net_m": 0.921,
+   "clearance_m": 0.093,
    "median_px": 1.31
   },
   {
@@ -57,7 +57,7 @@
    "y_m": 3.325,
    "height_m": 0.661,
    "net_m": 0.905,
-   "clearance_m": -0.243,
+   "clearance_m": -0.244,
    "median_px": 1.93
   },
   {
@@ -65,8 +65,8 @@
    "t_cross": 652.7923,
    "y_m": 1.374,
    "height_m": 1.275,
-   "net_m": 0.925,
-   "clearance_m": 0.35,
+   "net_m": 0.928,
+   "clearance_m": 0.347,
    "median_px": 2.6
   },
   {
@@ -74,8 +74,8 @@
    "t_cross": 682.6885,
    "y_m": 4.358,
    "height_m": 1.771,
-   "net_m": 0.92,
-   "clearance_m": 0.851,
+   "net_m": 0.922,
+   "clearance_m": 0.849,
    "median_px": 2.57
   },
   {
@@ -83,8 +83,8 @@
    "t_cross": 686.097,
    "y_m": 2.848,
    "height_m": 1.343,
-   "net_m": 0.903,
-   "clearance_m": 0.44,
+   "net_m": 0.904,
+   "clearance_m": 0.439,
    "median_px": 1.16
   },
   {
@@ -92,8 +92,8 @@
    "t_cross": 688.1764,
    "y_m": 4.609,
    "height_m": 1.289,
-   "net_m": 0.924,
-   "clearance_m": 0.365,
+   "net_m": 0.926,
+   "clearance_m": 0.363,
    "median_px": 1.11
   },
   {
@@ -101,8 +101,8 @@
    "t_cross": 689.4006,
    "y_m": 1.184,
    "height_m": 1.298,
-   "net_m": 0.928,
-   "clearance_m": 0.37,
+   "net_m": 0.931,
+   "clearance_m": 0.367,
    "median_px": 1.1
   },
   {
@@ -111,7 +111,7 @@
    "y_m": 3.415,
    "height_m": 1.518,
    "net_m": 0.906,
-   "clearance_m": 0.612,
+   "clearance_m": 0.611,
    "median_px": 3.48
   },
   {
@@ -119,8 +119,8 @@
    "t_cross": 734.271,
    "y_m": 2.541,
    "height_m": 1.589,
-   "net_m": 0.908,
-   "clearance_m": 0.681,
+   "net_m": 0.909,
+   "clearance_m": 0.68,
    "median_px": 1.52
   },
   {
@@ -128,7 +128,7 @@
    "t_cross": 769.8312,
    "y_m": 2.677,
    "height_m": 1.2,
-   "net_m": 0.906,
+   "net_m": 0.907,
    "clearance_m": 0.294,
    "median_px": 2.97
   },
@@ -137,8 +137,8 @@
    "t_cross": 849.4698,
    "y_m": 3.978,
    "height_m": 2.026,
-   "net_m": 0.914,
-   "clearance_m": 1.112,
+   "net_m": 0.916,
+   "clearance_m": 1.11,
    "median_px": 4.57
   },
   {
@@ -155,8 +155,8 @@
    "t_cross": 892.1779,
    "y_m": 2.188,
    "height_m": 0.187,
-   "net_m": 0.913,
-   "clearance_m": -0.727,
+   "net_m": 0.915,
+   "clearance_m": -0.728,
    "median_px": 3.88
   },
   {
@@ -173,8 +173,8 @@
    "t_cross": 921.9191,
    "y_m": 3.789,
    "height_m": 2.027,
-   "net_m": 0.911,
-   "clearance_m": 1.116,
+   "net_m": 0.913,
+   "clearance_m": 1.115,
    "median_px": 4.67
   },
   {
@@ -182,8 +182,8 @@
    "t_cross": 928.3064,
    "y_m": 4.275,
    "height_m": 1.125,
-   "net_m": 0.919,
-   "clearance_m": 0.206,
+   "net_m": 0.921,
+   "clearance_m": 0.204,
    "median_px": 1.26
   },
   {
@@ -192,7 +192,7 @@
    "y_m": 3.216,
    "height_m": 1.346,
    "net_m": 0.903,
-   "clearance_m": 0.443,
+   "clearance_m": 0.442,
    "median_px": 0.96
   },
   {
@@ -200,8 +200,8 @@
    "t_cross": 931.0531,
    "y_m": 3.789,
    "height_m": 1.216,
-   "net_m": 0.911,
-   "clearance_m": 0.304,
+   "net_m": 0.913,
+   "clearance_m": 0.303,
    "median_px": 1.58
   },
   {
@@ -209,8 +209,8 @@
    "t_cross": 964.405,
    "y_m": 3.862,
    "height_m": 1.748,
-   "net_m": 0.913,
-   "clearance_m": 0.835,
+   "net_m": 0.914,
+   "clearance_m": 0.834,
    "median_px": 2.05
   },
   {
@@ -218,7 +218,7 @@
    "t_cross": 993.0648,
    "y_m": 2.586,
    "height_m": 1.695,
-   "net_m": 0.907,
+   "net_m": 0.908,
    "clearance_m": 0.787,
    "median_px": 2.24
   },
@@ -227,8 +227,8 @@
    "t_cross": 1016.9518,
    "y_m": 4.363,
    "height_m": 1.438,
-   "net_m": 0.92,
-   "clearance_m": 0.518,
+   "net_m": 0.922,
+   "clearance_m": 0.516,
    "median_px": 2.6
   },
   {
@@ -236,8 +236,8 @@
    "t_cross": 1018.3887,
    "y_m": 2.802,
    "height_m": 1.457,
-   "net_m": 0.904,
-   "clearance_m": 0.553,
+   "net_m": 0.905,
+   "clearance_m": 0.552,
    "median_px": 1.57
   },
   {
@@ -245,8 +245,8 @@
    "t_cross": 1021.9873,
    "y_m": 1.24,
    "height_m": 0.933,
-   "net_m": 0.927,
-   "clearance_m": 0.005,
+   "net_m": 0.93,
+   "clearance_m": 0.003,
    "median_px": 1.11
   },
   {
@@ -273,7 +273,7 @@
    "y_m": 2.834,
    "height_m": 1.213,
    "net_m": 0.904,
-   "clearance_m": 0.31,
+   "clearance_m": 0.309,
    "median_px": 2.15
   },
   {
@@ -281,8 +281,8 @@
    "t_cross": 1094.6945,
    "y_m": 4.429,
    "height_m": 2.125,
-   "net_m": 0.921,
-   "clearance_m": 1.204,
+   "net_m": 0.923,
+   "clearance_m": 1.202,
    "median_px": 3.99
   },
   {
@@ -291,7 +291,7 @@
    "y_m": 2.638,
    "height_m": 1.049,
    "net_m": 0.907,
-   "clearance_m": 0.143,
+   "clearance_m": 0.142,
    "median_px": 5.26
   },
   {
@@ -299,8 +299,8 @@
    "t_cross": 1156.2119,
    "y_m": 2.477,
    "height_m": 1.318,
-   "net_m": 0.909,
-   "clearance_m": 0.409,
+   "net_m": 0.91,
+   "clearance_m": 0.408,
    "median_px": 3.32
   },
   {
@@ -308,8 +308,8 @@
    "t_cross": 1195.7294,
    "y_m": 4.216,
    "height_m": 1.36,
-   "net_m": 0.918,
-   "clearance_m": 0.442,
+   "net_m": 0.92,
+   "clearance_m": 0.44,
    "median_px": 4.68
   },
   {
@@ -317,8 +317,8 @@
    "t_cross": 1197.1589,
    "y_m": 3.959,
    "height_m": 1.46,
-   "net_m": 0.914,
-   "clearance_m": 0.546,
+   "net_m": 0.915,
+   "clearance_m": 0.544,
    "median_px": 1.08
   },
   {
@@ -326,8 +326,8 @@
    "t_cross": 1198.3038,
    "y_m": 4.623,
    "height_m": 0.995,
-   "net_m": 0.924,
-   "clearance_m": 0.071,
+   "net_m": 0.926,
+   "clearance_m": 0.069,
    "median_px": 1.45
   },
   {
@@ -335,8 +335,8 @@
    "t_cross": 1219.6866,
    "y_m": 2.372,
    "height_m": 1.389,
-   "net_m": 0.911,
-   "clearance_m": 0.478,
+   "net_m": 0.912,
+   "clearance_m": 0.477,
    "median_px": 1.55
   },
   {
@@ -344,8 +344,8 @@
    "t_cross": 1295.22,
    "y_m": 2.035,
    "height_m": 1.217,
-   "net_m": 0.916,
-   "clearance_m": 0.301,
+   "net_m": 0.917,
+   "clearance_m": 0.3,
    "median_px": 1.05
   },
   {
@@ -354,7 +354,7 @@
    "y_m": 2.439,
    "height_m": 1.364,
    "net_m": 0.91,
-   "clearance_m": 0.454,
+   "clearance_m": 0.453,
    "median_px": 3.33
   },
   {
@@ -362,8 +362,8 @@
    "t_cross": 1329.2374,
    "y_m": 4.785,
    "height_m": 1.493,
-   "net_m": 0.926,
-   "clearance_m": 0.567,
+   "net_m": 0.929,
+   "clearance_m": 0.564,
    "median_px": 2.54
   },
   {
@@ -371,8 +371,8 @@
    "t_cross": 1367.4924,
    "y_m": 1.153,
    "height_m": 0.96,
-   "net_m": 0.929,
-   "clearance_m": 0.031,
+   "net_m": 0.932,
+   "clearance_m": 0.029,
    "median_px": 1.23
   },
   {
@@ -380,8 +380,8 @@
    "t_cross": 1380.3529,
    "y_m": 4.499,
    "height_m": 1.212,
-   "net_m": 0.922,
-   "clearance_m": 0.29,
+   "net_m": 0.924,
+   "clearance_m": 0.288,
    "median_px": 0.97
   },
   {
@@ -389,7 +389,7 @@
    "t_cross": 1422.2162,
    "y_m": 3.496,
    "height_m": 1.35,
-   "net_m": 0.907,
+   "net_m": 0.908,
    "clearance_m": 0.442,
    "median_px": 1.14
   },
@@ -407,8 +407,8 @@
    "t_cross": 1513.3159,
    "y_m": 2.015,
    "height_m": 0.881,
-   "net_m": 0.916,
-   "clearance_m": -0.035,
+   "net_m": 0.917,
+   "clearance_m": -0.036,
    "median_px": 1.6
   },
   {
@@ -416,8 +416,8 @@
    "t_cross": 1530.7594,
    "y_m": 3.78,
    "height_m": 1.722,
-   "net_m": 0.911,
-   "clearance_m": 0.811,
+   "net_m": 0.912,
+   "clearance_m": 0.81,
    "median_px": 2.13
   },
   {
@@ -425,7 +425,7 @@
    "t_cross": 1541.3321,
    "y_m": 2.86,
    "height_m": 1.119,
-   "net_m": 0.903,
+   "net_m": 0.904,
    "clearance_m": 0.215,
    "median_px": 15.45
   },
@@ -434,8 +434,8 @@
    "t_cross": 1551.8354,
    "y_m": 2.78,
    "height_m": 2.062,
-   "net_m": 0.904,
-   "clearance_m": 1.158,
+   "net_m": 0.905,
+   "clearance_m": 1.157,
    "median_px": 4.51
   },
   {
@@ -443,7 +443,7 @@
    "t_cross": 1564.2153,
    "y_m": 2.523,
    "height_m": 1.226,
-   "net_m": 0.908,
+   "net_m": 0.909,
    "clearance_m": 0.317,
    "median_px": 0.99
   },
@@ -453,7 +453,7 @@
    "y_m": 3.659,
    "height_m": 1.3,
    "net_m": 0.91,
-   "clearance_m": 0.39,
+   "clearance_m": 0.389,
    "median_px": 1.68
   },
   {
@@ -461,8 +461,8 @@
    "t_cross": 1614.4776,
    "y_m": 4.138,
    "height_m": 1.738,
-   "net_m": 0.917,
-   "clearance_m": 0.822,
+   "net_m": 0.918,
+   "clearance_m": 0.82,
    "median_px": 3.53
   },
   {
@@ -470,8 +470,8 @@
    "t_cross": 1616.2868,
    "y_m": 4.2,
    "height_m": 0.578,
-   "net_m": 0.918,
-   "clearance_m": -0.34,
+   "net_m": 0.919,
+   "clearance_m": -0.341,
    "median_px": 2.98
   },
   {
@@ -479,8 +479,8 @@
    "t_cross": 1646.6564,
    "y_m": 1.262,
    "height_m": 1.093,
-   "net_m": 0.927,
-   "clearance_m": 0.166,
+   "net_m": 0.93,
+   "clearance_m": 0.163,
    "median_px": 1.55
   },
   {
@@ -488,8 +488,8 @@
    "t_cross": 1647.9902,
    "y_m": 3.805,
    "height_m": 1.224,
-   "net_m": 0.912,
-   "clearance_m": 0.312,
+   "net_m": 0.913,
+   "clearance_m": 0.311,
    "median_px": 1.5
   },
   {
@@ -497,8 +497,8 @@
    "t_cross": 1649.2582,
    "y_m": 1.32,
    "height_m": 1.422,
-   "net_m": 0.926,
-   "clearance_m": 0.496,
+   "net_m": 0.929,
+   "clearance_m": 0.494,
    "median_px": 1.19
   },
   {
@@ -506,8 +506,8 @@
    "t_cross": 1650.6415,
    "y_m": 2.516,
    "height_m": 1.177,
-   "net_m": 0.908,
-   "clearance_m": 0.269,
+   "net_m": 0.909,
+   "clearance_m": 0.268,
    "median_px": 1.61
   },
   {
@@ -515,8 +515,8 @@
    "t_cross": 1694.4713,
    "y_m": 2.18,
    "height_m": 1.456,
-   "net_m": 0.913,
-   "clearance_m": 0.543,
+   "net_m": 0.915,
+   "clearance_m": 0.542,
    "median_px": 4.04
   },
   {
@@ -524,8 +524,8 @@
    "t_cross": 1756.136,
    "y_m": 4.18,
    "height_m": 1.377,
-   "net_m": 0.917,
-   "clearance_m": 0.46,
+   "net_m": 0.919,
+   "clearance_m": 0.458,
    "median_px": 7.64
   },
   {
@@ -551,8 +551,8 @@
    "t_cross": 1787.1296,
    "y_m": 4.349,
    "height_m": 1.567,
-   "net_m": 0.92,
-   "clearance_m": 0.647,
+   "net_m": 0.922,
+   "clearance_m": 0.645,
    "median_px": 2.66
   },
   {
@@ -560,8 +560,8 @@
    "t_cross": 1788.5636,
    "y_m": 2.038,
    "height_m": 1.298,
-   "net_m": 0.916,
-   "clearance_m": 0.382,
+   "net_m": 0.917,
+   "clearance_m": 0.381,
    "median_px": 1.13
   },
   {
@@ -569,8 +569,8 @@
    "t_cross": 1791.5294,
    "y_m": 4.173,
    "height_m": 0.756,
-   "net_m": 0.917,
-   "clearance_m": -0.162,
+   "net_m": 0.919,
+   "clearance_m": -0.163,
    "median_px": 0.92
   },
   {
@@ -578,8 +578,8 @@
    "t_cross": 1797.5507,
    "y_m": 5.748,
    "height_m": 1.195,
-   "net_m": 0.941,
-   "clearance_m": 0.254,
+   "net_m": 0.945,
+   "clearance_m": 0.25,
    "median_px": 1.29
   },
   {
@@ -596,8 +596,8 @@
    "t_cross": 1848.7361,
    "y_m": 4.272,
    "height_m": 1.09,
-   "net_m": 0.919,
-   "clearance_m": 0.171,
+   "net_m": 0.92,
+   "clearance_m": 0.169,
    "median_px": 1.42
   },
   {
@@ -605,8 +605,8 @@
    "t_cross": 1857.8894,
    "y_m": 1.316,
    "height_m": 0.719,
-   "net_m": 0.926,
-   "clearance_m": -0.208,
+   "net_m": 0.929,
+   "clearance_m": -0.21,
    "median_px": 0.94
   },
   {
@@ -614,8 +614,8 @@
    "t_cross": 1858.6952,
    "y_m": 1.394,
    "height_m": 1.042,
-   "net_m": 0.925,
-   "clearance_m": 0.116,
+   "net_m": 0.928,
+   "clearance_m": 0.114,
    "median_px": 1.1
   },
   {
@@ -623,8 +623,8 @@
    "t_cross": 1860.3449,
    "y_m": 1.088,
    "height_m": 0.813,
-   "net_m": 0.93,
-   "clearance_m": -0.117,
+   "net_m": 0.933,
+   "clearance_m": -0.12,
    "median_px": 1.12
   },
   {
@@ -632,8 +632,8 @@
    "t_cross": 1861.3451,
    "y_m": 1.097,
    "height_m": 1.177,
-   "net_m": 0.93,
-   "clearance_m": 0.248,
+   "net_m": 0.932,
+   "clearance_m": 0.245,
    "median_px": 1.15
   },
   {
@@ -641,8 +641,8 @@
    "t_cross": 1862.9303,
    "y_m": 1.345,
    "height_m": 0.786,
-   "net_m": 0.926,
-   "clearance_m": -0.14,
+   "net_m": 0.928,
+   "clearance_m": -0.142,
    "median_px": 1.07
   },
   {
@@ -650,8 +650,8 @@
    "t_cross": 1863.9093,
    "y_m": 0.58,
    "height_m": 0.985,
-   "net_m": 0.937,
-   "clearance_m": 0.048,
+   "net_m": 0.941,
+   "clearance_m": 0.044,
    "median_px": 1.53
   },
   {
@@ -659,8 +659,8 @@
    "t_cross": 1865.3459,
    "y_m": 3.756,
    "height_m": 0.853,
-   "net_m": 0.911,
-   "clearance_m": -0.058,
+   "net_m": 0.912,
+   "clearance_m": -0.059,
    "median_px": 1.03
   },
   {
@@ -677,8 +677,8 @@
    "t_cross": 1911.5923,
    "y_m": 3.92,
    "height_m": 1.794,
-   "net_m": 0.913,
-   "clearance_m": 0.881,
+   "net_m": 0.915,
+   "clearance_m": 0.88,
    "median_px": 1.79
   },
   {
@@ -686,8 +686,8 @@
    "t_cross": 1932.127,
    "y_m": 3.312,
    "height_m": 1.829,
-   "net_m": 0.904,
-   "clearance_m": 0.925,
+   "net_m": 0.905,
+   "clearance_m": 0.924,
    "median_px": 1.62
   },
   {
@@ -695,8 +695,8 @@
    "t_cross": 1936.0906,
    "y_m": 1.878,
    "height_m": 1.063,
-   "net_m": 0.918,
-   "clearance_m": 0.145,
+   "net_m": 0.92,
+   "clearance_m": 0.144,
    "median_px": 2.53
   },
   {
@@ -704,8 +704,8 @@
    "t_cross": 1962.7971,
    "y_m": 0.004,
    "height_m": 0.151,
-   "net_m": 0.946,
-   "clearance_m": -0.795,
+   "net_m": 0.95,
+   "clearance_m": -0.8,
    "median_px": 1.28
   },
   {
@@ -722,8 +722,8 @@
    "t_cross": 2003.2186,
    "y_m": 0.738,
    "height_m": 0.9,
-   "net_m": 0.935,
-   "clearance_m": -0.035,
+   "net_m": 0.938,
+   "clearance_m": -0.038,
    "median_px": 1.51
   },
   {
@@ -731,8 +731,8 @@
    "t_cross": 2025.8634,
    "y_m": 5.558,
    "height_m": 2.278,
-   "net_m": 0.938,
-   "clearance_m": 1.34,
+   "net_m": 0.942,
+   "clearance_m": 1.336,
    "median_px": 3.71
   }
  ]
