@@ -1,4 +1,4 @@
-# Reconstructing pickleball flights with bounces and physics
+# Can one camera measure a pickleball's height and speed?
 
 Companion code for the condados.ai post. One fixed broadcast camera sees the ball as a pixel, and a pixel is a
 viewing ray, not a point. Between two bounces the ball is a projectile, and at each bounce it is on the floor. Those
