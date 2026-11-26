@@ -7,7 +7,8 @@ numbers the post publishes.
 | Folder | Post |
 |---|---|
 | [`embeddinggemma-2-video-search/`](embeddinggemma-2-video-search/) | [EmbeddingGemma 2 Video Search on a Laptop iGPU](https://condados.ai/blog/embeddinggemma-2-video-search) |
-| [`embeddinggemma-2-basketball-moments/`](embeddinggemma-2-basketball-moments/) | Can EmbeddingGemma 2 Replace TwelveLabs for Video Search? (in progress) |
+| [`embeddinggemma-2-basketball-moments/`](embeddinggemma-2-basketball-moments/) | [Can EmbeddingGemma 2 Replace TwelveLabs for Video Search?](https://condados.ai/blog/embeddinggemma-2-vs-twelvelabs-video-search) |
+| [`pickleball-3d-ball/`](pickleball-3d-ball/) | [Can One Camera Measure a Pickleball's Height and Speed?](https://condados.ai/blog/pickleball-3d-trajectory-single-camera) |
 | [`valdrada-traffic-safety/`](valdrada-traffic-safety/) | Traffic-safety cameras in a simulated New York (in progress) |
 
 ```bash
