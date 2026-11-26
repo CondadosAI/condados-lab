@@ -15,6 +15,7 @@ ray of the flight, start on the floor at the first bounce and come down near it 
 | Synthetic control | does the fit recover g when everything is known? | 9.78 ± 0.04 (lens model right), 10.20 or 9.36 (lens model wrong) | `output/gravity.json` |
 | Pixel fit, g fixed at 9.81 | do the arcs explain the detections? | median residual 1.6 px | `output/fits.json` |
 | The net | does every flight that crossed it clear it? | 78 cross; 78 cross; **65 clear**, 3 miss by under 5 cm, **10 miss by more** (up to 0.80 m); 8 of those 10 have a good pixel fit (≤ 3 px) | `output/net.json` |
+| Both per-flight checks (≤ 3 px and clears the net) | which flights' heights are worth showing? | **49 of 80** (20 fits miss their pixels by more than 3 px) | `notebook.ipynb`, last cell |
 | The 8 good fits under the net | does drag, the paddle time, spin or the lens explain them? | no single change lifts all 8 over | `output/diagnose_net.json` |
 
 One flight's gravity is not a measurement (interquartile range 9.07 to 10.65 m/s²); the median over 80 is a check
@@ -59,5 +60,5 @@ saved tables for all 80. No GPU anywhere.
   fitted arcs end a median 0.10 m from the floor at the second bounce (90th percentile 0.46 m, worst 1.53 m;
   `bounce2_z_m` in `output/net.json`). Making it a hard constraint is the obvious next change.
 - **The paddle time may move** up to 0.15 s from the detected hit; the fit keeps the time that explains the pixels
-  best. On the demo rally it moves 1 to 3 frames later.
+  best. On the demo rally it moves 1.5 to 4 frames later; over all 80 flights it moves later in 70 (median 1.5 frames), and 10 end at the edge of the window. The search steps half a frame.
 - **One camera**, calibrated on the court lines with one radial distortion term.
