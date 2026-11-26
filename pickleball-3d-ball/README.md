@@ -54,7 +54,10 @@ saved tables for all 80. No GPU anywhere.
   later measurements from filmed trajectories give about 0.45 for an indoor ball and 0.30 to 0.33 for an outdoor one
   (Steyn et al., arXiv:2501.00163; Lindsey, Tennis Warehouse University, 2025), so 0.05 is the indoor value.
 - **No spin.**
-- **The bounce is on the floor**: the ball's centre at height 0, which ignores its 3.6 cm radius at contact.
+- **The first bounce is on the floor**: the ball's centre at height 0 (ignoring its 3.6 cm radius at contact), by
+  construction. **The second bounce is only pulled toward the floor** by a penalty, which the robust loss softens: the
+  fitted arcs end a median 0.10 m from the floor at the second bounce (90th percentile 0.46 m, worst 1.53 m;
+  `bounce2_z_m` in `output/net.json`). Making it a hard constraint is the obvious next change.
 - **The paddle time may move** up to 0.15 s from the detected hit; the fit keeps the time that explains the pixels
   best. On the demo rally it moves 1 to 3 frames later.
 - **One camera**, calibrated on the court lines with one radial distortion term.

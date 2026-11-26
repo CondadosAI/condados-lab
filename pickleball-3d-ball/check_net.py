@@ -78,6 +78,11 @@ def main() -> None:
                 "net_m": round(net, 3),
                 "clearance_m": round(float(point[2] - net), 3),
                 "median_px": round(fit["median_px"], 2),
+                # The first bounce is on the floor by construction; the second is
+                # only pulled toward it by a penalty, so report where it ended up.
+                "bounce2_z_m": round(
+                    float(trajectory(fit, np.array([fit["bounce2_t"]]))[0, 2]), 3
+                ),
             }
         )
     clearance = np.array([r["clearance_m"] for r in rows])
@@ -90,6 +95,11 @@ def main() -> None:
         "clear_it": int((missed >= 0).sum()),
         "miss_within_noise": int(((missed < 0) & (missed >= -NOISE_M)).sum()),
         "miss_beyond_noise": int((missed < -NOISE_M).sum()),
+        "bounce2_abs_z_m": {
+            "median": round(float(np.median([abs(r["bounce2_z_m"]) for r in rows])), 3),
+            "p90": round(float(np.percentile([abs(r["bounce2_z_m"]) for r in rows], 90)), 3),
+            "max": round(float(max(abs(r["bounce2_z_m"]) for r in rows)), 3),
+        },
         "clearance_m": {
             "min": round(float(clearance[crossed].min()), 3),
             "p10": round(float(np.percentile(clearance[crossed], 10)), 3),

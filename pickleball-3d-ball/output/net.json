@@ -5,6 +5,11 @@
  "clear_it": 65,
  "miss_within_noise": 3,
  "miss_beyond_noise": 10,
+ "bounce2_abs_z_m": {
+  "median": 0.101,
+  "p90": 0.456,
+  "max": 1.526
+ },
  "clearance_m": {
   "min": -0.8,
   "p10": -0.127,
@@ -22,7 +27,8 @@
    "height_m": 0.884,
    "net_m": 0.913,
    "clearance_m": -0.029,
-   "median_px": 1.43
+   "median_px": 1.43,
+   "bounce2_z_m": -0.366
   },
   {
    "flight": 1,
@@ -31,7 +37,8 @@
    "height_m": 1.077,
    "net_m": 0.903,
    "clearance_m": 0.174,
-   "median_px": 1.15
+   "median_px": 1.15,
+   "bounce2_z_m": -0.145
   },
   {
    "flight": 2,
@@ -40,7 +47,8 @@
    "height_m": 1.107,
    "net_m": 0.907,
    "clearance_m": 0.2,
-   "median_px": 1.18
+   "median_px": 1.18,
+   "bounce2_z_m": -0.052
   },
   {
    "flight": 3,
@@ -49,7 +57,8 @@
    "height_m": 1.014,
    "net_m": 0.921,
    "clearance_m": 0.093,
-   "median_px": 1.31
+   "median_px": 1.31,
+   "bounce2_z_m": 0.22
   },
   {
    "flight": 4,
@@ -58,7 +67,8 @@
    "height_m": 0.661,
    "net_m": 0.905,
    "clearance_m": -0.244,
-   "median_px": 1.93
+   "median_px": 1.93,
+   "bounce2_z_m": 0.347
   },
   {
    "flight": 5,
@@ -67,7 +77,8 @@
    "height_m": 1.275,
    "net_m": 0.928,
    "clearance_m": 0.347,
-   "median_px": 2.6
+   "median_px": 2.6,
+   "bounce2_z_m": -0.032
   },
   {
    "flight": 6,
@@ -76,7 +87,8 @@
    "height_m": 1.771,
    "net_m": 0.922,
    "clearance_m": 0.849,
-   "median_px": 2.57
+   "median_px": 2.57,
+   "bounce2_z_m": 0.287
   },
   {
    "flight": 7,
@@ -85,7 +97,8 @@
    "height_m": 1.343,
    "net_m": 0.904,
    "clearance_m": 0.439,
-   "median_px": 1.16
+   "median_px": 1.16,
+   "bounce2_z_m": 0.116
   },
   {
    "flight": 8,
@@ -94,7 +107,8 @@
    "height_m": 1.289,
    "net_m": 0.926,
    "clearance_m": 0.363,
-   "median_px": 1.11
+   "median_px": 1.11,
+   "bounce2_z_m": -0.002
   },
   {
    "flight": 9,
@@ -103,7 +117,8 @@
    "height_m": 1.298,
    "net_m": 0.931,
    "clearance_m": 0.367,
-   "median_px": 1.1
+   "median_px": 1.1,
+   "bounce2_z_m": 0.504
   },
   {
    "flight": 10,
@@ -112,7 +127,8 @@
    "height_m": 1.518,
    "net_m": 0.906,
    "clearance_m": 0.611,
-   "median_px": 3.48
+   "median_px": 3.48,
+   "bounce2_z_m": -0.022
   },
   {
    "flight": 11,
@@ -121,7 +137,8 @@
    "height_m": 1.589,
    "net_m": 0.909,
    "clearance_m": 0.68,
-   "median_px": 1.52
+   "median_px": 1.52,
+   "bounce2_z_m": 0.081
   },
   {
    "flight": 12,
@@ -130,7 +147,8 @@
    "height_m": 1.2,
    "net_m": 0.907,
    "clearance_m": 0.294,
-   "median_px": 2.97
+   "median_px": 2.97,
+   "bounce2_z_m": 0.07
   },
   {
    "flight": 13,
@@ -139,7 +157,8 @@
    "height_m": 2.026,
    "net_m": 0.916,
    "clearance_m": 1.11,
-   "median_px": 4.57
+   "median_px": 4.57,
+   "bounce2_z_m": -0.01
   },
   {
    "flight": 14,
@@ -148,7 +167,8 @@
    "height_m": 2.948,
    "net_m": 0.902,
    "clearance_m": 2.046,
-   "median_px": 4.1
+   "median_px": 4.1,
+   "bounce2_z_m": -0.205
   },
   {
    "flight": 15,
@@ -157,7 +177,8 @@
    "height_m": 0.187,
    "net_m": 0.915,
    "clearance_m": -0.728,
-   "median_px": 3.88
+   "median_px": 3.88,
+   "bounce2_z_m": -0.005
   },
   {
    "flight": 16,
@@ -166,7 +187,8 @@
    "height_m": 1.382,
    "net_m": 0.904,
    "clearance_m": 0.478,
-   "median_px": 2.79
+   "median_px": 2.79,
+   "bounce2_z_m": -0.031
   },
   {
    "flight": 17,
@@ -175,7 +197,8 @@
    "height_m": 2.027,
    "net_m": 0.913,
    "clearance_m": 1.115,
-   "median_px": 4.67
+   "median_px": 4.67,
+   "bounce2_z_m": 0.067
   },
   {
    "flight": 18,
@@ -184,7 +207,8 @@
    "height_m": 1.125,
    "net_m": 0.921,
    "clearance_m": 0.204,
-   "median_px": 1.26
+   "median_px": 1.26,
+   "bounce2_z_m": -0.002
   },
   {
    "flight": 19,
@@ -193,7 +217,8 @@
    "height_m": 1.346,
    "net_m": 0.903,
    "clearance_m": 0.442,
-   "median_px": 0.96
+   "median_px": 0.96,
+   "bounce2_z_m": -0.021
   },
   {
    "flight": 20,
@@ -202,7 +227,8 @@
    "height_m": 1.216,
    "net_m": 0.913,
    "clearance_m": 0.303,
-   "median_px": 1.58
+   "median_px": 1.58,
+   "bounce2_z_m": -0.073
   },
   {
    "flight": 21,
@@ -211,7 +237,8 @@
    "height_m": 1.748,
    "net_m": 0.914,
    "clearance_m": 0.834,
-   "median_px": 2.05
+   "median_px": 2.05,
+   "bounce2_z_m": -0.169
   },
   {
    "flight": 22,
@@ -220,7 +247,8 @@
    "height_m": 1.695,
    "net_m": 0.908,
    "clearance_m": 0.787,
-   "median_px": 2.24
+   "median_px": 2.24,
+   "bounce2_z_m": -0.003
   },
   {
    "flight": 23,
@@ -229,7 +257,8 @@
    "height_m": 1.438,
    "net_m": 0.922,
    "clearance_m": 0.516,
-   "median_px": 2.6
+   "median_px": 2.6,
+   "bounce2_z_m": -0.066
   },
   {
    "flight": 24,
@@ -238,7 +267,8 @@
    "height_m": 1.457,
    "net_m": 0.905,
    "clearance_m": 0.552,
-   "median_px": 1.57
+   "median_px": 1.57,
+   "bounce2_z_m": 0.774
   },
   {
    "flight": 25,
@@ -247,7 +277,8 @@
    "height_m": 0.933,
    "net_m": 0.93,
    "clearance_m": 0.003,
-   "median_px": 1.11
+   "median_px": 1.11,
+   "bounce2_z_m": -0.124
   },
   {
    "flight": 26,
@@ -256,7 +287,8 @@
    "height_m": NaN,
    "net_m": NaN,
    "clearance_m": NaN,
-   "median_px": 11.44
+   "median_px": 11.44,
+   "bounce2_z_m": 0.015
   },
   {
    "flight": 27,
@@ -265,7 +297,8 @@
    "height_m": 2.495,
    "net_m": 0.904,
    "clearance_m": 1.591,
-   "median_px": 3.96
+   "median_px": 3.96,
+   "bounce2_z_m": -0.215
   },
   {
    "flight": 28,
@@ -274,7 +307,8 @@
    "height_m": 1.213,
    "net_m": 0.904,
    "clearance_m": 0.309,
-   "median_px": 2.15
+   "median_px": 2.15,
+   "bounce2_z_m": 0.154
   },
   {
    "flight": 29,
@@ -283,7 +317,8 @@
    "height_m": 2.125,
    "net_m": 0.923,
    "clearance_m": 1.202,
-   "median_px": 3.99
+   "median_px": 3.99,
+   "bounce2_z_m": 0.003
   },
   {
    "flight": 30,
@@ -292,7 +327,8 @@
    "height_m": 1.049,
    "net_m": 0.907,
    "clearance_m": 0.142,
-   "median_px": 5.26
+   "median_px": 5.26,
+   "bounce2_z_m": 0.877
   },
   {
    "flight": 31,
@@ -301,7 +337,8 @@
    "height_m": 1.318,
    "net_m": 0.91,
    "clearance_m": 0.408,
-   "median_px": 3.32
+   "median_px": 3.32,
+   "bounce2_z_m": -0.014
   },
   {
    "flight": 32,
@@ -310,7 +347,8 @@
    "height_m": 1.36,
    "net_m": 0.92,
    "clearance_m": 0.44,
-   "median_px": 4.68
+   "median_px": 4.68,
+   "bounce2_z_m": 0.15
   },
   {
    "flight": 33,
@@ -319,7 +357,8 @@
    "height_m": 1.46,
    "net_m": 0.915,
    "clearance_m": 0.544,
-   "median_px": 1.08
+   "median_px": 1.08,
+   "bounce2_z_m": 0.001
   },
   {
    "flight": 34,
@@ -328,7 +367,8 @@
    "height_m": 0.995,
    "net_m": 0.926,
    "clearance_m": 0.069,
-   "median_px": 1.45
+   "median_px": 1.45,
+   "bounce2_z_m": -0.047
   },
   {
    "flight": 35,
@@ -337,7 +377,8 @@
    "height_m": 1.389,
    "net_m": 0.912,
    "clearance_m": 0.477,
-   "median_px": 1.55
+   "median_px": 1.55,
+   "bounce2_z_m": -0.061
   },
   {
    "flight": 36,
@@ -346,7 +387,8 @@
    "height_m": 1.217,
    "net_m": 0.917,
    "clearance_m": 0.3,
-   "median_px": 1.05
+   "median_px": 1.05,
+   "bounce2_z_m": 0.073
   },
   {
    "flight": 37,
@@ -355,7 +397,8 @@
    "height_m": 1.364,
    "net_m": 0.91,
    "clearance_m": 0.453,
-   "median_px": 3.33
+   "median_px": 3.33,
+   "bounce2_z_m": -0.005
   },
   {
    "flight": 38,
@@ -364,7 +407,8 @@
    "height_m": 1.493,
    "net_m": 0.929,
    "clearance_m": 0.564,
-   "median_px": 2.54
+   "median_px": 2.54,
+   "bounce2_z_m": 0.006
   },
   {
    "flight": 39,
@@ -373,7 +417,8 @@
    "height_m": 0.96,
    "net_m": 0.932,
    "clearance_m": 0.029,
-   "median_px": 1.23
+   "median_px": 1.23,
+   "bounce2_z_m": -0.145
   },
   {
    "flight": 40,
@@ -382,7 +427,8 @@
    "height_m": 1.212,
    "net_m": 0.924,
    "clearance_m": 0.288,
-   "median_px": 0.97
+   "median_px": 0.97,
+   "bounce2_z_m": 0.377
   },
   {
    "flight": 41,
@@ -391,7 +437,8 @@
    "height_m": 1.35,
    "net_m": 0.908,
    "clearance_m": 0.442,
-   "median_px": 1.14
+   "median_px": 1.14,
+   "bounce2_z_m": 0.272
   },
   {
    "flight": 42,
@@ -400,7 +447,8 @@
    "height_m": 0.423,
    "net_m": 0.901,
    "clearance_m": -0.478,
-   "median_px": 32.05
+   "median_px": 32.05,
+   "bounce2_z_m": -0.007
   },
   {
    "flight": 43,
@@ -409,7 +457,8 @@
    "height_m": 0.881,
    "net_m": 0.917,
    "clearance_m": -0.036,
-   "median_px": 1.6
+   "median_px": 1.6,
+   "bounce2_z_m": -0.053
   },
   {
    "flight": 44,
@@ -418,7 +467,8 @@
    "height_m": 1.722,
    "net_m": 0.912,
    "clearance_m": 0.81,
-   "median_px": 2.13
+   "median_px": 2.13,
+   "bounce2_z_m": 0.158
   },
   {
    "flight": 45,
@@ -427,7 +477,8 @@
    "height_m": 1.119,
    "net_m": 0.904,
    "clearance_m": 0.215,
-   "median_px": 15.45
+   "median_px": 15.45,
+   "bounce2_z_m": -0.509
   },
   {
    "flight": 46,
@@ -436,7 +487,8 @@
    "height_m": 2.062,
    "net_m": 0.905,
    "clearance_m": 1.157,
-   "median_px": 4.51
+   "median_px": 4.51,
+   "bounce2_z_m": 0.004
   },
   {
    "flight": 47,
@@ -445,7 +497,8 @@
    "height_m": 1.226,
    "net_m": 0.909,
    "clearance_m": 0.317,
-   "median_px": 0.99
+   "median_px": 0.99,
+   "bounce2_z_m": 0.05
   },
   {
    "flight": 48,
@@ -454,7 +507,8 @@
    "height_m": 1.3,
    "net_m": 0.91,
    "clearance_m": 0.389,
-   "median_px": 1.68
+   "median_px": 1.68,
+   "bounce2_z_m": -0.032
   },
   {
    "flight": 49,
@@ -463,7 +517,8 @@
    "height_m": 1.738,
    "net_m": 0.918,
    "clearance_m": 0.82,
-   "median_px": 3.53
+   "median_px": 3.53,
+   "bounce2_z_m": -0.09
   },
   {
    "flight": 50,
@@ -472,7 +527,8 @@
    "height_m": 0.578,
    "net_m": 0.919,
    "clearance_m": -0.341,
-   "median_px": 2.98
+   "median_px": 2.98,
+   "bounce2_z_m": -0.455
   },
   {
    "flight": 51,
@@ -481,7 +537,8 @@
    "height_m": 1.093,
    "net_m": 0.93,
    "clearance_m": 0.163,
-   "median_px": 1.55
+   "median_px": 1.55,
+   "bounce2_z_m": -0.105
   },
   {
    "flight": 52,
@@ -490,7 +547,8 @@
    "height_m": 1.224,
    "net_m": 0.913,
    "clearance_m": 0.311,
-   "median_px": 1.5
+   "median_px": 1.5,
+   "bounce2_z_m": 0.127
   },
   {
    "flight": 53,
@@ -499,7 +557,8 @@
    "height_m": 1.422,
    "net_m": 0.929,
    "clearance_m": 0.494,
-   "median_px": 1.19
+   "median_px": 1.19,
+   "bounce2_z_m": -0.261
   },
   {
    "flight": 54,
@@ -508,7 +567,8 @@
    "height_m": 1.177,
    "net_m": 0.909,
    "clearance_m": 0.268,
-   "median_px": 1.61
+   "median_px": 1.61,
+   "bounce2_z_m": 0.146
   },
   {
    "flight": 55,
@@ -517,7 +577,8 @@
    "height_m": 1.456,
    "net_m": 0.915,
    "clearance_m": 0.542,
-   "median_px": 4.04
+   "median_px": 4.04,
+   "bounce2_z_m": 0.189
   },
   {
    "flight": 56,
@@ -526,7 +587,8 @@
    "height_m": 1.377,
    "net_m": 0.919,
    "clearance_m": 0.458,
-   "median_px": 7.64
+   "median_px": 7.64,
+   "bounce2_z_m": -0.54
   },
   {
    "flight": 57,
@@ -535,7 +597,8 @@
    "height_m": 1.617,
    "net_m": 0.906,
    "clearance_m": 0.711,
-   "median_px": 1.29
+   "median_px": 1.29,
+   "bounce2_z_m": 0.214
   },
   {
    "flight": 58,
@@ -544,7 +607,8 @@
    "height_m": NaN,
    "net_m": NaN,
    "clearance_m": NaN,
-   "median_px": 45.01
+   "median_px": 45.01,
+   "bounce2_z_m": 1.526
   },
   {
    "flight": 59,
@@ -553,7 +617,8 @@
    "height_m": 1.567,
    "net_m": 0.922,
    "clearance_m": 0.645,
-   "median_px": 2.66
+   "median_px": 2.66,
+   "bounce2_z_m": -0.052
   },
   {
    "flight": 60,
@@ -562,7 +627,8 @@
    "height_m": 1.298,
    "net_m": 0.917,
    "clearance_m": 0.381,
-   "median_px": 1.13
+   "median_px": 1.13,
+   "bounce2_z_m": 0.123
   },
   {
    "flight": 61,
@@ -571,7 +637,8 @@
    "height_m": 0.756,
    "net_m": 0.919,
    "clearance_m": -0.163,
-   "median_px": 0.92
+   "median_px": 0.92,
+   "bounce2_z_m": -0.097
   },
   {
    "flight": 62,
@@ -580,7 +647,8 @@
    "height_m": 1.195,
    "net_m": 0.945,
    "clearance_m": 0.25,
-   "median_px": 1.29
+   "median_px": 1.29,
+   "bounce2_z_m": -0.114
   },
   {
    "flight": 63,
@@ -589,7 +657,8 @@
    "height_m": 1.755,
    "net_m": 0.901,
    "clearance_m": 0.854,
-   "median_px": 1.36
+   "median_px": 1.36,
+   "bounce2_z_m": 0.187
   },
   {
    "flight": 64,
@@ -598,7 +667,8 @@
    "height_m": 1.09,
    "net_m": 0.92,
    "clearance_m": 0.169,
-   "median_px": 1.42
+   "median_px": 1.42,
+   "bounce2_z_m": -0.184
   },
   {
    "flight": 65,
@@ -607,7 +677,8 @@
    "height_m": 0.719,
    "net_m": 0.929,
    "clearance_m": -0.21,
-   "median_px": 0.94
+   "median_px": 0.94,
+   "bounce2_z_m": -0.029
   },
   {
    "flight": 66,
@@ -616,7 +687,8 @@
    "height_m": 1.042,
    "net_m": 0.928,
    "clearance_m": 0.114,
-   "median_px": 1.1
+   "median_px": 1.1,
+   "bounce2_z_m": -0.211
   },
   {
    "flight": 67,
@@ -625,7 +697,8 @@
    "height_m": 0.813,
    "net_m": 0.933,
    "clearance_m": -0.12,
-   "median_px": 1.12
+   "median_px": 1.12,
+   "bounce2_z_m": -0.036
   },
   {
    "flight": 68,
@@ -634,7 +707,8 @@
    "height_m": 1.177,
    "net_m": 0.932,
    "clearance_m": 0.245,
-   "median_px": 1.15
+   "median_px": 1.15,
+   "bounce2_z_m": -0.25
   },
   {
    "flight": 69,
@@ -643,7 +717,8 @@
    "height_m": 0.786,
    "net_m": 0.928,
    "clearance_m": -0.142,
-   "median_px": 1.07
+   "median_px": 1.07,
+   "bounce2_z_m": -0.124
   },
   {
    "flight": 70,
@@ -652,7 +727,8 @@
    "height_m": 0.985,
    "net_m": 0.941,
    "clearance_m": 0.044,
-   "median_px": 1.53
+   "median_px": 1.53,
+   "bounce2_z_m": -0.231
   },
   {
    "flight": 71,
@@ -661,7 +737,8 @@
    "height_m": 0.853,
    "net_m": 0.912,
    "clearance_m": -0.059,
-   "median_px": 1.03
+   "median_px": 1.03,
+   "bounce2_z_m": -0.06
   },
   {
    "flight": 72,
@@ -670,7 +747,8 @@
    "height_m": 1.503,
    "net_m": 0.902,
    "clearance_m": 0.601,
-   "median_px": 0.72
+   "median_px": 0.72,
+   "bounce2_z_m": 0.467
   },
   {
    "flight": 73,
@@ -679,7 +757,8 @@
    "height_m": 1.794,
    "net_m": 0.915,
    "clearance_m": 0.88,
-   "median_px": 1.79
+   "median_px": 1.79,
+   "bounce2_z_m": -0.002
   },
   {
    "flight": 74,
@@ -688,7 +767,8 @@
    "height_m": 1.829,
    "net_m": 0.905,
    "clearance_m": 0.924,
-   "median_px": 1.62
+   "median_px": 1.62,
+   "bounce2_z_m": -0.076
   },
   {
    "flight": 75,
@@ -697,7 +777,8 @@
    "height_m": 1.063,
    "net_m": 0.92,
    "clearance_m": 0.144,
-   "median_px": 2.53
+   "median_px": 2.53,
+   "bounce2_z_m": -0.073
   },
   {
    "flight": 76,
@@ -706,7 +787,8 @@
    "height_m": 0.151,
    "net_m": 0.95,
    "clearance_m": -0.8,
-   "median_px": 1.28
+   "median_px": 1.28,
+   "bounce2_z_m": 0.034
   },
   {
    "flight": 77,
@@ -715,7 +797,8 @@
    "height_m": 1.979,
    "net_m": 0.901,
    "clearance_m": 1.078,
-   "median_px": 2.23
+   "median_px": 2.23,
+   "bounce2_z_m": 0.222
   },
   {
    "flight": 78,
@@ -724,7 +807,8 @@
    "height_m": 0.9,
    "net_m": 0.938,
    "clearance_m": -0.038,
-   "median_px": 1.51
+   "median_px": 1.51,
+   "bounce2_z_m": 0.936
   },
   {
    "flight": 79,
@@ -733,7 +817,8 @@
    "height_m": 2.278,
    "net_m": 0.942,
    "clearance_m": 1.336,
-   "median_px": 3.71
+   "median_px": 3.71,
+   "bounce2_z_m": -0.041
   }
  ]
 }
