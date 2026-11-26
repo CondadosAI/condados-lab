@@ -37,8 +37,8 @@ def main() -> None:
                 "duration": q["duration"],
                 "windows": q["relevant_windows"],
                 "seg": [[round(float(a), 2), round(float(b), 2)] for a, b in zip(s, e)],
-                "marengo": [round(float(x), 4) for x in mk["emb"][rows["marengo"]] @ tv["marengo"][q["query"]]],
-                "gemma": [round(float(x), 4) for x in gm["emb"][rows["gemma"]] @ tv["gemma"][q["query"]]],
+                "marengo": [round(float(x), 6) for x in mk["emb"][rows["marengo"]] @ tv["marengo"][q["query"]]],
+                "gemma": [round(float(x), 6) for x in gm["emb"][rows["gemma"]] @ tv["gemma"][q["query"]]],
             }
         )
     OUT.mkdir(exist_ok=True)
