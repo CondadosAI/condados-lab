@@ -3,7 +3,7 @@
 Companion code for the condados.ai post. One fixed broadcast camera sees the ball as a pixel, and a pixel is a
 viewing ray, not a point. Between two bounces the ball is a projectile, and at each bounce it is on the floor. Those
 two facts are enough to place the whole flight in 3D: one trajectory under gravity and drag has to pass through every
-ray of the flight and touch the floor at both bounces. `fit.py` finds it by least squares.
+ray of the flight, start on the floor at the first bounce and come down near it at the second. `fit.py` finds it by least squares.
 
 ## Results
 
