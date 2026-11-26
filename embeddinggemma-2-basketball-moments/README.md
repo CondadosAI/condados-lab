@@ -12,10 +12,10 @@ same queries, so the only difference is the model, on three kinds of video.
 |---|---|---|---|---|
 | Vlogs and news (QVHighlights val, 90 videos) | 92 queries, Hit@1 | 88.0 | 93.5 | 34.8 |
 | same, R1@0.5 | | 48.9 | 53.3 | 4.4 |
-| Basketball broadcast, threes (window AP, ±5 s) | Loras 23 / Misericordia 9 | 0.11 / 0.03 | 0.44 / 0.49 | 0.09 / 0.03 |
-| same, free throws | 31 / 46 | 0.41 / 0.39 | 0.61 / 0.60 | 0.21 / 0.24 |
-| Traffic camera (MEVA, 8 cameras), vehicle stops (window AP, ±2 s) | 76 | 0.50 | 0.50 | 0.37 |
-| same, person opens a door | 64 | 0.28 | 0.40 | 0.30 |
+| Basketball broadcast, threes (window AP, ±5 s) | Loras 23 / Misericordia 9 | 0.11 / 0.03 | 0.44 / 0.49 | 0.10 / 0.04 |
+| same, free throws | 31 / 46 | 0.41 / 0.39 | 0.61 / 0.60 | 0.22 / 0.25 |
+| Traffic camera (MEVA, 8 cameras), vehicle stops (window AP, ±2 s) | 76 | 0.50 | 0.50 | 0.38 |
+| same, person opens a door | 64 | 0.28 | 0.40 | 0.32 |
 
 - **Scenes, Gemma is close.** On QVHighlights it is about 5 points behind on every measure. Paired by query, Marengo
   finds 5 that Gemma misses and the reverse never happens (exact McNemar p = 0.06). All 5 are a person doing
@@ -28,6 +28,11 @@ same queries, so the only difference is the model, on three kinds of video.
 Full tables: `output/qvh_eval.md`; `output/<game>_seg-…_d{2,5}.md` (Gemma on Marengo's segments) and
 `output/<game>-mask_marengo_{visual,audio}_d{2,5}.md`, `output/<game>-mask_twelvelabs_search_d{2,5}.md` for the two
 games; `output/meva*_d{0,2}.md` for MEVA. `notebook.ipynb` walks all of it.
+
+**Chance.** Hit@1 chance is the share of right segments. AP chance is the expected AP of a random ranking,
+computed exactly by `chance_ap.py` (`output/chance_ap.md`): it sits above the share of positives, most on
+QVHighlights (43.7 against 34.8) where a video has only about 20 segments. The basketball and MEVA tables from
+`evaluate.py` still print the share in their `chance AP` column; the exact values are 0.00-0.02 higher.
 
 ## Data and licences
 
@@ -108,7 +113,9 @@ uv run python qvh.py upload                    # one TwelveLabs index, egbm-qvh
 uv run python qvh.py embed                     # Marengo segment and text vectors -> index/qvh_marengo_*.npz
 uv run python qvh.py gemma --device cuda       # Gemma on the same segments -> index/qvh_gemma_visual.npz
 uv run python qvh.py search                    # the hosted search, top result per query
-uv run python qvh.py evaluate                  # -> output/qvh_eval.md
+uv run python qvh.py evaluate index/qvh_marengo_visual.npz index/qvh_gemma_visual.npz index/qvh_marengo_audio.npz   # -> output/qvh_eval.md
+uv run python chance_ap.py                     # exact chance AP for every table -> output/chance_ap.md
+uv run python lab_data.py                      # scores + spans for the post's lab -> output/qvh_lab.json
 uv run python demo_reel.py --qvh 6065 222 5097 7578 6266 5651             # -> output/reel_qvh.mp4
 uv run --with jupyter jupyter lab notebook.ipynb
 ```

@@ -14,7 +14,8 @@ Steps (the sample is qvh_sample.json, from fetch_qvh.py):
 - `search`: the hosted search, filtered to the query's own video, top result only.
 - `evaluate`: for each index file, per query:
   - AP: the video's segments ranked by the query; a segment is positive when it overlaps a
-    relevant window. Chance = the share of positive segments.
+    relevant window. Chance = the expected AP of a random ranking (chance_ap.py), which is
+    higher than the share of positive segments when a video has few segments.
   - Hit@1: the top segment overlaps a relevant window. Chance = the same share.
   - R1@0.5: one predicted span, scored by IoU >= 0.5 with any relevant window. The span is the
     top segment grown over its neighbours while their score stays above the midpoint between
@@ -35,6 +36,8 @@ import time
 from pathlib import Path
 
 import numpy as np
+
+from chance_ap import expected_ap
 
 HERE = Path(__file__).parent
 DATA, INDEX, OUT = HERE / "data" / "qvh", HERE / "index", HERE / "output"
@@ -229,7 +232,7 @@ def evaluate(paths: list[str]) -> None:
             if not pos.any():
                 continue
             r["ap"].append(ap(sc, pos))
-            r["cap"].append(pos.mean())
+            r["cap"].append(expected_ap(len(pos), int(pos.sum())))
             r["hit"].append(float(pos[np.argmax(sc)]))
             r["chit"].append(pos.mean())
             ps, pe = grow(sc, s, e)
