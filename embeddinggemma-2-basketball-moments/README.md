@@ -1,4 +1,4 @@
-# What a free video model finds in your footage, and what it misses
+# Can EmbeddingGemma 2 replace TwelveLabs for video search?
 
 Companion code for the condados.ai post. The question is a founder's: you have hours of video and want to find
 moments in it by typing what you are looking for. Can an open model on your own GPU
